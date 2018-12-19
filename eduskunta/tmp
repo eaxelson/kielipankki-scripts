@@ -1,0 +1,25 @@
+    <a href="{TRANSCRIPT_URL}" target="_blank" rel="noopener noreferrer">Eduskunnan alkuperäinen pöytäkirja</a> (Pöytäkirja avautuu uudessa välilehdessä.)
+                <Name>{YYYY}-kevat</Name>
+                <Title>Kevään {YYYY} täysistunnot - Parliament plenary sessions of spring {YYYY}</Title>
+                <Description LanguageId="ISO639-3:eng" Link="">Plenary sessions of Finnish Parliament from spring {YYYY}. The material includes videofiles of the sessions in annotated format.</Description>
+        <Description LanguageId="ISO639-3:fin" Link="">Kevään {YYYY} täysistunnot. Aineisto sisältää videotiedostot annotoidussa muodossa.</Description>
+      <CorpusLink Name="">{YYYY}-kevat/{YYYY}-{MM}-{DD}.imdi</CorpusLink>
+      <Name>{YYYY}-{MM}-{DD}</Name>
+      <Title>Täysistunto {DD}.{MM}.{YYYY} - Plenary session {YYYY}/{MM}/{DD}</Title>
+      <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan {ORDINAL_FI} täysistunto {DATE_FI}. Sisältää istunnon videotiedoston annotointeineen.</Description>
+      <Description LanguageId="ISO639-3:eng" Link="">{ORDINAL_EN} plenary session of Finnish Parliament on {DATE_EN}. The material includes video file of the session in annotated format.</Description>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.mp4</ResourceLink>
+            <Size>{MP4_SIZE}KB</Size>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.eaf</ResourceLink>
+            <Size>{EAF_SIZE}KB</Size>
+            <ResourceLink>{YYYY}-{MM}-{DD}/Poytakirja.html</ResourceLink>
+            <Size>{HTML_SIZE}KB</Size>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.txt</ResourceLink>
+            <Size>{TXT_SIZE}KB</Size>
+Published: {PUBLISHED_DATE_AND_TIME}
+Video: {VIDEO_URL}
+Transcript: {TRANSCRIPT_URL}
+                <Name>{YYYY}-syksy</Name>
+                <Title>Syksyn {YYYY} täysistunnot - Parliament plenary sessions of fall {YYYY}</Title>
+        <Description LanguageId="ISO639-3:fin" Link="">Syksyn {YYYY} täysistunnot. Aineisto sisältää videotiedostot annotoidussa muodossa.</Description>
+      <CorpusLink Name="">{YYYY}-syksy/{YYYY}-{MM}-{DD}.imdi</CorpusLink>

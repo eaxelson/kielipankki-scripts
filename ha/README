@@ -1,0 +1,28 @@
+
+rm -fR data pkgs registry vrt && mkdir registry
+
+The original files:
+
+ kitxtall.txt
+ kiphrall.txt
+ kiphral2.txt
+
+and the corrected ones:
+
+ kitxtall_corrected.txt
+ kiphrall_corrected.txt
+ kiphral2_corrected.txt
+
+
+Commands:
+
+ ./ha-process.sh kitxtall_corrected.txt ha_stories --stories --corpusdir /usr/lib/cgi-bin/corpora
+ ./ha-process.sh kiphrall_corrected.txt ha_sentences_1 --sentences --corpusdir /usr/lib/cgi-bin/corpora
+ ./ha-process.sh kiphral2_corrected.txt ha_sentences_2 --sentences --corpusdir /usr/lib/cgi-bin/corpora
+
+
+Finally copy generated corpora under '/usr/lib/cgi-bin/corpora':
+
+ sudo cp registry/* /usr/lib/cgi-bin/corpora/registry/
+ sudo cp -R data/* /usr/lib/cgi-bin/corpora/data/
+

@@ -1,0 +1,75 @@
+Scripts for generating court decision corpora.
+
+
+
+Old instructions for local compilation:
+
+
+First set either of the following:
+
+COURT="kho"
+COURT="kko"
+
+For a fresh start run first in directory '/data/eaxelson/$COURT/sf-data/orig/$COURT':
+
+  rm -fR data pkgs registry vrt && mkdir registry
+
+Run then in the same directory:
+
+  ./court-generate-all-vrt-files.sh --${COURT} --fin
+  ./court-generate-all-vrt-files.sh --${COURT} --swe
+
+and then:
+
+  ./court-generate-all-corpora.sh --${COURT} --fin [--separate-years]
+  ./court-generate-all-corpora.sh --${COURT} --swe [--separate-years]
+
+Finally copy generated corpora under '/usr/lib/cgi-bin/corpora':
+
+  sudo cp registry/* /usr/lib/cgi-bin/corpora/registry/
+  sudo cp -R data/* /usr/lib/cgi-bin/corpora/data/
+
+
+
+Old remarks about differences in files (which are now handled by scripts
+finlex-rename-files.sh and finlex-preprocess.pl in parent directory):
+
+
+Note: the following files in directory kko/fi have been modified as they had
+some typos in date tags:
+
+kko19890070.xml kko19960153.xml kko20000102.xml kko20010103.xml kko20040110.xml
+
+and the following files in directory kko/sv:
+
+kko19800113t.xml kko19810091t.xml kko19900121.xml kko19910186.xml
+kko19960153.xml kko20020093.xml kko20020094.xml kko20020095.xml
+kko20020096.xml kko20020097.xml kko20030058.xml kko20040110.xml
+
+and the file in directory kho/fi:
+
+kho201301846.xml
+
+There exists a corresponding original file *.xml.original for each
+of the files. Some Swedish files do not have a date given,
+so 0101(YEAR) is set as date for them by the processing tools.
+
+
+Note: the following files in directory kko/fi have been renamed to *.xml.swedish
+as they contain only Swedish and the same text is already under directory kko/sv:
+
+kko19800021t.xml kko19800032t.xml kko19800093t.xml kko19810017t.xml
+kko19810028t.xml kko19810053t.xml kko19810085t.xml kko19820056t.xml
+kko19820062t.xml kko19820095t.xml kko19820117t.xml kko19820183t.xml
+kko19830103t.xml kko19830111t.xml kko19830121t.xml kko19830148t.xml
+kko19830169t.xml kko19830186t.xml kko19830193t.xml kko19840010t.xml
+kko19840051t.xml kko19840117t.xml kko19840119t.xml kko19840144t.xml
+kko19840221t.xml kko19850063t.xml kko19850102t.xml kko19850161t.xml
+kko19850174t.xml kko19860002t.xml kko19860013t.xml kko19860051t.xml
+kko19860129t.xml kko19870008.xml kko19870032.xml kko19870034.xml
+kko19870039.xml kko19870040.xml kko19870061.xml
+
+
+Note: some of the files in directory kko/fi contain some Swedish text that
+e.g. refers to court decisions given in Swedish (in Finland or Sweden).
+

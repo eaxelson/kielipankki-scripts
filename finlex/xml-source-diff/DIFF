@@ -1,0 +1,165 @@
+
+Renamed:
+
+ fi/asd19940635.xml -> fi/asd19940635.xml.empty  # empty file
+ fi/asd19970197.xml -> fi/asd19970197.xml.error  # not valid xml
+
+Renamed *.xml -> *.xml.swedish  # contain only Swedish text
+
+ fi/1980/kko19800021t.xml
+ fi/1980/kko19800032t.xml
+ fi/1980/kko19800093t.xml
+ fi/1981/kko19810017t.xml
+ fi/1981/kko19810028t.xml
+ fi/1981/kko19810053t.xml
+ fi/1981/kko19810085t.xml
+ fi/1982/kko19820056t.xml
+ fi/1982/kko19820062t.xml
+ fi/1982/kko19820095t.xml
+ fi/1982/kko19820117t.xml
+ fi/1982/kko19820183t.xml
+ fi/1983/kko19830103t.xml
+ fi/1983/kko19830111t.xml
+ fi/1983/kko19830121t.xml
+ fi/1983/kko19830148t.xml
+ fi/1983/kko19830169t.xml
+ fi/1983/kko19830186t.xml
+ fi/1983/kko19830193t.xml
+ fi/1984/kko19840010t.xml
+ fi/1984/kko19840051t.xml
+ fi/1984/kko19840117t.xml
+ fi/1984/kko19840119t.xml
+ fi/1984/kko19840144t.xml
+ fi/1984/kko19840221t.xml
+ fi/1985/kko19850063t.xml
+ fi/1985/kko19850102t.xml
+ fi/1985/kko19850161t.xml
+ fi/1985/kko19850174t.xml
+ fi/1986/kko19860002t.xml
+ fi/1986/kko19860013t.xml
+ fi/1986/kko19860051t.xml
+ fi/1986/kko19860129t.xml
+ fi/1987/kko19870008.xml
+ fi/1987/kko19870032.xml
+ fi/1987/kko19870034.xml
+ fi/1987/kko19870039.xml
+ fi/1987/kko19870040.xml
+ fi/1987/kko19870061.xml
+
+Fixed (fixed files included in this dir and full output of diff in file diff.log):
+
+ asd/sf-data/orig/asd/fi/1991/asd19911202.xml  # \224 -> ö
+ asd/sf-data/orig/asd/fi/2010/asd20100584.xml  # \226 -> -
+ asd/sf-data/orig/asd/fi/2010/asd20100745.xml  # \227 -> -
+ asd/sf-data/orig/asd/fi/2011/asd20110109.xml  # \224 removed
+
+ # \217 -> Å, \226 -> Ö
+ asd/sf-data/orig/asd/sv/1961/asd19610404.xml
+ asd/sf-data/orig/asd/sv/1965/asd19650040.xml
+ asd/sf-data/orig/asd/sv/1991/asd19910516.xml
+ asd/sf-data/orig/asd/sv/1995/asd19950253.xml
+ asd/sf-data/orig/asd/sv/1996/asd19961093.xml
+ asd/sf-data/orig/asd/sv/1997/asd19970133.xml
+ asd/sf-data/orig/asd/sv/1997/asd19970540.xml
+
+ # D.M.YYYY -> YYYY-MM-DD inside <dcterms:issued> tags
+ kho/sf-data/orig/kho/fi/1987/kho198700025.xml
+ kho/sf-data/orig/kho/fi/1987/kho198700104.xml
+ kho/sf-data/orig/kho/fi/1987/kho198700840.xml
+ kho/sf-data/orig/kho/fi/1987/kho198702282.xml
+
+ kho/sf-data/orig/kho/fi/1991/kho199100287.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/1999/kho199901344.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2004/kho200401139.xml # trash <br/>\226- - ... <br/> removed
+ kho/sf-data/orig/kho/fi/2004/kho200403346.xml # extra \226 removed
+ kho/sf-data/orig/kho/fi/2005/kho200500635.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2005/kho200502264.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2005/kho200502489.xml #  extra \226 removed
+ kho/sf-data/orig/kho/fi/2005/kho200502738.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2006/kho200601311.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2006/kho200602471.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2007/kho200700214.xml # \226 -> - , a-c -> a - c
+ kho/sf-data/orig/kho/fi/2007/kho200701711.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2007/kho200702643.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2007/kho200703084.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2007/kho200703168.xml # extra \226 removed
+ kho/sf-data/orig/kho/fi/2008/kho200800355.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2008/kho200802480.xml # \226 -> -
+ kho/sf-data/orig/kho/fi/2009/kho200900164.xml # extra \226 removed
+ kho/sf-data/orig/kho/fi/2009/kho200900644.xml # a-c -> a - c
+ kho/sf-data/orig/kho/fi/2013/kho201301846.xml # missing date added inside <dcterms:issued> tags
+ kko/sf-data/orig/kko/fi/1987/kko19870052.xml # \202 -> é
+ kko/sf-data/orig/kko/fi/1987/kko19870088.xml # \202 -> é
+ kko/sf-data/orig/kko/fi/1989/kko19890070.xml # missing date added inside <dcterms:issued> tags
+ kko/sf-data/orig/kko/fi/1989/kko19890113.xml # \202 -> é
+ kko/sf-data/orig/kko/fi/1996/kko19960069.xml # \216 -> Ä
+ kko/sf-data/orig/kko/fi/1996/kko19960153.xml # typo in <dcterms:issued>
+ kko/sf-data/orig/kko/fi/2000/kko20000069.xml # \222 -> '
+ kko/sf-data/orig/kko/fi/2000/kko20000102.xml # typo in <dcterms:issued>
+ kko/sf-data/orig/kko/fi/2001/kko20010019.xml # \221 -> ', \222 -> '
+ kko/sf-data/orig/kko/fi/2001/kko20010103.xml # typo in <dcterms:issued>
+
+ # \221 -> ', \222 -> '
+ kko/sf-data/orig/kko/fi/2002/kko20020119.xml
+ kko/sf-data/orig/kko/fi/2003/kko20030118.xml
+ kko/sf-data/orig/kko/fi/2003/kko20030121.xml
+ kko/sf-data/orig/kko/fi/2003/kko20030123.xml
+ kko/sf-data/orig/kko/fi/2004/kko20040063.xml
+ kko/sf-data/orig/kko/fi/2004/kko20040078.xml
+ kko/sf-data/orig/kko/fi/2004/kko20040080.xml
+ kko/sf-data/orig/kko/fi/2004/kko20040099.xml
+
+ kko/sf-data/orig/kko/fi/2004/kko20040110.xml # add missing date between <dcterms:issued> tags
+ kko/sf-data/orig/kko/fi/2005/kko20050007.xml # \222 -> '
+ kko/sf-data/orig/kko/sv/1980/kko19800113t.xml # typo in <dcterms:issued>
+ kko/sf-data/orig/kko/sv/1981/kko19810091t.xml # typo in <dcterms:issued>
+
+ # \202 -> é
+ kko/sf-data/orig/kko/sv/1985/kko19850020t.xml
+ kko/sf-data/orig/kko/sv/1985/kko19850023t.xml
+ kko/sf-data/orig/kko/sv/1988/kko19880067.xml
+ kko/sf-data/orig/kko/sv/1988/kko19880082.xml
+ kko/sf-data/orig/kko/sv/1989/kko19890064.xml
+
+ kko/sf-data/orig/kko/sv/1990/kko19900121.xml # typo in <dcterms:issued>
+ kko/sf-data/orig/kko/sv/1990/kko19900149.xml # \202 -> é
+
+ kko/sf-data/orig/kko/sv/1990/kko19900180.xml # \202 -> é
+ kko/sf-data/orig/kko/sv/1991/kko19910055.xml
+ kko/sf-data/orig/kko/sv/1991/kko19910186.xml # typo in <dcterms:issued>
+
+ # \202 -> é
+ kko/sf-data/orig/kko/sv/1992/kko19920063.xml
+ kko/sf-data/orig/kko/sv/1992/kko19920187.xml
+ kko/sf-data/orig/kko/sv/1993/kko19930003.xml
+ kko/sf-data/orig/kko/sv/1993/kko19930023.xml
+ kko/sf-data/orig/kko/sv/1993/kko19930090.xml
+ kko/sf-data/orig/kko/sv/1994/kko19940074.xml
+ kko/sf-data/orig/kko/sv/1994/kko19940099.xml
+ kko/sf-data/orig/kko/sv/1995/kko19950043.xml
+
+ kko/sf-data/orig/kko/sv/1995/kko19950064.xml # \205 -> à
+ kko/sf-data/orig/kko/sv/1995/kko19950124.xml # \202 -> é
+ kko/sf-data/orig/kko/sv/1995/kko19950188.xml ../kko/sf-data/orig/kko/sv/1995/kko19950188.xml
+ kko/sf-data/orig/kko/sv/1995/kko19950200.xml ../kko/sf-data/orig/kko/sv/1995/kko19950200.xml
+ kko/sf-data/orig/kko/sv/1996/kko19960153.xml # a typo in <dcterms:issued>
+
+ # \202 -> é
+ kko/sf-data/orig/kko/sv/1997/kko19970116.xml
+ kko/sf-data/orig/kko/sv/1997/kko19970181.xml
+ kko/sf-data/orig/kko/sv/1998/kko19980105.xml
+ kko/sf-data/orig/kko/sv/1999/kko19990062.xml
+ kko/sf-data/orig/kko/sv/1999/kko19990113.xml
+
+ kko/sf-data/orig/kko/sv/2001/kko20010049.xml # \222 -> '
+
+ # typo in <dcterms:issued>
+ kko/sf-data/orig/kko/sv/2002/kko20020093.xml
+ kko/sf-data/orig/kko/sv/2002/kko20020094.xml
+ kko/sf-data/orig/kko/sv/2002/kko20020095.xml
+ kko/sf-data/orig/kko/sv/2002/kko20020096.xml
+ kko/sf-data/orig/kko/sv/2002/kko20020097.xml
+ kko/sf-data/orig/kko/sv/2003/kko20030058.xml
+
+ kko/sf-data/orig/kko/sv/2004/kko20040065.xml # \226 -> -
+ kko/sf-data/orig/kko/sv/2004/kko20040110.xml # a typo in <dcterms:issued>

@@ -1,0 +1,14 @@
+{DATE_EN}			Tuesday June the 21st 2016
+{DATE_FI}			tiistaina 21. kesäkuuta 2016
+{DD}				21
+{EAF_SIZE}			(in kilobytes)
+{HTML_SIZE}			(in kilobytes)
+{MM}				06
+{MP4_SIZE}			(in kilobytes)
+{ORDINAL_EN}			73rd
+{ORDINAL_FI}			73.
+{PUBLISHED_DATE_AND_TIME}	(can this be left out?)
+{TRANSCRIPT_URL}		https://www.eduskunta.fi/FI/vaski/Poytakirja/Documents/PTK_73+2016.pdf
+{TXT_SIZE}			(in kilobytes)
+{VIDEO_URL}			https://down0-80133-down0.dna.qbrick.com/80133-down0/ncode/2016-06-22/sessio_21_06_2016-13_52_15_432p_99c5393a.mp4
+{YYYY}				2006

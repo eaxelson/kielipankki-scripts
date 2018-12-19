@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2017-11-13"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>Korpiselka</Name>
+                <Title>Korpiselän murretta - Korpiselkä dialect</Title>
+                <Description LanguageId="" Link=""/>
+         <CorpusLink Name="">Korpiselka/Korpiselka_01nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_01nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_01nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_01nD.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_01nE.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_02nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_03nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_03nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_03nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_04nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_05nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_05nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_05nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_05nD.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_06mA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_06mB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_07nA_08mA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_07nB_08mB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_09nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_09nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_09nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_09nD.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_10nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_10nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_11mA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_12nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_13mA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_13mB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_14nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_14nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_14nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_15nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_15nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_16mA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_16mB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_17nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_17nB.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_17nC.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_18nA.imdi</CorpusLink>
+         <CorpusLink Name="">Korpiselka/Korpiselka_19mA.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2017-11-13"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>Suojarvi</Name>
+                <Title>Suojärven murretta - Suojärvi dialect</Title>
+                <Description LanguageId="" Link=""/>
+         <CorpusLink Name="">Suojarvi/Suojarvi_01nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_01nB.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_02nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_03nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_03nB.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_04nA_05nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_06mA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_06mB.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_06mC.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_07nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_08nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_09mA.imdi</CorpusLink>
+         <CorpusLink Name="">Suojarvi/Suojarvi_10mA.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>

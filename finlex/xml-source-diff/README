@@ -1,0 +1,4 @@
+*** Deprecated. ***
+
+Scripts finlex-rename-files.sh and finlex-preprocess.pl in the
+parent directory now handle renaming and preprocessing of files.

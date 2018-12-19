@@ -1,0 +1,1011 @@
+71	tiistaina 9. syyskuuta 2008
+72	keskiviikkona 10. syyskuuta 2008
+73	torstaina 11. syyskuuta 2008
+74	perjantaina 12. syyskuuta 2008
+75	tiistaina 16. syyskuuta 2008
+77	torstaina 18. syyskuuta 2008
+78	perjantaina 19. syyskuuta 2008
+79	tiistaina 23. syyskuuta 2008
+81	torstaina 25. syyskuuta 2008
+82	perjantaina 26. syyskuuta 2008
+89	torstaina 9. lokakuuta 2008
+90	perjantaina 10. lokakuuta 2008
+94	perjantaina 17. lokakuuta 2008
+95	tiistaina 21. lokakuuta 2008 
+97	torstaina 23. lokakuuta 2008
+99	perjantaina 24. lokakuuta 2008
+100	tiistaina 4. marraskuuta 2008
+101	keskiviikkona 5. marraskuuta 2008
+102	torstaina 6. marraskuuta 2008
+103	perjantaina 7. marraskuuta 2008
+104	tiistaina 11. marraskuuta 2008
+105	keskiviikkona 12. marraskuuta 2008
+106	torstaina 13. marraskuuta 2008
+107	perjantaina 14. marraskuuta 2008
+108	tiistaina 18. marraskuuta 2008
+109	keskiviikkona 19. marraskuuta 2008 
+110	torstaina 20. marraskuuta 2008
+111	perjantaina 21. marraskuuta 2008
+112	tiistaina 25. marraskuuta 2008
+113	keskiviikkona 26. marraskuuta 2008
+114	torstaina 27. marraskuuta 2008
+115	perjantaina 28. marraskuuta 2008
+116	tiistaina 2. joulukuuta 2008
+117	keskiviikkona 3. joulukuuta 2008
+118	torstaina 4. joulukuuta 2008
+119	perjantaina 5. joulukuuta 2008
+120	maanantaina 8. joulukuuta 2008
+121	tiistaina 9. joulukuuta 2008
+123	keskiviikkona 10. joulukuuta 2008
+124	torstaina 11. joulukuuta 2008
+125	perjantaina 12. joulukuuta 2008
+126	maanantaina 15. joulukuuta 2008
+127	tiistaina 16. joulukuuta 2008
+128	keskiviikkona 17. joulukuuta 2008
+129	torstaina 18. joulukuuta 2008
+130	perjantaina 19. joulukuuta 2008
+1	tiistaina 3. helmikuuta 2009
+2	keskiviikkona 4. helmikuuta 2009
+3	torstaina 5. helmikuuta 2009
+4	perjantaina 6. helmikuuta 2009
+5	tiistaina 10. helmikuuta 2009
+6	keskiviikkona 11. helmikuuta 2009
+8	perjantaina 13. helmikuuta 2009
+9	tiistaina 17. helmikuuta 2009
+10	keskiviikkona 18. helmikuuta 2009
+11	torstaina 19. helmikuuta 2009
+12	perjantaina 20. helmikuuta 2009
+13	tiistaina 24. helmikuuta 2009
+14	keskiviikkona 25. helmikuuta 2009
+15	torstaina 26. helmikuuta 2009
+16	perjantaina 27. helmikuuta 2009
+17	tiistaina 3. maaliskuuta 2009
+18	keskiviikkona 4. maaliskuuta 2009
+19	torstaina 5. maaliskuuta 2009
+20	perjantaina 6. maaliskuuta 2009
+21	tiistaina 10. maaliskuuta 2009
+22	keskiviikkona 11. maaliskuuta 2009
+23	torstaina 12. maaliskuuta 2009
+24	perjantaina 13. maaliskuuta 2009
+25	tiistaina 17. maaliskuuta 2009
+26	keskiviikkona 18. maaliskuuta 2009
+27	torstaina 19. maaliskuuta 2009
+28	perjantaina 20. maaliskuuta 2009
+29	tiistaina 24. maaliskuuta 2009
+30	keskiviikkona 25. maaliskuuta 2009
+31	torstaina 26. maaliskuuta 2009
+32	perjantaina 27. maaliskuuta 2009
+33	tiistaina 31. maaliskuuta 2009
+34	keskiviikkona 1. huhtikuuta 2009
+35	torstaina 2. huhtikuuta 2009
+36	perjantaina 3. huhtikuuta 2009
+37	tiistaina 14. huhtikuuta 2009
+38	keskiviikkona 15. huhtikuuta 2009
+39	torstaina 16. huhtikuuta 2009
+40	perjantaina 17. huhtikuuta 2009
+41	tiistaina 21. huhtikuuta 2009
+42	keskiviikkona 22. huhtikuuta 2009
+43	torstaina 23. huhtikuuta 2009
+44	perjantaina 24. huhtikuuta 2009
+45	tiistaina 28. huhtikuuta 2009
+46	keskiviikkona 29. huhtikuuta 2009
+47	tiistaina 5. toukokuuta 2009
+48	keskiviikkona 6. toukokuuta 2009
+49	torstaina 7. toukokuuta 2009
+50	perjantaina 8.toukokuuta 2009
+52	torstaina 14. toukokuuta 2009
+57	keskiviikkona 27. toukokuuta 2009
+58	torstaina 28. toukokuuta 2009
+59	perjantaina 29. toukokuuta 2009
+60	tiistaina 2. kesäkuuta 2009
+62	torstaina 4. kesäkuuta 2009
+63	perjantai 5. kesäkuuta 2009
+64	tiistaina 9. kesäkuuta 2009
+65	keskiviikkona 10. kesäkuuta 2009
+66	torstaina 11. kesäkuuta 2009
+67	perjantaina 12. kesäkuuta 2009
+68	maanantaina 15. kesäkuuta 2009
+69	tiistaina 16. kesäkuuta 2009
+70	keskiviikkona 17. kesäkuuta 2009 klo 10 - 12
+71	torstaina 18. kesäkuuta 2009
+72	tiistaina 8. syyskuuta 2009
+73	keskiviikkona 9. syyskuuta 2009
+74	torstaina 10. syyskuuta 2009
+75	perjantaina 11. syyskuuta 2009
+76	tiistaina 15. syyskuuta 2009
+77	keskiviikkona 16. syyskuuta 2009
+78	torstaina 17. syyskuuta 2009
+79	perjantaina 18. syyskuuta 2009
+80	tiistaina 22. syyskuuta 2009
+81	keskiviikkona 23. syyskuuta 2009
+82	torstaina 24. syyskuuta 2009
+83	perjantaina 25. syyskuuta 2009
+84	tiistaina 29. syyskuuta 2009
+85	keskiviikkona 30. syyskuuta 2009
+86	torstaina 1. lokakuuta 2009
+87	tiistaina 6. lokakuuta 2009
+88	keskiviikkona 7. lokakuuta 2009
+89	torstaina 8. lokakuuta 2009
+90	perjantaina 9. lokakuuta 2009
+91	tiistaina 13. lokakuuta 2009
+92	keskiviikkona 14. lokakuuta 2009
+93	torstaina 15. lokakuuta 2009
+94	perjantaina 16. lokakuuta 2009
+95	tiistaina 20. lokakuuta 2009
+96	keskiviikkona 21. lokakuuta 2009
+97	torstaina 22. lokakuuta 2009
+98	perjantaina 23. lokakuuta 2009
+99	tiistaina 3. marraskuuta 2009
+100	keskiviikkona 4. marraskuuta 2009
+101	torstaina 5. marraskuuta 2009
+102	perjantaina 6. marraskuuta 2009
+103	tiistaina 10. marraskuuta 2009
+104	keskiviikkona 11. marraskuuta 2009
+105	torstaina 12. marraskuuta 2009
+106	perjantaina 13. marraskuuta 2009
+107	tiistaina 17. marraskuuta 2009
+109	torstaina 19. marraskuuta 2009
+110	perjantaina 20. marraskuuta 2009
+111	tiistaina 24. marraskuuta 2009
+112	keskiviikkona 25. marraskuuta 2009
+113	torstaina 26. marraskuuta 2009
+114	perjantaina 27. marraskuuta 2009
+115	maanantaina 30. marraskuuta 2009
+116	tiistaina 1. joulukuuta 2009
+117	keskiviikkona 2. joulukuuta 2009
+118	torstaina 3. joulukuuta 2009
+119	perjantaina 4. joulukuuta 2009
+120	maanantaina 7. joulukuuta 2009
+121	tiistaina 8. joulukuuta 2009
+122	keskiviikkona 9. joulukuuta 2009
+123	torstaina 10. joulukuuta 2009
+124	perjantaina 11. joulukuuta 2009
+125	maanantaina 14. joulukuuta 2009
+126	tiistaina 15. joulukuuta 2009
+127	keskiviikkona 16. joulukuuta 2009
+128	torstaina 17. joulukuuta 2009
+129	perjantaina 18. joulukuuta 2009
+1	tiistaina 2. helmikuuta 2010
+2	keskiviikkona 3. helmikuuta 2010
+3	torstaina 4. helmikuuta 2010
+4	perjantaina 5. helmikuuta 2010
+5	tiistaina 9. helmikuuta 2010
+6	keskiviikkona 10. helmikuuta 2010
+7	torstaina 11. helmikuuta 2010
+8	perjantaina 12. helmikuuta 2010
+9	tiistaina 16. helmikuuta 2010
+10	torstaina 18. helmikuuta 2010
+11	perjantaina 19. helmikuuta 2010
+12	tiistaina 23. helmikuuta 2010
+14	torstaina 25. helmikuuta 2010
+15	perjantaina 26. helmikuuta 2010
+16	tiistaina 2. maaliskuuta 2010
+17	keskiviikkona 3. maaliskuuta 2010
+19	perjantaina 5. maaliskuuta 2010
+20	tiistaina 9. maaliskuuta 2010
+21	keskiviikkona 10. maaliskuuta 2010
+22	torstaina 11. maaliskuuta 2010
+23	perjantaina 12. maaliskuuta 2010
+24	tiistaina 16. maaliskuuta 2010
+25	keskiviikkona 17. maaliskuuta 2010
+26	torstaina 18. maaliskuuta 2010
+27	perjantaina 19. maaliskuuta 2010
+28	tiistaina 23. maaliskuuta 2010
+29	keskiviikkona 24. maaliskuuta 2010
+30	torstaina 25. maaliskuuta 2010
+31	perjantaina 26. maaliskuuta 2010
+32	tiistaina 6. huhtikuuta 2010
+33	keskiviikkona 7. huhtikuuta 2010
+34	torstaina 8. huhtikuuta 2010
+35	perjantaina 9. huhtikuuta 2010
+36	tiistaina 13. huhtikuuta 2010
+37	keskiviikkona 14. huhtikuuta 2010
+38	torstaina 15. huhtikuuta 2010
+39	tiistaina 20. huhtikuuta 2010
+40	keskiviikkona 21. huhtikuuta 2010
+41	torstaina 22. huhtikuuta 2010
+42	perjantaina 23. huhtikuuta 2010
+43	tiistaina 27. huhtikuuta 2010
+44	keskiviikkona 28. huhtikuuta 2010
+45	torstaina 29. huhtikuuta 2010
+46	tiistaina 4. toukokuuta 2010
+47	keskiviikkona 5. toukokuuta 2010
+48	torstaina 6. toukokuuta 2010
+49	perjantaina 7. toukokuuta 2010
+50	tiistaina 11. toukokuuta 2010
+51	keskiviikkona 12. toukokuuta 2010
+52	tiistaina 18. toukokuuta 2010
+53	keskiviikkona 19. toukokuuta 2010
+54	torstaina 20. toukokuuta 2010
+55	perjantaina 21. toukokuuta 2010
+56	keskiviikkona 26. toukokuuta 2010
+57	torstaina 27. toukokuuta 2010
+58	tiistaina 1. kesäkuuta 2010
+59	keskiviikkona 2. kesäkuuta 2010
+60	torstaina 3. kesäkuuta 2010
+61	perjantaina 4. kesäkuuta 2010
+62	tiistaina 8. kesäkuuta 2010
+63	keskiviikkona 9. kesäkuuta 2010
+64	torstaina 10. kesäkuuta 2010
+65	tiistaina 15. kesäkuuta 2010
+66	keskiviikkona 16. kesäkuuta 2010
+67	torstaina 17. kesäkuuta 2010
+68	perjantaina 18. kesäkuuta 2010
+69	maanantaina 21. kesäkuuta 2010
+70	tiistaina 22. kesäkuuta 2010
+71	tiistaina 22. kesäkuuta 2010
+72	keskiviikkona 23. kesäkuuta 2010
+73	keskiviikkona 23. kesäkuuta 2010
+74	torstaina 24. kesäkuuta 2010
+75	tiistaina 29. kesäkuuta 2010
+76	keskiviikkona 30. kesäkuuta 2010
+77	torstaina 1. heinäkuuta 2010
+78	tiistaina 7. syyskuuta 2010
+79	keskiviikkona 8. syyskuuta 2010
+80	torstaina 9. syyskuuta 2010
+81	perjantaina 10. syyskuuta 2010
+82	tiistaina 14. syyskuuta 2010
+83	keskiviikkona 15. syyskuuta 2010
+84	torstaina 16. syyskuuta 2010
+85	perjantaina 17. syyskuuta 2010
+86	tiistaina 21. syyskuuta 2010
+87	keskiviikkona 22. syyskuuta 2010
+88	torstaina 23. syyskuuta 2010
+89	perjantaina 24. syyskuuta 2010
+90	tiistaina 28. syyskuuta 2010
+91	keskiviikkona 29. syyskuuta 2010
+92	torstaina 30. syyskuuta 2010
+93	perjantaina 1. lokakuuta 2010
+94	tiistaina 5. lokakuuta 2010
+95	keskiviikkona 6. lokakuuta 2010
+96	torstaina 7. lokakuuta 2010
+97	perjantaina 8. lokakuuta 2010
+98	tiistaina 12. lokakuuta 2010
+99	keskiviikkona 13. lokakuuta 2010
+100	torstaina 14. lokakuuta 2010
+101	perjantaina 15. lokakuuta 2010
+102	tiistaina 19. lokakuuta 2010
+103	keskiviikkona 20. lokakuuta 2010
+104	torstaina 21. lokakuuta 2010
+105	perjantaina 22. lokakuuta 2010
+106	tiistaina 26. lokakuuta 2010
+107	keskiviikkona 27. lokakuuta 2010
+108	torstaina 28. lokakuuta 2010
+109	perjantaina 29. lokakuuta 2010
+110	tiistaina 9. marraskuuta 2010
+111	keskiviikkona 10. marraskuuta 2010
+112	torstaina 11. marraskuuta 2010
+113	perjantaina 12. marraskuuta 2010
+114	tiistaina 16. marraskuuta 2010
+115	keskiviikkona 17. marraskuuta 2010
+116	torstaina 18. marraskuuta 2010
+117	perjantaina 19. marraskuuta 2010
+118	tiistaina 23. marraskuuta 2010
+119	keskiviikkona 24. marraskuuta 2010
+120	torstaina 25. marraskuuta 2010
+121	perjantaina 26. marraskuuta 2010
+122	tiistaina 30. marraskuuta 2010
+123	keskiviikkona 1. joulukuuta 2010
+124	torstaina 2. joulukuuta 2010
+125	perjantaina 3. joulukuuta 2010
+126	tiistaina 7. joulukuuta 2010
+127	keskiviikkona 8. joulukuuta 2010
+128	torstaina 9. joulukuuta 2010
+129	perjantaina 10. joulukuuta 2010
+130	maanantaina 13. joulukuuta 2010
+131	tiistaina 14. joulukuuta 2010
+132	keskiviikkona 15. joulukuuta 2010
+133	torstaina 16. joulukuuta 2010
+134	perjantaina 17. joulukuuta 2010
+135	tiistaina 11. tammikuuta 2011
+136	keskiviikkona 12. tammikuuta 2011
+137	torstaina 13. tammikuuta 2011
+138	perjantaina 14. tammikuuta 2011
+139	tiistaina 18. tammikuuta 2011
+140	keskiviikkona 19. tammikuuta 2011
+141	torstaina 20. tammikuuta 2011
+142	perjantaina 21. tammikuuta 2011
+143	tiistaina 25. tammikuuta 2011
+144	keskiviikkona 26. tammikuuta 2011
+145	torstaina 27. tammikuuta 2011
+146	perjantaina 28. tammikuuta 2011
+147	tiistaina 1. helmikuuta 2011
+148	keskiviikkona 2. helmikuuta 2011
+149	torstaina 3. helmikuuta 2011
+150	perjantaina 4. helmikuuta 2011
+151	tiistaina 8. helmikuuta 2011
+152	keskiviikkona 9. helmikuuta 2011
+153	torstaina 10. helmikuuta 2011
+154	perjantaina 11. helmikuuta 2011
+155	tiistaina 15. helmikuuta 2011
+156	keskiviikkona 16. helmikuuta 2011
+157	torstaina 17. helmikuuta 2011
+158	perjantaina 18. helmikuuta 2011
+159	tiistaina 22. helmikuuta 2011
+160	keskiviikkona 23. helmikuuta 2011
+161	torstaina 24. helmikuuta 2011
+162	perjantaina 25. helmikuuta 2011
+163	tiistaina 1. maaliskuuta 2011
+164	keskiviikkona 2. maaliskuuta 2011
+165	torstaina 3. maaliskuuta 2011
+166	perjantaina 4. maaliskuuta 2011
+167	tiistaina 8. maaliskuuta 2011
+168	keskiviikkona 9. maaliskuuta 2011
+169	torstaina 10. maaliskuuta 2011
+170	perjantaina 11. maaliskuuta 2011
+171	tiistaina 15. maaliskuuta 2011
+172	tiistaina 15. maaliskuuta 2011
+3	tiistaina 3. toukokuuta 2011
+4	keskiviikkona 4. toukokuuta 2011
+5	tiistaina 10. toukokuuta 2011
+6	perjantaina 13. toukokuuta 2011
+7	tiistaina 17. toukokuuta 2011
+8	perjantaina 20. toukokuuta 2011
+9	tiistaina 24. toukokuuta 2011
+10	keskiviikkona 25. toukokuuta 2011
+11	perjantaina 27. toukokuuta 2011
+12	tiistaina 31. toukokuuta 2011
+13	tiistaina 7. kesäkuuta 2011
+14	perjantaina 10. kesäkuuta 2011
+15	tiistaina 14. kesäkuuta 2011
+16	perjantaina 17. kesäkuuta 2011
+17	tiistaina 21. kesäkuuta 2011
+18	keskiviikkona 22. kesäkuuta 2011
+19	keskiviikkona 22. kesäkuuta 2011
+20	torstaina 23. kesäkuuta 2011
+21	torstaina 23. kesäkuuta 2011
+22	tiistaina 28. kesäkuuta 2011
+23	keskiviikkona 29. kesäkuuta 2011
+24	torstaina 30. kesäkuuta 2011
+25	torstaina 30. kesäkuuta 2011
+26	perjantaina 1. heinäkuuta 2011
+27	tiistaina 6. syyskuuta 2011
+28	keskiviikkona 7. syyskuuta 2011
+29	torstaina 8. syyskuuta 2011
+31	perjantaina 9. syyskuuta 2011
+32	tiistaina 13. syyskuuta 2011
+33	keskiviikkona 14. syyskuuta 2011
+34	torstaina 15. syyskuuta 2011
+35	perjantaina 16. syyskuuta 2011
+36	tiistaina 20. syyskuuta 2011
+38	torstaina 22. syyskuuta 2011
+39	perjantaina 23. syyskuuta 2011
+40	perjantaina 23. syyskuuta 2011
+41	tiistaina 27. syyskuuta 2011
+42	keskiviikkona 28. syyskuuta 2011
+43	torstaina 29. syyskuuta 2011
+44	perjantaina 30. syyskuuta 2011
+45	tiistaina 4. lokakuuta 2011
+46	keskiviikkona 5. lokakuuta 2011
+47	torstaina 6. lokakuuta 2011
+48	perjantaina 7. lokakuuta 2011
+49	maanantaina 10. lokakuuta 2011
+51	keskiviikkona 12. lokakuuta 2011
+52	torstaina 13. lokakuuta 2011
+53	perjantaina 14. lokakuuta 2011
+54	tiistaina 18. lokakuuta 2011
+55	keskiviikkona 19. lokakuuta 2011
+56	torstaina 20. lokakuuta 2011
+57	perjantaina 21. lokakuuta 2011
+58	tiistaina 25. lokakuuta 2011
+59	keskiviikkona 26. lokakuuta 2011
+60	torstaina 27. lokakuuta 2011
+61	perjantaina 28. lokakuuta 2011
+62	tiistaina 1. marraskuuta 2011
+63	keskiviikkona 2. marraskuuta 2011
+64	torstaina 3. marraskuuta 2011
+65	tiistaina 8. marraskuuta 2011
+66	keskiviikkona 9. marraskuuta 2011
+67	torstaina 10. marraskuuta 2011
+68	perjantaina 11. marraskuuta 2011
+69	tiistaina 15. marraskuuta 2011
+70	keskiviikkona 16. marraskuuta 2011
+71	torstaina 17. marraskuuta 2011
+72	perjantaina 18. marraskuuta 2011
+73	tiistaina 22. marraskuuta 2011
+74	keskiviikkona 23. marraskuuta 2011
+75	torstaina 24. marraskuuta 2011
+76	perjantaina 25. marraskuuta 2011
+77	tiistaina 29. marraskuuta 2011
+78	keskiviikkona 30. marraskuuta 2011
+79	torstaina 1. joulukuuta 2011
+80	perjantaina 2. joulukuuta 2011
+81	keskiviikkona 7. joulukuuta 2011
+82	torstaina 8. joulukuuta 2011
+83	perjantaina 9. joulukuuta 2011
+84	maanantaina 12. joulukuuta 2011
+85	tiistaina 13. joulukuuta 2011
+86	keskiviikkona 14. joulukuuta 2011
+87	torstaina 15. joulukuuta 2011
+88	perjantaina 16. joulukuuta 2011
+89	maanantaina 19. joulukuuta 2011
+90	tiistaina 20. joulukuuta 2011
+91	keskiviikkona 21. joulukuuta 2011
+1	maanantaina 6. helmikuuta 2012
+2	tiistaina 7. helmikuuta 2012
+3	keskiviikkona 8. helmikuuta 2012
+4	torstaina 9. helmikuuta 2012
+5	perjantaina 10. helmikuuta 2012
+6	tiistaina 14. helmikuuta 2012
+7	keskiviikkona 15. helmikuuta 2012
+8	torstaina 16. helmikuuta 2012
+9	perjantaina 17. helmikuuta 2012
+10	tiistaina 21. helmikuuta 2012
+11	keskiviikkona 22. helmikuuta 2012
+12	torstaina 23. helmikuuta 2012
+13	perjantaina 24. helmikuuta 2012
+14	tiistaina 28. helmikuuta 2012
+15	keskiviikkona 29. helmikuuta 2012
+17	perjantaina 2. maaliskuuta 2012
+18	tiistaina 6. maaliskuuta 2012
+19	keskiviikkona 7. maaliskuuta 2012
+20	torstaina 8. maaliskuuta 2012
+21	perjantaina 9. maaliskuuta 2012
+22	tiistaina 13. maaliskuuta 2012
+23	keskiviikkona 14. maaliskuuta 2012
+24	torstaina 15. maaliskuuta 2012
+25	perjantaina 16. maaliskuuta 2012
+26	tiistaina 20. maaliskuuta 2012
+27	keskiviikkona 21. maaliskuuta 2012
+28	torstaina 22. maaliskuuta 2012
+29	tiistaina 27. maaliskuuta 2012
+30	keskiviikkona 28. maaliskuuta 2012
+31	torstaina 29. maaliskuuta 2012
+32	perjantaina 30. maaliskuuta 2012
+33	tiistaina 10. huhtikuuta 2012
+35	torstaina 12. huhtikuuta 2012
+36	perjantaina 13. huhtikuuta 2012
+37	tiistaina 17. huhtikuuta 2012
+38	keskiviikkona 18. huhtikuuta 2012
+39	torstaina 19. huhtikuuta 2012
+40	perjantaina 20. huhtikuuta 2012
+41	tiistaina 24. huhtikuuta 2012
+42	keskiviikkona 25. huhtikuuta 2012
+43	torstaina 26. huhtikuuta 2012
+44	perjantaina 27. huhtikuuta 2012
+45	keskiviikkona 2. toukokuuta 2012
+46	torstaina 3. toukokuuta 2012
+47	perjantaina 4. toukokuuta 2012
+48	tiistaina 8. toukokuuta 2012
+49	keskiviikkona 9. toukokuuta 2012
+50	torstaina 10. toukokuuta 2012
+51	perjantaina 11. toukokuuta 2012
+52	tiistaina 15. toukokuuta 2012
+53	keskiviikkona 16. toukokuuta 2012
+54	tiistaina 22. toukokuuta 2012
+55	keskiviikkona 23. toukokuuta 2012
+56	torstaina 24. toukokuuta 2012
+57	tiistaina 29. toukokuuta 2012
+58	keskiviikkona 30. toukokuuta 2012
+59	torstaina 31. toukokuuta 2012
+60	perjantaina 1. kesäkuuta 2012
+61	tiistaina 5. kesäkuuta 2012
+62	keskiviikkona 6. kesäkuuta 2012
+63	torstaina 7. kesäkuuta 2012
+64	tiistaina 12. kesäkuuta 2012
+65	keskiviikkona 13. kesäkuuta 2012
+66	keskiviikkona 13. kesäkuuta 2012
+67	torstaina 14. kesäkuuta 2012
+69	tiistaina 19. kesäkuuta 2012
+70	keskiviikkona 20. kesäkuuta 2012
+71	torstaina 21. kesäkuuta 2012
+72	torstaina 19. heinäkuuta 2012
+73	perjantaina 20. heinäkuuta 2012
+74	keskiviikkona 5. syyskuuta 2012
+75	torstaina 6. syyskuuta 2012
+76	perjantaina 7. syyskuuta 2012
+77	tiistaina 11. syyskuuta 2012
+78	keskiviikkona 12. syyskuuta 2012
+79	torstaina 13. syyskuuta 2012
+80	perjantaina 14. syyskuuta 2012
+81	tiistaina 18. syyskuuta 2012
+82	keskiviikkona 19. syyskuuta 2012
+83	torstaina 20. syyskuuta 2012
+84	perjantaina 21. syyskuuta 2012
+85	tiistaina 25. syyskuuta 2012
+86	keskiviikkona 26. syyskuuta 2012
+87	torstaina 27. syyskuuta 2012
+88	perjantaina 28. syyskuuta 2012
+89	tiistaina 2. lokakuuta 2012
+90	keskiviikkona 3. lokakuuta 2012
+92	perjantaina 5. lokakuuta 2012
+93	tiistaina 9. lokakuuta 2012
+94	keskiviikkona 10. lokakuuta 2012
+95	torstaina 11. lokakuuta 2012
+96	perjantaina 12. lokakuuta 2012
+97	tiistaina 16. lokakuuta 2012
+98	keskiviikkona 17. lokakuuta 2012
+99	torstaina 18. lokakuuta 2012
+100	perjantaina 19. lokakuuta 2012
+101	tiistaina 23. lokakuuta 2012
+102	keskiviikkona 24. lokakuuta 2012
+103	torstaina 25. lokakuuta 2012
+104	perjantaina 26. lokakuuta 2012
+105	tiistaina 6. marraskuuta 2012
+106	keskiviikkona 7. marraskuuta 2012
+107	torstaina 8. marraskuuta 2012
+108	perjantaina 9. marraskuuta 2012
+109	tiistaina 13. marraskuuta 2012
+110	keskiviikkona 14. marraskuuta 2012
+111	torstaina 15. marraskuuta 2012
+112	perjantaina 16. marraskuuta 2012
+113	tiistaina 20. marraskuuta 2012
+114	keskiviikkona 21. marraskuuta 2012
+115	torstaina 22. marraskuuta 2012
+116	perjantaina 23. marraskuuta 2012
+117	tiistaina 27. marraskuuta 2012
+118	keskiviikkona 28. marraskuuta 2012
+119	torstaina 29. marraskuuta 2012
+120	perjantaina 30. marraskuuta 2012
+121	tiistaina 4. joulukuuta 2012
+122	keskiviikkona 5. joulukuuta 2012
+123	keskiviikkona 5. joulukuuta 2012
+124	perjantaina 7. joulukuuta 2012
+125	tiistaina 11. joulukuuta 2012
+126	tiistaina 11. joulukuuta 2012
+127	keskiviikkona 12. joulukuuta 2012
+128	torstaina 13. joulukuuta 2012
+129	torstaina 13. joulukuuta 2012
+130	perjantaina 14. joulukuuta 2012
+132	tiistaina 18. joulukuuta 2012
+133	keskiviikkona 19. joulukuuta 2012
+134	torstaina 20. joulukuuta 2012
+135	perjantaina 21. joulukuuta 2012
+1	maanantaina 4. helmikuuta 2013
+2	tiistaina 5. helmikuuta 2013
+3	keskiviikkona 6. helmikuuta 2013
+4	torstaina 7. helmikuuta 2013
+5	perjantaina 8. helmikuuta 2013
+6	tiistaina 12. helmikuuta 2013
+8	torstaina 14. helmikuuta 2013
+9	perjantaina 15. helmikuuta 2013
+10	tiistaina 19. helmikuuta 2013
+11	keskiviikkona 20. helmikuuta 2013
+12	torstaina 21. helmikuuta 2013
+13	perjantaina 22. helmikuuta 2013
+14	tiistaina 26. helmikuuta 2013
+15	keskiviikkona 27. helmikuuta 2013
+16	torstaina 28. helmikuuta 2013
+17	perjantaina 1. maaliskuuta 2013
+18	tiistaina 5. maaliskuuta 2013
+19	keskiviikkona 6. maaliskuuta 2013
+20	torstaina 7. maaliskuuta 2013
+21	perjantaina 8. maaliskuuta 2013
+22	tiistaina 12. maaliskuuta 2013
+23	keskiviikkona 13. maaliskuuta 2013
+24	torstaina 14. maaliskuuta 2013
+25	perjantaina 15. maaliskuuta 2013
+26	tiistaina 19. maaliskuuta 2013
+27	keskiviikkona 20. maaliskuuta 2013
+28	torstaina 21. maaliskuuta 2013
+29	perjantaina 22. maaliskuuta 2013
+30	tiistaina 2. huhtikuuta 2013
+31	keskiviikkona 3. huhtikuuta 2013
+32	torstaina 4. huhtikuuta 2013
+33	perjantaina 5. huhtikuuta 2013
+34	tiistaina 9. huhtikuuta 2013
+35	keskiviikkona 10. huhtikuuta 2013
+36	keskiviikkona 10. huhtikuuta 2013
+37	torstaina 11. huhtikuuta 2013
+38	perjantaina 12. huhtikuuta 2013
+39	tiistaina 16. huhtikuuta 2013
+41	torstaina 18. huhtikuuta 2013
+42	perjantaina 19. huhtikuuta 2013
+43	tiistaina 23. huhtikuuta 2013
+44	keskiviikkona 24. huhtikuuta 2013
+45	torstaina 25. huhtikuuta 2013
+46	perjantaina 26. huhtikuuta 2013
+47	torstaina 2. toukokuuta 2013
+48	perjantaina 3. toukokuuta 2013
+49	tiistaina 7. toukokuuta 2013
+50	keskiviikkona 8. toukokuuta 2013
+51	tiistaina 14. toukokuuta 2013
+52	keskiviikkona 15. toukokuuta 2013
+53	torstaina 16. toukokuuta 2013
+54	perjantaina 17. toukokuuta 2013
+55	tiistaina 21. toukokuuta 2013
+56	keskiviikkona 22. toukokuuta 2013
+57	torstaina 23. toukokuuta 2013
+58	perjantaina 24. toukokuuta 2013
+59	tiistaina 28. toukokuuta 2013
+60	keskiviikkona 29. toukokuuta 2013
+61	torstaina 30. toukokuuta 2013
+62	perjantaina 31. toukokuuta 2013
+63	tiistaina 4. kesäkuuta 2013
+64	keskiviikkona 5. kesäkuuta 2013
+65	torstaina 6. kesäkuuta 2013
+66	perjantaina 7. kesäkuuta 2013
+67	tiistaina 11. kesäkuuta 2013
+68	keskiviikkona 12. kesäkuuta 2013
+69	torstaina 13. kesäkuuta 2013
+70	torstaina 13. kesäkuuta 2013
+71	perjantaina 14. kesäkuuta 2013
+72	tiistaina 18. kesäkuuta 2013
+73	keskiviikkona 19. kesäkuuta 2013
+74	keskiviikkona 19. kesäkuuta 2013
+75	keskiviikkona 26. kesäkuuta 2013
+76	keskiviikkona 4. syyskuuta 2013
+77	torstaina 5. syyskuuta 2013
+78	perjantaina 6. syyskuuta 2013
+79	tiistaina 10. syyskuuta 2013
+80	keskiviikkona 11. syyskuuta 2013
+81	torstaina 12. syyskuuta 2013
+82	perjantaina 13. syyskuuta 2013
+83	tiistaina 17. syyskuuta 2013
+84	keskiviikkona 18. syyskuuta 2013
+85	torstaina 19. syyskuuta 2013
+86	perjantaina 20. syyskuuta 2013
+87	tiistaina 24. syyskuuta 2013
+88	keskiviikkona 25. syyskuuta 2013
+89	torstaina 26. syyskuuta 2013
+90	perjantaina 27. syyskuuta 2013
+91	tiistaina 1. lokakuuta 2013
+92	keskiviikkona 2. lokakuuta 2013
+93	torstaina 3. lokakuuta 2013
+94	perjantaina 4. lokakuuta 2013
+95	tiistaina 8. lokakuuta 2013
+96	keskiviikkona 9. lokakuuta 2013
+97	torstaina 10. lokakuuta 2013
+98	perjantaina 11. lokakuuta 2013
+99	tiistaina 15. lokakuuta 2013
+100	keskiviikkona 16. lokakuuta 2013
+101	torstaina 17. lokakuuta 2013
+102	perjantaina 18. lokakuuta 2013
+103	tiistaina 22. lokakuuta 2013
+104	keskiviikkona 23. lokakuuta 2013
+105	torstaina 24. lokakuuta 2013
+106	perjantaina 25. lokakuuta 2013
+107	tiistaina 5. marraskuuta 2013
+108	keskiviikkona 6. marraskuuta 2013
+109	torstaina 7. marraskuuta 2013
+110	perjantaina 8. marraskuuta 2013
+111	tiistaina 12. marraskuuta 2013
+112	keskiviikkona 13. marraskuuta 2013
+113	torstaina 14. marraskuuta 2013
+114	perjantaina 15. marraskuuta 2013
+115	tiistaina 19. marraskuuta 2013
+116	keskiviikkona 20. marraskuuta 2013
+117	torstaina 21. marraskuuta 2013
+118	perjantaina 22. marraskuuta 2013
+119	tiistaina 26. marraskuuta 2013
+120	keskiviikkona 27. marraskuuta 2013
+121	torstaina 28. marraskuuta 2013
+122	perjantaina 29. marraskuuta 2013
+123	tiistaina 3. joulukuuta 2013
+124	keskiviikkona 4. joulukuuta 2013
+125	torstaina 5. joulukuuta 2013
+126	tiistaina 10. joulukuuta 2013
+127	keskiviikkona 11. joulukuuta 2013
+128	keskiviikkona 11. joulukuuta 2013
+129	torstaina 12. joulukuuta 2013
+130	perjantaina 13. joulukuuta 2013
+131	perjantaina 13. joulukuuta 2013
+132	maanantaina 16. joulukuuta 2013
+133	tiistaina 17. joulukuuta 2013
+134	keskiviikkona 18. joulukuuta 2013
+135	torstaina 19. joulukuuta 2013
+136	perjantaina 20. joulukuuta 2013
+1	maanantaina 3. helmikuuta 2014
+2	tiistaina 4. helmikuuta 2014
+3	keskiviikkona 5. helmikuuta 2014
+4	torstaina 6. helmikuuta 2014
+5	perjantaina 7. helmikuuta 2014
+6	tiistaina 11. helmikuuta 2014
+7	keskiviikkona 12. helmikuuta 2014
+8	torstaina 13. helmikuuta 2014
+9	perjantaina 14. helmikuuta 2014
+10	tiistaina 18. helmikuuta 2014
+11	keskiviikkona 19. helmikuuta 2014
+12	torstaina 20. helmikuuta 2014
+13	perjantaina 21. helmikuuta 2014
+14	tiistaina 25. helmikuuta 2014
+15	keskiviikkona 26. helmikuuta 2014
+17	perjantaina 28. helmikuuta 2014
+18	tiistaina 4. maaliskuuta 2014
+19	keskiviikkona 5. maaliskuuta 2014
+20	torstaina 6. maaliskuuta 2014
+21	perjantaina 7. maaliskuuta 2014
+22	tiistaina 11. maaliskuuta 2014
+23	keskiviikkona 12. maaliskuuta 2014
+24	torstaina 13. maaliskuuta 2014
+26	tiistaina 18. maaliskuuta 2014
+27	keskiviikkona 19. maaliskuuta 2014
+28	torstaina 20. maaliskuuta 2014
+29	perjantaina 21. maaliskuuta 2014
+30	tiistaina 25. maaliskuuta 2014
+31	keskiviikkona 26. maaliskuuta 2014
+32	torstaina 27. maaliskuuta 2014
+33	tiistaina 1. huhtikuuta 2014
+34	keskiviikkona 2. huhtikuuta 2014
+35	torstaina 3. huhtikuuta 2014
+36	perjantaina 4. huhtikuuta 2014
+37	tiistaina 8. huhtikuuta 2014
+38	keskiviikkona 9. huhtikuuta 2014
+39	torstaina 10. huhtikuuta 2014
+40	perjantaina 11. huhtikuuta 2014
+41	tiistaina 22. huhtikuuta 2014
+42	keskiviikkona 23. huhtikuuta 2014
+43	torstaina 24. huhtikuuta 2014
+44	perjantaina 25. huhtikuuta 2014
+45	tiistaina 29. huhtikuuta 2014
+47	tiistaina 6. toukokuuta 2014
+48	keskiviikkona 7. toukokuuta 2014
+49	torstaina 8. toukokuuta 2014
+50	tiistaina 13. toukokuuta 2014
+51	keskiviikkona 14. toukokuuta 2014
+52	torstaina 15. toukokuuta 2014
+53	perjantaina 16. toukokuuta 2014
+54	tiistaina 20. toukokuuta 2014
+55	keskiviikkona 21. toukokuuta 2014
+56	torstaina 22. toukokuuta 2014
+57	perjantaina 23. toukokuuta 2014
+58	tiistaina 27. toukokuuta 2014
+59	keskiviikkona 28. toukokuuta 2014
+60	tiistaina 3. kesäkuuta 2014
+61	keskiviikkona 4. kesäkuuta 2014
+62	torstaina 5. kesäkuuta 2014
+63	perjantaina 6. kesäkuuta 2014
+64	tiistaina 10. kesäkuuta 2014
+65	keskiviikkona 11. kesäkuuta 2014
+66	torstaina 12. kesäkuuta 2014
+67	tiistaina 17. kesäkuuta 2014
+68	keskiviikkona 18. kesäkuuta 2014
+69	maanantaina 23. kesäkuuta 2014
+70	maanantaina 23. kesäkuuta 2014
+71	tiistaina 24. kesäkuuta 2014
+72	keskiviikkona 25. kesäkuuta 2014
+73	tiistaina 2. syyskuuta 2014
+74	keskiviikkona 3. syyskuuta 2014
+75	torstaina 4. syyskuuta 2014
+76	perjantaina 5. syyskuuta 2014
+77	tiistaina 9. syyskuuta 2014
+78	keskiviikkona 10. syyskuuta 2014
+79	torstaina 11. syyskuuta 2014
+80	perjantaina 12. syyskuuta 2014
+81	tiistaina 16. syyskuuta 2014
+82	keskiviikkona 17. syyskuuta 2014
+83	torstaina 18. syyskuuta 2014
+84	perjantaina 19. syyskuuta 2014
+85	tiistaina 23. syyskuuta 2014
+86	keskiviikkona 24. syyskuuta 2014
+87	torstaina 25. syyskuuta 2014
+88	perjantaina 26. syyskuuta 2014
+89	tiistaina 30. syyskuuta 2014
+90	keskiviikkona 1. lokakuuta 2014
+91	torstaina 2. lokakuuta 2014
+92	perjantaina 3. lokakuuta 2014
+93	tiistaina 7. lokakuuta 2014
+94	keskiviikkona 8. lokakuuta 2014
+95	torstaina 9. lokakuuta 2014
+96	perjantaina 10. lokakuuta 2014
+97	tiistaina 14. lokakuuta 2014
+98	keskiviikkona 15. lokakuuta 2014
+99	torstaina 16. lokakuuta 2014
+100	perjantaina 17. lokakuuta 2014
+101	tiistaina 21. lokakuuta 2014
+102	tiistaina 21. lokakuuta 2014
+103	keskiviikkona 22. lokakuuta 2014
+104	torstaina 23. lokakuuta 2014
+105	perjantaina 24. lokakuuta 2014
+106	tiistaina 4. marraskuuta 2014
+107	keskiviikkona 5. marraskuuta 2014
+108	torstaina 6. marraskuuta 2014
+109	perjantaina 7. marraskuuta 2014
+110	tiistaina 11. marraskuuta 2014
+111	keskiviikkona 12. marraskuuta 2014
+112	torstaina 13. marraskuuta 2014
+113	perjantaina 14. marraskuuta 2014
+114	tiistaina 18. marraskuuta 2014
+115	keskiviikkona 19. marraskuuta 2014
+116	torstaina 20. marraskuuta 2014
+117	perjantaina 21. marraskuuta 2014
+118	tiistaina 25. marraskuuta 2014
+119	keskiviikkona 26. marraskuuta 2014
+120	torstaina 27. marraskuuta 2014
+121	perjantaina 28. marraskuuta 2014
+122	tiistaina 2. joulukuuta 2014
+123	keskiviikkona 3. joulukuuta 2014
+124	torstaina 4. joulukuuta 2014
+125	perjantaina 5. joulukuuta 2014
+126	tiistaina 9. joulukuuta 2014
+127	keskiviikkona 10. joulukuuta 2014
+128	torstaina 11. joulukuuta 2014
+129	perjantaina 12. joulukuuta 2014
+130	maanantaina 15. joulukuuta 2014
+131	tiistaina 16. joulukuuta 2014
+132	keskiviikkona 17. joulukuuta 2014
+133	torstaina 18. joulukuuta 2014
+134	perjantaina 19. joulukuuta 2014
+135	tiistaina 13. tammikuuta 2015
+136	keskiviikkona 14. tammikuuta 2015
+137	torstaina 15. tammikuuta 2015
+138	perjantaina 16. tammikuuta 2015
+139	tiistaina 20. tammikuuta 2015
+140	keskiviikkona 21. tammikuuta 2015
+141	torstaina 22. tammikuuta 2015
+142	perjantaina 23. tammikuuta 2015
+143	tiistaina 27. tammikuuta 2015
+144	keskiviikkona 28. tammikuuta 2015
+145	torstaina 29. tammikuuta 2015
+146	perjantaina 30. tammikuuta 2015
+147	tiistaina 3. helmikuuta 2015
+149	torstaina 5. helmikuuta 2015
+150	perjantaina 6. helmikuuta 2015
+151	tiistaina 10. helmikuuta 2015
+152	keskiviikkona 11. helmikuuta 2015
+153	torstaina 12. helmikuuta 2015
+154	perjantaina 13. helmikuuta 2015
+155	tiistaina 17. helmikuuta 2015
+156	keskiviikkona 18. helmikuuta 2015
+158	perjantaina 20. helmikuuta 2015
+160	keskiviikkona 25. helmikuuta 2015
+162	perjantaina 27. helmikuuta 2015
+163	tiistaina 3. maaliskuuta 2015
+164	keskiviikkona 4. maaliskuuta 2015
+165	torstaina 5. maaliskuuta 2015
+166	perjantaina 6. maaliskuuta 2015
+167	maanantaina 9. maaliskuuta 2015
+168	maanantaina 9. maaliskuuta 2015
+169	tiistaina 10. maaliskuuta 2015
+170	tiistaina 10. maaliskuuta 2015
+171	keskiviikkona 11. maaliskuuta 2015
+173	perjantaina 13. maaliskuuta 2015
+174	perjantaina 13. maaliskuuta 2015
+175	lauantaina 14. maaliskuuta 2015
+1	tiistaina 28. huhtikuuta 2015
+2	tiistaina 5. toukokuuta 2015
+3	keskiviikkona 6. toukokuuta 2015
+4	tiistaina 12. toukokuuta 2015
+5	tiistaina 19. toukokuuta 2015
+7	perjantaina 22. toukokuuta 2015
+8	tiistaina 26. toukokuuta 2015
+10	torstaina 28. toukokuuta 2015
+11	perjantaina 29. toukokuuta 2015
+13	tiistaina 2. kesäkuuta 2015
+14	keskiviikkona 3. kesäkuuta 2015
+15	torstaina 4. kesäkuuta 2015
+16	perjantaina 5. kesäkuuta 2015
+17	tiistaina 9. kesäkuuta 2015
+18	keskiviikkona 10. kesäkuuta 2015
+20	perjantaina 12. kesäkuuta 2015
+21	tiistaina 16. kesäkuuta 2015
+22	keskiviikkona 17. kesäkuuta 2015
+23	tiistaina 23. kesäkuuta 2015
+24	keskiviikkona 24. kesäkuuta 2015
+25	torstaina 25. kesäkuuta 2015
+26	perjantaina 26. kesäkuuta 2015
+27	maanantaina 29. kesäkuuta 2015
+29	tiistaina 8. syyskuuta 2015 klo 14.03—16.20
+30	keskiviikkona 9. syyskuuta 2015 klo 14.04—14.15
+31	torstaina 10. syyskuuta 2015 klo 16.01—18.09
+32	perjantaina 11. syyskuuta 2015 klo 13.00—13.30
+33	tiistaina 15. syyskuuta 2015 klo 14.01—15.08
+34	keskiviikkona 16. syyskuuta 2015 klo 14.01—15.02
+35	torstaina 17. syyskuuta 2015 klo 16.01—17.01
+36	perjantaina 18. syyskuuta 2015 klo 13.08—13.32
+37	tiistaina 22. syyskuuta 2015 klo 14.00—20.47
+38	keskiviikkona 23. syyskuuta 2015 klo 14.00—17.13
+39	torstaina 24. syyskuuta 2015 klo 16.00—18.48
+40	perjantaina 25. syyskuuta 2015 klo 13.01—13.31
+41	tiistaina 29. syyskuuta 2015 klo 12.01—21.50
+42	keskiviikkona 30. syyskuuta 2015 klo 10.07—20.34
+43	torstaina 1. lokakuuta 2015 klo 10.02—21.41
+44	perjantaina 2. lokakuuta 2015 klo 13.05—17.28
+45	tiistaina 6. lokakuuta 2015 klo 14.02—21.11
+46	keskiviikkona 7. lokakuuta 2015 klo 14.00—18.06
+47	torstaina 8. lokakuuta 2015 klo 16.00—20.08
+48	perjantaina 9. lokakuuta 2015 klo 13.00—13.32
+49	tiistaina 13. lokakuuta 2015 klo 14.00—17.26
+50	keskiviikkona 14. lokakuuta 2015 klo 13.59—17.39
+51	torstaina 15. lokakuuta 2015 klo 16.00—18.20
+52	perjantaina 16. lokakuuta 2015 klo 13.02—13.21
+53	tiistaina 20. lokakuuta 2015 klo 14.00—18.05
+54	keskiviikkona 21. lokakuuta 2015 klo 14.00—19.34
+55	torstaina 22. lokakuuta 2015 klo 16.02—20.19
+56	perjantaina 23. lokakuuta 2015 klo 13.09—13.31
+57	tiistaina 3. marraskuuta 2015 klo 13.59—22.02
+58	keskiviikkona 4. marraskuuta 2015 klo 14.00—17.37
+59	torstaina 5. marraskuuta 2015 klo 16.01—18.33
+60	perjantaina 6. marraskuuta 2015 klo 12.59—13.30
+61	tiistaina 10. marraskuuta 2015 klo 13.59—20.53
+62	keskiviikkona 11. marraskuuta 2015 klo 14.03—17.59
+63	torstaina 12. marraskuuta 2015 klo 15.59—19.19
+64	perjantaina 13. marraskuuta 2015 klo 13.00—13.36
+65	tiistaina 17. marraskuuta 2015 klo 14.00—20.14
+66	keskiviikkona 18. marraskuuta 2015 klo 14.06—19.11
+67	torstaina 19. marraskuuta 2015 klo 16.01—19.47
+68	perjantaina 20. marraskuuta 2015 klo 13.02—13.35
+69	tiistaina 24. marraskuuta 2015 klo 13.59—22.10
+70	keskiviikkona 25. marraskuuta 2015 klo 14.00—23.16
+71	torstaina 26. marraskuuta 2015 klo 16.00—23.07
+72	perjantaina 27. marraskuuta 2015 klo 13.00—13.30
+73	tiistaina 1. joulukuuta 2015 klo 13.59—17.09
+74	keskiviikkona 2. joulukuuta 2015 klo 13.59—20.20
+75	torstaina 3. joulukuuta 2015 klo 16.01—21.22
+76	perjantaina 4. joulukuuta 2015 klo 13.04—15.30
+77	tiistaina 8. joulukuuta 2015 klo 14.00—4.12
+78	keskiviikkona 9. joulukuuta 2015 klo 14.17—21.39
+79	torstaina 10. joulukuuta 2015 klo 16.02—3.07
+80	perjantaina 11. joulukuuta 2015 klo 13.00—13.53
+81	maanantaina 14. joulukuuta 2015 klo 12.01—0.39
+82	tiistaina 15. joulukuuta 2015 klo 10.01—0.29
+83	keskiviikkona 16. joulukuuta 2015 klo 10.01—0.48
+84	torstaina 17. joulukuuta 2015 klo 10.01—23.27
+85	perjantaina 18. joulukuuta 2015 klo 10.01—11.10
+1	tiistaina 2. helmikuuta 2016 klo 12.00—13.50
+2	torstaina 4. helmikuuta 2016 klo 15.59—21.43
+3	perjantaina 5. helmikuuta 2016 klo 12.59—13.32
+4	tiistaina 9. helmikuuta 2016 klo 14.01—19.29
+5	keskiviikkona 10. helmikuuta 2016 klo 14.00—17.41
+6	torstaina 11. helmikuuta 2016 klo 15.59—21.21
+7	perjantaina 12. helmikuuta 2016 klo 13.00—13.31
+8	tiistaina 16. helmikuuta 2016 klo 14.02—17.51
+9	keskiviikkona 17. helmikuuta 2016 klo 13.59—18.10
+10	torstaina 18. helmikuuta 2016 klo 15.59—20.29
+11	perjantaina 19. helmikuuta 2016 klo 12.59—13.30
+12	tiistaina 23. helmikuuta 2016 klo 13.59—15.41
+13	keskiviikkona 24. helmikuuta 2016 klo 14.00—15.21
+14	torstaina 25. helmikuuta 2016 klo 16.00—17.44
+15	perjantaina 26. helmikuuta 2016 klo 13.00—13.32
+16	tiistaina 1. maaliskuuta 2016 klo 13.59—20.51
+17	keskiviikkona 2. maaliskuuta 2016 klo 13.59—16.57
+18	torstaina 3. maaliskuuta 2016 klo 16.00—19.08
+19	perjantaina 4. maaliskuuta 2016 klo 13.00—13.09
+20	tiistaina 8. maaliskuuta 2016 klo 14.00—17.30
+21	keskiviikkona 9. maaliskuuta 2016 klo 14.00—16.42
+22	torstaina 10. maaliskuuta 2016 klo 16.02—18.50
+23	perjantaina 11. maaliskuuta 2016 klo 13.00—13.32
+24	tiistaina 15. maaliskuuta 2016 klo 13.59—17.06
+25	keskiviikkona 16. maaliskuuta 2016 klo 13.59—19.40
+26	torstaina 17. maaliskuuta 2016 klo 15.59—17.46
+27	perjantaina 18. maaliskuuta 2016 klo 13.00—13.38
+28	tiistaina 29. maaliskuuta 2016 klo 13.59—15.52
+29	keskiviikkona 30. maaliskuuta 2016 klo 14.01—16.13
+30	torstaina 31. maaliskuuta 2016 klo 15.59—17.43
+31	perjantaina 1. huhtikuuta 2016 klo 12.59—13.30
+32	tiistaina 5. huhtikuuta 2016 klo 13.59—18.31
+33	keskiviikkona 6. huhtikuuta 2016 klo 13.59—20.33
+34	torstaina 7. huhtikuuta 2016 klo 15.59—19.32
+35	perjantaina 8. huhtikuuta 2016 klo 12.58—13.27
+36	tiistaina 12. huhtikuuta 2016 klo 13.59—20.29
+37	keskiviikkona 13. huhtikuuta 2016 klo 13.59—15.58
+38	torstaina 14. huhtikuuta 2016 klo 15.59—18.39
+39	tiistaina 19. huhtikuuta 2016 klo 13.58—19.26
+40	keskiviikkona 20. huhtikuuta 2016 klo 13.59—17.51
+41	torstaina 21. huhtikuuta 2016 klo 16.00—19.18
+42	perjantaina 22. huhtikuuta 2016 klo 12.59—13.31
+43	tiistaina 26. huhtikuuta 2016 klo 13.59—16.35
+44	keskiviikkona 27. huhtikuuta 2016 klo 14.00—18.04
+45	torstaina 28. huhtikuuta 2016 klo 16.06—20.01
+46	perjantaina 29. huhtikuuta 2016 klo 13.02—13.32
+47	tiistaina 3. toukokuuta 2016 klo 13.59—17.25
+48	keskiviikkona 4. toukokuuta 2016 klo 14.00—16.20
+49	tiistaina 10. toukokuuta 2016 klo 14.00—15.59
+50	keskiviikkona 11. toukokuuta 2016 klo 13.59—15.30
+51	torstaina 12. toukokuuta 2016 klo 15.59—17.19
+52	perjantaina 13. toukokuuta 2016 klo 12.59—13.30
+53	tiistaina 17. toukokuuta 2016 klo 13.58—16.38
+54	keskiviikkona 18. toukokuuta 2016 klo 13.58—21.38
+55	torstaina 19. toukokuuta 2016 klo 16.02—21.24
+56	perjantaina 20. toukokuuta 2016 klo 12.59—13.32
+57	tiistaina 24. toukokuuta 2016 klo 13.59—20.03
+58	keskiviikkona 25. toukokuuta 2016 klo 14.00—14.36
+59	torstaina 26. toukokuuta 2016 klo 16.00—19.04
+60	perjantaina 27. toukokuuta 2016 klo 12.58—13.30
+61	tiistaina 31. toukokuuta 2016 klo 13.59—17.32
+62	keskiviikkona 1. kesäkuuta 2016 klo 14.01—14.53
+63	torstaina 2. kesäkuuta 2016 klo 16.01—17.24
+64	perjantaina 3. kesäkuuta 2016 klo 13.00—13.33
+65	tiistaina 7. kesäkuuta 2016 klo 14.02—16.54
+66	keskiviikkona 8. kesäkuuta 2016 klo 14.07—15.50
+67	torstaina 9. kesäkuuta 2016 klo 16.01—18.55
+68	tiistaina 14. kesäkuuta 2016 klo 14.00—19.41
+69	keskiviikkona 15. kesäkuuta 2016 klo 13.59—21.01
+70	torstaina 16. kesäkuuta 2016 klo 16.00—22.44
+71	torstaina 16. kesäkuuta 2016 klo 22.53—23.03
+72	perjantaina 17. kesäkuuta 2016 klo 12.59—15.01
+73	tiistaina 21. kesäkuuta 2016 klo 14.00—0.59
+74	keskiviikkona 22. kesäkuuta 2016 klo 14.03—21.14
+75	keskiviikkona 22. kesäkuuta 2016 klo 21.24—21.27
+76	torstaina 23. kesäkuuta 2016 klo 10.02—11.02
+77	perjantaina 1. heinäkuuta 2016 klo 10.02—12.35

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2017-11-13"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>Ilomantsi</Name>
+                <Title>Ilomantsin murretta - Ilomantsi dialect</Title>
+                <Description LanguageId="" Link=""/>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nE.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nF.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nG.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nH.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nI.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nJ.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nK.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nL.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nM.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nN.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nO_02nA_03nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_01nP_02nB_03nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_04nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_04nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_04nC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_04nD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_04nE.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mE.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mF.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_05mG.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_06mA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_06mB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_07mA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_07mB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_07mC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_07mD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_08nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_08nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_09nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_09nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_09nC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_09nD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_09nE.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_10mA_11mA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_10mB_11mB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_10mC_11mC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nE.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_12nF.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_13nA.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_13nB.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_13nC.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_13nD.imdi</CorpusLink>
+         <CorpusLink Name="">Ilomantsi/Ilomantsi_13nE.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>

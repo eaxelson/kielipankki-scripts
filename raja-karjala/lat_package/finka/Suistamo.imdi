@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2017-11-13"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>Suistamo</Name>
+                <Title>Suistamon murretta - Suistamo dialect</Title>
+                <Description LanguageId="" Link=""/>
+         <CorpusLink Name="">Suistamo/Suistamo_01nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mB.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mC.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mD.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mE.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_02mF.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_03nA_04nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_05mA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_05mB.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_05mC.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_05mD.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_06nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_06nB.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_07nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_07nB.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_07nC.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_08nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_09nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_09nB.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_10nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_11nA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_12mA.imdi</CorpusLink>
+         <CorpusLink Name="">Suistamo/Suistamo_12mB.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>

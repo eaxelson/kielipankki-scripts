@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2018-02-22"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>{YYYY}-syksy</Name>
+                <Title>Syksyn {YYYY} täysistunnot - Parliament plenary sessions of fall {YYYY}</Title>
+                <Description LanguageId="ISO639-3:eng" Link="">Plenary sessions of Finnish Parliament from fall {YYYY}. The material includes videofiles of the sessions in annotated format.</Description>
+        <Description LanguageId="ISO639-3:fin" Link="">Syksyn {YYYY} täysistunnot. Aineisto sisältää videotiedostot annotoidussa muodossa.</Description>
+      <!-- <CorpusLink Name="">{YYYY}-syksy/{YYYY}-{MM}-{DD}.imdi</CorpusLink> -->
+      <!-- INSERT CORPUS LINKS HERE -->
+   </Corpus>
+</METATRANSCRIPT>

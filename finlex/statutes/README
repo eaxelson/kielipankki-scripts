@@ -1,0 +1,48 @@
+
+*** Deprecated. ***
+
+Use scripts in ../parallel-statutes/ instead.
+
+
+Old instructions:
+
+
+First, run iconv for all source xml files (this needs to be done only once):
+
+  iconv -t UTF-8 [FILE] > tmp && mv tmp [FILE]
+
+The following files had strange characters:
+
+  fi/asd19911202.xml  fi/asd20100584.xml  fi/asd20100745.xml  fi/asd20110109.xml
+
+so the original files are available as *.xml.original.
+
+Also, the empty file fi/1994/asd19940635.xml has been renamed to
+*.xml.empty and file fi/1997/asd19970197.xml to *.xml.error.
+
+The following files had some Å, Ä and Ö characters strangely encoded:
+
+  sv/asd19610404.xml sv/asd19650040.xml sv/asd19910516.xml sv/asd19950253.xml
+  sv/asd19961093.xml sv/asd19970133.xml sv/asd19970540.xml
+
+so the original files are available as *.xml.original.
+
+
+For a fresh start run first in directory '/data/eaxelson/asd/sf-data/orig/asd':
+
+  rm -fR data pkgs registry vrt && mkdir registry
+
+Run then in the same directory (this can take some time):
+
+  ./statute-generate-all-vrt-files.sh --fin
+  ./statute-generate-all-vrt-files.sh --swe
+
+and then:
+
+  ./statute-generate-all-corpora.sh --fin
+  ./statute-generate-all-corpora.sh --swe
+
+Finally copy generated corpora under '/usr/lib/cgi-bin/corpora':
+
+  sudo cp registry/* /usr/lib/cgi-bin/corpora/registry/
+  sudo cp -R data/* /usr/lib/cgi-bin/corpora/data/

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2017-11-13"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>Impilahti</Name>
+                <Title>Impilahden murretta - Impilahti dialect</Title>
+                <Description LanguageId="" Link=""/>
+         <CorpusLink Name="">Impilahti/Impilahti_01nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_02nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nB.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nC.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nD.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nE.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nF.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nG_04mA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_03nH.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_05mA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_05mB.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_05mC.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_06nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_06nB.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_07mA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_08nA_09nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_08nB_09nB.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_10mA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_10mB.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_10mC.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_10mD.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_10mE.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_11nA.imdi</CorpusLink>
+         <CorpusLink Name="">Impilahti/Impilahti_11nB.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>
