@@ -3,7 +3,7 @@
 if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
     echo "Usage: statute-generate-all-vrt-files.sh"
-    echo "       [--fin|--swe] --ignore-dates --from-year YEAR --to-year YEAR --only-file FILE"
+    echo "       [--fin|--swe] --ignore-dates --from-year YEAR --to-year YEAR --only-file FILE --script-path"
     echo ""
     echo "Purpose: generate a vrt file for each statute xml file."
     echo ""
@@ -19,6 +19,10 @@ if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo "intermediary files named *.ext; *.punct; *.sent are also generated."
     echo "They must be manually removed from a distribution package."
     echo ""
+    echo "The script depends on other scripts whose path can be given with"
+    echo "option --script-path (statute-extract-text-and-add-links.pl,"
+    echo "statute-handle-punctuation.pl and statute-add-sentence-tags.pl)."
+    echo ""
     exit 0
 fi
 
@@ -29,6 +33,7 @@ to_year=""
 only_file=""
 only_vrt_step=""
 ignore_dates="false"
+path="."
 
 for arg in "$@"
 do
@@ -48,6 +53,8 @@ do
 	to_year="next..."
     elif [ "$arg" = "--only-file" ]; then
 	only_file="next..."
+    elif [ "$arg" = "--script-path" ]; then
+	path="next..."
     elif [ "$from_year" = "next..." ]; then
 	from_year=$arg
     elif [ "$to_year" = "next..." ]; then
@@ -58,6 +65,19 @@ do
 	    exit 1
 	fi
 	only_file=$arg
+    elif [ "$path" = "next..." ]; then
+	path=$arg
+    fi
+done
+
+for script in statute-extract-text-and-add-links.pl \
+	      statute-handle-punctuation.pl \
+	      statute-add-sentence-tags.pl
+do
+    if !(ls $path/$script > /dev/null 2> /dev/null)
+    then
+	echo "Error: script "$script" not found (path can be given with --script-path)"
+	exit 1
     fi
 done
 
@@ -103,15 +123,15 @@ do
 	if [ "$only_vrt_step" != "true" ]; then
 	    echo "processing xml file "$f"..."
 
-	    if ! (./statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f > $extfile); then
+	    if ! ($path/statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f > $extfile); then
 		echo "Error: in statute-extract-text-and-add-links.pl, exiting..."
 		exit 1
 	    fi
-	    if ! (./statute-handle-punctuation.pl < $extfile > $punctfile); then
+	    if ! ($path/statute-handle-punctuation.pl < $extfile > $punctfile); then
 		echo "Error: in statute-handle-punctuation.pl, exiting..."
 		exit 1
 	    fi
-	    if ! (./statute-add-sentence-tags.pl < $punctfile > $sentfile); then
+	    if ! ($path/statute-add-sentence-tags.pl < $punctfile > $sentfile); then
 		echo "Error: in statute-add-sentence-tags.pl, exiting..."
 		exit 1
 	    fi
