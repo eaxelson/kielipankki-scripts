@@ -34,5 +34,7 @@ foreach my $line ( <STDIN> ) {
     # some strange stuff used in kho files...
     $line =~ s/<p>"?\( \)(\.")?<\/p>//g;
     $line =~ s/<p>\( \)\.(<\/p>)?//g;
+    # line feeds as hmtl entities?
+    $line =~ s/&#10;//g;
     print $line;
 }

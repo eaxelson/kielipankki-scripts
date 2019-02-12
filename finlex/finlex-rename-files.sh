@@ -73,24 +73,16 @@ do
     mv $file $file.swedish
 done
 
-# files that do not pass the scripts
-# asd/fi/1992/asd19920123.xml # many xml tags on one line
-# asd/sv/1992/asd19921607.xml # many xml tags on one line
-# asd/fi/1996/asd19960460.xml # many xml tags on one line
-# asd/fi/1996/asd19960477.xml # many xml tags on one line
-# asd/fi/2015/asd20150455.xml # "& # 1 0 ;" used in Pykala identification field
-# asd/fi/2015/asd20150502.xml # "& # 1 0 ;" used in Pykala identification field
-# asd/sv/2015/asd20150455.xml # "& # 1 0 ;" used in Pykala identification field
-# asd/sv/2015/asd20150502.xml # "& # 1 0 ;" used in Pykala identification field
-#for file in \
-#    asd/fi/1992/asd19920123.xml \
-#    asd/sv/1992/asd19921607.xml \
-#    asd/fi/1996/asd19960460.xml \
-#    asd/fi/1996/asd19960477.xml \
-#    asd/fi/2015/asd20150455.xml \
-#    asd/fi/2015/asd20150502.xml \
-#    asd/sv/2015/asd20150455.xml \
-#    asd/sv/2015/asd20150502.xml;
-#do
-#    mv $file $file.error
-#done
+# files that do not pass the scripts (todo: fix the scripts)
+asd/fi/1992/asd19920123.xml # many xml tags on one line
+asd/sv/1992/asd19921607.xml # many xml tags on one line
+asd/fi/1996/asd19960460.xml # many xml tags on one line
+asd/fi/1996/asd19960477.xml # many xml tags on one line
+for file in \
+    asd/fi/1992/asd19920123.xml \
+    asd/sv/1992/asd19921607.xml \
+    asd/fi/1996/asd19960460.xml \
+    asd/fi/1996/asd19960477.xml \
+do
+    mv $file $file.error
+done
