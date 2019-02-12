@@ -2,3 +2,11 @@ This directory contains Finlex-related scripts etc.
 
 See https://github.com/eaxelson/kielipankki-scripts/wiki/Finlex
 for more information about the data and compiling it into corpora.
+
+Preprocessing is done in the following order:
+
+finlex-rename-files.sh
+finlex-fix-nonprintable-characters.sh
+finlex-check-utf8.sh
+finlex-fix-spaces-etc.sh (depends on finlex-fix-spaces-etc.pl whose path can be given with --script-prefix)
+

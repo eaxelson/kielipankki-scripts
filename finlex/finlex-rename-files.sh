@@ -7,7 +7,7 @@
 mv asd/fi/1994/asd19940635.xml asd/fi/1994/asd19940635.xml.empty
 
 # duplicates (e.g. asd/fi/1734/asd17340001000.xml is equivalent to asd/fi/1734/asd17340001.xml)
-# (also asd/fi/1906/asd19070006001.xml to asd/fi/1907/asd19070006.xml)
+# (also asd/fi/1906/asd19070006001.xml is equivalent to asd/fi/1907/asd19070006.xml)
 for file in \
     asd/fi/1734/asd17340001000.xml \
     asd/fi/1734/asd17340003000.xml \
@@ -82,15 +82,15 @@ done
 # asd/fi/2015/asd20150502.xml # "& # 1 0 ;" used in Pykala identification field
 # asd/sv/2015/asd20150455.xml # "& # 1 0 ;" used in Pykala identification field
 # asd/sv/2015/asd20150502.xml # "& # 1 0 ;" used in Pykala identification field
-for file in \
-    asd/fi/1992/asd19920123.xml \
-    asd/sv/1992/asd19921607.xml \
-    asd/fi/1996/asd19960460.xml \
-    asd/fi/1996/asd19960477.xml \
-    asd/fi/2015/asd20150455.xml \
-    asd/fi/2015/asd20150502.xml \
-    asd/sv/2015/asd20150455.xml \
-    asd/sv/2015/asd20150502.xml;
-do
-    mv $file $file.error
-done
+#for file in \
+#    asd/fi/1992/asd19920123.xml \
+#    asd/sv/1992/asd19921607.xml \
+#    asd/fi/1996/asd19960460.xml \
+#    asd/fi/1996/asd19960477.xml \
+#    asd/fi/2015/asd20150455.xml \
+#    asd/fi/2015/asd20150502.xml \
+#    asd/sv/2015/asd20150455.xml \
+#    asd/sv/2015/asd20150502.xml;
+#do
+#    mv $file $file.error
+#done
