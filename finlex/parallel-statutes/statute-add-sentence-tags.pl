@@ -21,7 +21,7 @@ foreach my $line ( <STDIN> ) {
 	print $line;
     }
     # <> is special symbol for end of sentence in titles etc (not visible in the result)
-    elsif ( $line =~ /^\.$/ || $line =~ /^<>$/ )
+    elsif ( $line =~ /^\.$/ || $line =~ /^<>$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ )
     {
 	if ($first_line eq "true")
 	{
@@ -34,7 +34,19 @@ foreach my $line ( <STDIN> ) {
 	    # just ignore <> at the start of sentence...
 	    next;
 	}
-	unless ( $line =~ /^<>$/ )
+	if ( $line =~ /^\.\)$/ )
+	{
+	    print ".\n)\n";
+	}
+	elsif ( $line =~ /^\.\]$/ )
+	{
+	    print ".\n]\n";
+	}
+	elsif ( $line =~ /^<>$/ )
+	{
+	    ;
+	}
+	else
 	{
 	    print $line;
 	}
