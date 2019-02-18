@@ -187,8 +187,11 @@ foreach my $line ( <STDIN> ) {
 	}
 
 	# get rid of empty lines
-	$line =~ s/^\n//g;	
-	
+	$line =~ s/^ *\n//g;
+
+	# todo: get rid of empty links:
+	# perl -pe 's/>\n/>/g;' | perl -pe 's/<link[^>]*><\/link>//g;' | perl -pe 's/>/>\n/g;'
+
 	print $line;
     }
 }
