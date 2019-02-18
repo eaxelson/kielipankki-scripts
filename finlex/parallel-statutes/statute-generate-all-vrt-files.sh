@@ -160,27 +160,29 @@ do
 	else
 	    url="http://data.finlex.fi/eli/sd/"$url_year"/"$url_number"/alkup/"$url_lang".html"
 	fi
-	
+
+	datefrom=$url_year"0101"
+	dateto=$url_year"1231"
 	# extract date of document from xml file
-	datefrom=`grep -m 1 'met1:laadintaPvm=' $f | perl -pe 's/^.*met1\:laadintaPvm="([0-9]{4}\-[0-9]{2}\-[0-9]{2})".*$/$1/g; s/\-//g;'`
-	length=`printf "%s" "$datefrom" | wc -c`
-	if [ "$length" = "0" ]; then
-	    datefrom=$url_year"0101"
-	    dateto=$url_year"1231"
-	    if [ "$ignore_dates" = "false" ]; then
+	if [ "$ignore_dates" = "false" ]; then
+	    datefrom=`grep -m 1 'met1:laadintaPvm=' $f | perl -pe 's/^.*met1\:laadintaPvm="([0-9]{4}\-[0-9]{2}\-[0-9]{2})".*$/$1/g; s/\-//g;'`
+	    length=`printf "%s" "$datefrom" | wc -c`
+	    if [ "$length" = "0" ]; then
+		datefrom=$url_year"0101"
+		dateto=$url_year"1231"
 		echo "could not find date in file '"$f"', setting it to "$datefrom" - "$dateto" for output file '"$vrtfile"'..."
+	    elif [ "$datefrom" = "21000101" ]; then
+		datefrom=$url_year"0101"
+		dateto=$url_year"1231"
+		if [ "$ignore_dates" = "false" ]; then
+		    echo "date '2100-01-01' given in file '"$f"', setting it to "$datefrom" - "$dateto" for output file '"$vrtfile"'..."
+		fi
+	    elif [ "$length" -gt 8 -o "$length" -lt 8 ]; then
+		echo "invalid date in file '"$f"' (output file '"$vrtfile"'), exiting..."
+		exit 1
+	    else
+		dateto=$datefrom
 	    fi
-	elif [ "$datefrom" = "21000101" ]; then
-	    datefrom=$url_year"0101"
-	    dateto=$url_year"1231"
-	    if [ "$ignore_dates" = "false" ]; then
-		echo "date '2100-01-01' given in file '"$f"', setting it to "$datefrom" - "$dateto" for output file '"$vrtfile"'..."
-	    fi
-	elif [ "$length" -gt 8 -o "$length" -lt 8 ]; then
-	    echo "invalid date in file '"$f"' (output file '"$vrtfile"'), exiting..."
-	    exit 1
-	else
-	    dateto=$datefrom
 	fi
 		
 	# add text tags around the output
