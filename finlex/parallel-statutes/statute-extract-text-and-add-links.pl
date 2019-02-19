@@ -64,13 +64,6 @@ foreach my $line ( <STDIN> ) {
 	    $continu = 0;
 	    next;
 	}
-	
-	# special symbol <> means end of sentence (in titles)
-	$line =~ s/(<\/saa:SaadosOtsikkoKooste>)/<>$1/g;
-	$line =~ s/(<\/saa:SaadosNimeke>)/<>$1/g;
-	$line =~ s/(<\/saa:SaadosKappaleKooste>)/<>$1/g;
-	$line =~ s/(<\/asi:AllekirjoitusOsa>)/<>$1/g;
-	$line =~ s/(<\/met:Nimeke>)/<>$1/g;
 
 	# replace <br/> with space
 	$line =~ s/<br\/>/ /g;

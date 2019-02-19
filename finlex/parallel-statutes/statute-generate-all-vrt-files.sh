@@ -123,7 +123,7 @@ do
 	if [ "$only_vrt_step" != "true" ]; then
 	    echo "processing xml file "$f"..."
 
-	    if ! ($path/statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f > $extfile); then
+	    if ! ($path/statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f | $path/statute-remove-empty-links.sh > $extfile); then
 		echo "Error: in statute-extract-text-and-add-links.pl, exiting..."
 		exit 1
 	    fi

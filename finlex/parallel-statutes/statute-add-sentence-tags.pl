@@ -6,34 +6,25 @@ use open qw(:std :utf8);
 
 my $sentence_number = 0;
 my $first_line = "true";
-my $end_tag_printed = "false";
+my $end_tag_printed = "true";
 
 foreach my $line ( <STDIN> ) {
 
-    # This case should already have been handled by court-handle-punctuation.pl.
-    if ( $line =~ /^ *$/)
-    {
-	;
-    }
     # skip links
-    elsif ( $line =~ /^<\/?link/ )
+    if ( $line =~ /^<\/?link/ )
     {
+	if ( $end_tag_printed eq "false" )
+	{
+	    print '</sentence>';
+	    print "\n";
+	    $end_tag_printed = "true";
+	    $first_line = "true";
+	}
 	print $line;
     }
-    # <> is special symbol for end of sentence in titles etc (not visible in the result)
-    elsif ( $line =~ /^\.$/ || $line =~ /^<>$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ )
+    # end of sentence
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ )
     {
-	if ($first_line eq "true")
-	{
-	    # just ignore strange dots, they are probably from tables...
-	    #if ( $line =~ /^\.$/ )
-	    #{
-		#print "court-add-sentence-tags.pl: error: first non-empty line in sentence is '.', exiting.\n";
-		#exit 1;
-	    #}
-	    # just ignore <> at the start of sentence...
-	    next;
-	}
 	if ( $line =~ /^\.\)$/ )
 	{
 	    print ".\n)\n";
@@ -41,10 +32,6 @@ foreach my $line ( <STDIN> ) {
 	elsif ( $line =~ /^\.\]$/ )
 	{
 	    print ".\n]\n";
-	}
-	elsif ( $line =~ /^<>$/ )
-	{
-	    ;
 	}
 	else
 	{
