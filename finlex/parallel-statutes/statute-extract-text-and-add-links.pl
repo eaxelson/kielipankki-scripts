@@ -72,10 +72,12 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/ +/ /g;
 	$line =~ s/^ //g;
 	$line =~ s/ $//g;
-	
+
+	# table entries are sometimes not inside <tau:table>, get rid of them
+	$line =~ s/^<te>.*<\/te>\n//g;
         # table entries sometimes contain hyphenated words extending to several lines
 	# (,- is used when referring to money such as 200,-)
-	$line =~ s/^<te>(.*)[^, \t]\-<\/te>\n/$1<\->/g;
+	# $line =~ s/^<te>(.*)[^, \t]\-<\/te>\n/$1<\->/g;
 	
 	if ($link eq 1)
 	{
