@@ -7,6 +7,14 @@ use open qw(:std :utf8);
 my $sentence_number = 0;
 my $first_line = "true";
 my $end_tag_printed = "true";
+my $sentence = "";
+my $words = 0;
+my $delayed = "false";
+
+if (scalar(@ARGV) gt 0)
+{
+    if ( $ARGV[0] eq "--delayed" ) { $delayed = "true"; }
+}
 
 foreach my $line ( <STDIN> ) {
 
@@ -15,45 +23,79 @@ foreach my $line ( <STDIN> ) {
     {
 	if ( $end_tag_printed eq "false" )
 	{
-	    print '</sentence>';
-	    print "\n";
+	    if ( $delayed eq "true" )
+	    {
+		$sentence .= '</sentence>';
+		$sentence .= "\n";
+		print $sentence;
+		$sentence = "";
+	    }
+	    else
+	    {
+		print '</sentence>';
+		print "\n";
+	    }
 	    $end_tag_printed = "true";
 	    $first_line = "true";
+	    $words = 0;
 	}
-	print $line;
+	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
     # end of sentence
-    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ )
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ )
     {
+	$words++;
 	if ( $line =~ /^\.\)$/ )
 	{
-	    print ".\n)\n";
+	    if ( $delayed eq "true" ) { $sentence .= ".\n)\n"; } else { print ".\n)\n"; }
 	}
 	elsif ( $line =~ /^\.\]$/ )
 	{
-	    print ".\n]\n";
+	    if ( $delayed eq "true" ) { $sentence .= ".\n]\n"; } else { print ".\n]\n"; }
 	}
 	else
 	{
-	    print $line;
+	    if ( $delayed eq "true" ) { $sentence .= $line; } else { print $line; }
 	}
-	print '</sentence>';
-	print "\n";
+	if ( $delayed eq "true" )
+	{
+	    $sentence .= '</sentence>';
+	    $sentence .= "\n";
+	    print $sentence;
+	    $sentence = "";
+	}
+	else
+	{
+	    print '</sentence>';
+	    print "\n";
+	}
 	$end_tag_printed = "true";
 	$first_line = "true";
+	$words = 0;
     }
     else
     {
+	$words++;
 	if ($first_line eq "true")
 	{
-	    print '<sentence n="';
-	    print ++$sentence_number;
-	    print '">';
-	    print "\n";
+	    if ( $delayed eq "true" )
+	    {
+		$sentence .= '<sentence n="';
+		$sentence .= ++$sentence_number;
+		$sentence .= '">';
+		$sentence .= "\n";
+	    }
+	    else
+	    {
+		print '<sentence n="';
+		print ++$sentence_number;
+		print '">';
+		print "\n";
+	    }
 	    $end_tag_printed = "false";
 	}
 	$first_line = "false";
-	print $line;
+	if ( $delayed eq "true" ) { $sentence .= $line; } else { print $line; }
     }
 }
 
@@ -61,6 +103,21 @@ foreach my $line ( <STDIN> ) {
 if ($end_tag_printed eq "false")
 {
     # print STDERR "court-add-sentence-tags.pl: warning: missing '.' at the end of last sentence, adding a sentence end tag anyway.\n";
-    print '</sentence>';
-    print "\n";
+    if ( $delayed eq "true" )
+    {
+	$sentence .= '</sentence>';
+	$sentence .= "\n";
+	print $sentence;
+    }
+    else
+    {
+	print '</sentence>';
+	print "\n";
+    }
 }
+else
+{
+    # sentence might contain the last </link> that has not yet been printed
+    if ( $delayed eq "true" ) { print $sentence; }
+}
+
