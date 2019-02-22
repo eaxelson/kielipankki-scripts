@@ -4,16 +4,21 @@ use strict;
 use warnings;
 use open qw(:std :utf8);
 
-my $sentence_number = 0;
-my $first_line = "true";
-my $end_tag_printed = "true";
-my $sentence = "";
-my $words = 0;
-my $delayed = "false";
+my $sentence_number = 0; # number of sentence
+my $first_line = "true"; # control sentence tags
+my $end_tag_printed = "true"; # control sentence tags
+my $sentence = ""; # the current sentence
+my $words = 0; # number of words in a sentence, including punctuation
+my $limit = 100000; # limit of sentence length
+my $delayed = "false"; # delayed printing of sentences, required automatically if --limit is set
 
-if (scalar(@ARGV) gt 0)
+foreach (@ARGV)
 {
-    if ( $ARGV[0] eq "--delayed" ) { $delayed = "true"; }
+    if ( $_ eq "--delayed" ) { $delayed = "true"; }
+    elsif ( $_ eq "--limit" ) { $limit = 0; $delayed = "true"; }
+    elsif ( $limit == 0 ) { $limit = $_; }
+    elsif ( $_ eq "--help" || $_ eq "-h" ) { print "Usage: $0 [--limit LIMIT] [--delayed]\n"; exit 0; }
+    else {}
 }
 
 foreach my $line ( <STDIN> ) {
@@ -26,6 +31,7 @@ foreach my $line ( <STDIN> ) {
 	    if ( $delayed eq "true" )
 	    {
 		$sentence .= '</sentence>';
+		if ( $words > $limit ) { $sentence .= $words; }
 		$sentence .= "\n";
 		print $sentence;
 		$sentence = "";
@@ -42,7 +48,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
     # end of sentence
-    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ )
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ )
     {
 	$words++;
 	if ( $line =~ /^\.\)$/ )
@@ -60,6 +66,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" )
 	{
 	    $sentence .= '</sentence>';
+	    if ( $words > $limit ) { $sentence .= $words; }
 	    $sentence .= "\n";
 	    print $sentence;
 	    $sentence = "";
@@ -106,6 +113,7 @@ if ($end_tag_printed eq "false")
     if ( $delayed eq "true" )
     {
 	$sentence .= '</sentence>';
+	if ( $words > $limit ) { $sentence .= $words; }
 	$sentence .= "\n";
 	print $sentence;
     }
