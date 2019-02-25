@@ -20,11 +20,20 @@ foreach my $line ( <STDIN> ) {
 	# literal '\n'
 	$line =~ s/\\n/ /g;
 
+	# escape dots in special cases, e.g. "(1.1.-31.12.)." or "(tanssit. maist.);"
+	$line =~ s/\.\)\./<\.>\)\./g;
+	$line =~ s/\.\)\;/<\.>\)\;/g;
+
 	# separate parentheses () and []
 	$line =~ s/([^ ])\(/$1 \(/g;
 	$line =~ s/\)([^ ])/\) $1/g;
 	$line =~ s/([^ ])\[/$1 \[/g;
 	$line =~ s/\]([^ ])/\] $1/g;
+
+	# strange punctuation in some files:
+	$line =~ s/\; ?\;/\;/g;
+	# tagged text containing only one dot
+	$line =~ s/>\.<\//><\//g;
 
 	# escape &amp; &quot; &apos; &lt; &gt;
 	$line =~ s/\&((amp)|(quot)|(apos)|(lt)|(gt))\;/\&$1¤/g;
@@ -50,9 +59,6 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/\. *$/ \./;
 	# .) and .] are handled later
 
-	# unescape escaped dots
-	$line =~ s/<\.>/\./g;
-	
 	# separate content inside parentheses from parentheses
 	$line =~ s/\(([^\)]+)\)/\( $1 \)/g;
 	$line =~ s/\[([^\]]+)\]/\[ $1 \]/g;
@@ -60,6 +66,9 @@ foreach my $line ( <STDIN> ) {
 	# handle .) and .] that were just separated
 	$line =~ s/\. \)/ \.\)/g;
 	$line =~ s/\. \]/ \.\]/g;
+
+	# unescape escaped dots
+	$line =~ s/<\.>/\./g;
 
 	# separate hyphen, n dash, m dash and horizontal bar in numerical ranges and dates (e.g. 250-300; 1.2.-5.2.)
 	$line =~ s/([0-9\.])(\-|\x{2013}|\x{2014}|\x{2015})([0-9])/$1 $2 $3/g;
