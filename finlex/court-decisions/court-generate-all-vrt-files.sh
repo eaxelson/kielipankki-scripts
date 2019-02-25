@@ -2,7 +2,7 @@
 
 if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
-    echo "Usage: court-generate-all-vrt-files.sh [--kko|--kho] [--fin|--swe]"
+    echo "Usage: court-generate-all-vrt-files.sh [--kko|--kho] [--fin|--swe] --script-path PATH"
     echo ""
     exit 0
 fi
@@ -11,6 +11,7 @@ url_lang=""
 dir_lang=""
 court=""
 courtdir=""
+path="."
 
 for arg in "$@"
 do
@@ -26,6 +27,10 @@ do
     elif [ "$arg" = "--kho" ]; then
 	court="--kho"
 	courtdir="kho"
+    elif [ "$arg" = "--script-path" ]; then
+	path="next..."
+    elif [ "$path" = "next..." ]; then
+	path=$arg;
     fi
 done
 
@@ -42,7 +47,7 @@ fi
 for f in ${courtdir}/${dir_lang}/*/*.xml
 do
     echo "processing xml file "$f"..."
-    if ! (./court-process-xml-to-vrt.sh $f `echo $f | perl -pe 's/\.xml/\.vrt/g;'` ${url_lang} ${court} ); then
+    if ! ($path/court-process-xml-to-vrt.sh $f `echo $f | perl -pe 's/\.xml/\.vrt/g;'` ${url_lang} ${court} --script-path ${path} ); then
 	exit 1
     fi
 done

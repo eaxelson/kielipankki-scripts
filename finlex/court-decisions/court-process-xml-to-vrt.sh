@@ -2,7 +2,7 @@
 
 if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
-    echo "Usage: court-process-xml-to-vrt.sh XMLFILE VRTFILE [--datefrom DATE] [--dateto DATE] [--kko|--kho] [--fin|--swe]"
+    echo "Usage: court-process-xml-to-vrt.sh XMLFILE VRTFILE [--datefrom DATE] [--dateto DATE] [--kko|--kho] [--fin|--swe] --script-path PATH"
     echo ""
     exit 0
 fi
@@ -11,6 +11,7 @@ datefrom=""
 dateto=""
 url_lang=""
 court=""
+path="."
 
 for arg in "$@"
 do
@@ -18,10 +19,14 @@ do
 	datefrom=$arg
     elif [ "$dateto" = "next..." ]; then
 	dateto=$arg
+    elif [ "$path" = "next..." ]; then
+	path=$arg
     elif [ "$arg" = "--datefrom" ]; then
 	datefrom="next..."
     elif [ "$arg" = "--dateto" ]; then
 	dateto="next..."
+    elif [ "$arg" = "--script-path" ]; then
+	path="next..."
     elif [ "$arg" = "--fin" ]; then
 	url_lang="fin"
     elif [ "$arg" = "--swe" ]; then
@@ -46,12 +51,12 @@ fi
 
 cp $1 tmp
 
-if ! (cat tmp | ./court-extract-text.pl > TMP); then
+if ! (cat tmp | $path/court-extract-text.pl > TMP); then
     echo "Error: in court-extract-text.pl("$1", "$2"), exiting..."
     exit 1
 fi
-./court-handle-punctuation.pl < TMP > tmp
-if ! (./court-add-sentence-tags.pl < tmp > TMP); then
+$path/court-handle-punctuation.pl < TMP > tmp
+if ! ($path/court-add-sentence-tags.pl < tmp > TMP); then
     echo "Error: in court-add-sentence-tags.pl("$1", "$2"), exiting..."
     exit 1
 fi
@@ -103,4 +108,3 @@ cat TMP >> tmp
 echo "</text>" >> tmp
 mv tmp $2
 rm TMP
-
