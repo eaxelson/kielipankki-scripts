@@ -3,7 +3,7 @@
 if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
     echo "Usage: statute-generate-all-vrt-files.sh"
-    echo "       [--fin|--swe] --ignore-dates --from-year YEAR --to-year YEAR --only-file FILE --script-path"
+    echo "       [--fin|--swe] --ignore-dates --from-year YEAR --to-year YEAR --only-file FILE --script-path PATH"
     echo ""
     echo "Purpose: generate a vrt file for each statute xml file."
     echo ""
@@ -131,7 +131,7 @@ do
 		echo "Error: in statute-handle-punctuation.pl, exiting..."
 		exit 1
 	    fi
-	    if ! ($path/statute-add-sentence-tags.pl < $punctfile > $sentfile); then
+	    if ! ($path/statute-add-sentence-tags.pl --limit 1000 < $punctfile > $sentfile); then
 		echo "Error: in statute-add-sentence-tags.pl, exiting..."
 		exit 1
 	    fi
