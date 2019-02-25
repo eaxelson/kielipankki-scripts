@@ -31,7 +31,7 @@ foreach my $line ( <STDIN> ) {
 	    if ( $delayed eq "true" )
 	    {
 		$sentence .= '</sentence>';
-		if ( $words > $limit ) { $sentence .= $words; }
+		if ( $words > $limit ) { print STDERR $words; print STDERR "\n"; }
 		$sentence .= "\n";
 		print $sentence;
 		$sentence = "";
@@ -66,7 +66,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" )
 	{
 	    $sentence .= '</sentence>';
-	    if ( $words > $limit ) { $sentence .= $words; }
+	    if ( $words > $limit ) { print STDERR $words; print STDERR "\n"; }
 	    $sentence .= "\n";
 	    print $sentence;
 	    $sentence = "";
@@ -113,7 +113,7 @@ if ($end_tag_printed eq "false")
     if ( $delayed eq "true" )
     {
 	$sentence .= '</sentence>';
-	if ( $words > $limit ) { $sentence .= $words; }
+	if ( $words > $limit ) { print STDERR $words; print STDERR "\n"; }
 	$sentence .= "\n";
 	print $sentence;
     }
