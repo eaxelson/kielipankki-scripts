@@ -67,7 +67,18 @@ foreach my $line ( <STDIN> ) {
 	}
 
 	# remove content in parentheses in participant
-	$line =~ s/(participant="[^"\(]+)\([^"\)]+\)/$1/g;
+	$line =~ s/(participant="[^"\(]+)(\([^"\)]+\))/$1/g;
+
+	# and append it to attribute 'extra'
+	if ( defined $2 )
+	{
+	    my $extra = $2;
+	    $extra =~ s/\((.*)\)/$1/;
+	    $line =~ s/>/ extra="$extra">/;
+	}
+
+	# Remove ordinal before participant name
+	$line =~ s/participant="[0-9]+\. /participant="/g;
 
 	# get rid of extra space and use only ordinary space
 	$line =~ s/\h/ /g;
