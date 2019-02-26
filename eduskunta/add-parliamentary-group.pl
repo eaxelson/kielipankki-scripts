@@ -27,7 +27,7 @@ foreach my $line ( <STDIN> ) {
 	# group given after slash, e.g. "/kesk", "/kok", "/sd" etc.
 	if ( $group =~ /\// )
 	{
-	    $group =~ s/.*\/([a-öA-Ö]*).*/$1/;
+	    $group =~ s/.*\/([a-öA-Ö0-9]*).*/$1/;
 	    $group =~ s/^\s+|\s+$//g;
 	}
 	# group given inside first parentheses, e.g. "(vas)", "(kd)", "(ps)" etc.
