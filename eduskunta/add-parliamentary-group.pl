@@ -7,6 +7,8 @@ use strict;
 use warnings;
 use open qw(:std :utf8);
 
+my $remove_group_from_participant = "true";
+
 foreach my $line ( <STDIN> ) {
 
     # process only paragraph elements
@@ -29,6 +31,10 @@ foreach my $line ( <STDIN> ) {
 	{
 	    $group =~ s/.*\/([a-öA-Ö0-9]*).*/$1/;
 	    $group =~ s/^\s+|\s+$//g;
+	    if ( $remove_group_from_participant eq "true" )
+	    {
+		$line =~ s/\s\/[a-öA-Ö0-9]*//;
+	    }
 	}
 	# group given inside first parentheses, e.g. "(vas)", "(kd)", "(ps)" etc.
 	elsif ( $group =~ /\([^\)]/ )
@@ -39,6 +45,13 @@ foreach my $line ( <STDIN> ) {
 	    if ( $group eq "koputtaa" )
 	    {
 		$group = "";
+	    }
+	    else
+	    {
+		if ( $remove_group_from_participant eq "true" )
+		{
+		    $line =~ s/\s?\([^\)]+\)//;
+		}
 	    }
 	}
 	# no group given
@@ -52,6 +65,15 @@ foreach my $line ( <STDIN> ) {
 	{
 	    $line =~ s/>/ group="$group">/;
 	}
+
+	# remove content in parentheses in participant
+	$line =~ s/(participant="[^"\(]+)\([^"\)]+\)/$1/g;
+
+	# get rid of extra space and use only ordinary space
+	$line =~ s/\h/ /g;
+	$line =~ s/ +/ /g;
+	$line =~ s/ "/"/g;
     }
+
     print $line;
 }
