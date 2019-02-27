@@ -49,7 +49,7 @@ foreach my $line ( <STDIN> ) {
 	{
 	    $group =~ s/[^\(]*\(([^\)]+)\).*/$1/;
 	    $group =~ s/^\s+|\s+$//g;
-	    # "(koputtaa)" is a remark, not a group 
+	    # "(koputtaa)" is a note, not a group 
 	    if ( $group eq "koputtaa" )
 	    {
 		$group = "";
@@ -76,12 +76,12 @@ foreach my $line ( <STDIN> ) {
 
 	# remove content in parentheses in participant
 	$line =~ s/(participant="[^"\(]+)(\([^"\)]+\))/$1/g;
-	# and append it to attribute 'remark'
+	# and append it to attribute 'note'
 	if ( defined $2 )
 	{
-	    my $remark = $2;
-	    $remark =~ s/\((.*)\)/$1/;
-	    $line =~ s/>/ remark="$remark">/;
+	    my $note = $2;
+	    $note =~ s/\((.*)\)/$1/;
+	    $line =~ s/>/ note="$note">/;
 	}
 
 	# exctract possible role in participant
