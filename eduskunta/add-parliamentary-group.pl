@@ -49,7 +49,8 @@ foreach my $line ( <STDIN> ) {
 	{
 	    $group =~ s/[^\(]*\(([^\)]+)\).*/$1/;
 	    $group =~ s/^\s+|\s+$//g;
-	    # "(koputtaa)" is a note, not a group 
+
+	    # "(koputtaa)" is speech type, not a group
 	    if ( $group eq "koputtaa" )
 	    {
 		$group = "";
@@ -71,17 +72,27 @@ foreach my $line ( <STDIN> ) {
 	# append group attribute, if group was found
 	unless ( $group eq "" )
 	{
-	    $line =~ s/>/ group="$group">/;
+	    if( $group =~ /^(emus|kd|kesk|kok|m11|ps|r|sd|vas|vihr|vr)$/ )
+	    {
+		$line =~ s/>/ group="$group">/;
+	    }
+	    else
+	    {
+		print "Error: parliamentary group not recognized: ";
+		print $group;
+		print "\n";
+		exit 1;
+	    }
 	}
 
 	# remove content in parentheses in participant
 	$line =~ s/(participant="[^"\(]+)(\([^"\)]+\))/$1/g;
-	# and append it to attribute 'note'
+	# and append it to attribute 'type'
 	if ( defined $2 )
 	{
-	    my $note = $2;
-	    $note =~ s/\((.*)\)/$1/;
-	    $line =~ s/>/ note="$note">/;
+	    my $type = $2;
+	    $type =~ s/\((.*)\)/$1/;
+	    $line =~ s/>/ type="$type">/;
 	}
 
 	# exctract possible role in participant
