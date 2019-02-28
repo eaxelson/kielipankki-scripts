@@ -37,11 +37,11 @@ foreach my $line ( <STDIN> ) {
 	my $group = $participant;
 	if ( $group =~ /\// )
 	{
-	    $group =~ s/.*\/([a-öA-Ö0-9]*).*/$1/;
+	    $group =~ s/.*\/([a-z\x{00E4}\x{00F6}A-Z\x{00C4}\x{00D6}0-9]*).*/$1/;
 	    $group =~ s/^\s+|\s+$//g;
 	    if ( $remove_group_from_participant eq "true" )
 	    {
-		$line =~ s/\s\/[a-öA-Ö0-9]*//;
+		$line =~ s/\s\/[a-z\x{00E4}\x{00F6}A-Z\x{00C4}\x{00D6}0-9]*//;
 	    }
 	}
 	# group given inside first parentheses, e.g. "(vas)", "(kd)", "(ps)" etc.
@@ -98,7 +98,7 @@ foreach my $line ( <STDIN> ) {
 	# exctract possible role in participant
 	# and append it to attribute 'role', but do not remove it
 	my $possible_role = $participant;
-	if ( $possible_role =~ /[A-Ö][a-ö]+(\- ja [a-ö]+)?ministeri/ ||
+	if ( $possible_role =~ /[A-Z\x{00C4}\x{00D6}][a-z\x{00E4}\x{00F6}]+(\- ja [a-z\x{00E4}\x{00F6}]+)?ministeri/ ||
 	     $possible_role =~ /Eduskunnan oikeusasiamies/ ||
 	     $possible_role =~ /Ensimm\x{00E4}inen puhemies/ ||
 	     $possible_role =~ /Ensimm\x{00E4}inen varapuhemies/ ||
@@ -108,7 +108,7 @@ foreach my $line ( <STDIN> ) {
 	     $possible_role =~ /Toinen varapuhemies/ ||
 	     $possible_role =~ /Valtioneuvoston apulaisoikeuskansleri/ ||
 	     $possible_role =~ /Valtioneuvoston oikeuskansleri/ ||
-	     $possible_role =~ /varaj\x{00E4}senenään( kansanedustaja)/ )
+	     $possible_role =~ /varaj\x{00E4}senen\x{00E4}\x{00E4}n( kansanedustaja)/ )
 	{
 	    print $possible_role;
 	    if ( defined $& )
@@ -123,7 +123,7 @@ foreach my $line ( <STDIN> ) {
 	    if ( defined $& )
 	    {
 		my $role = $&;
-		$line =~ s/>/ role="$role \(vara\)puhemies">/;
+		$line =~ s/>/ role="$role varapuhemies">/;
 	    }
 	}
 	elsif ( $possible_role =~ /Ensimma?inen varapuhemies/ )
