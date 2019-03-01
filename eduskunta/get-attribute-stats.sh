@@ -1,8 +1,9 @@
 #!/bin/sh
 
-echo group:
-cat $1 | grep '<paragraph' | grep 'group="' | perl -pe 's/.*group="([^"]+)".*/\1/;' | sort | uniq -c | sort -nr
-echo role:
-cat $1 | grep '<paragraph' | grep 'role="' | perl -pe 's/.*role="([^"]+)".*/\1/;' | sort | uniq -c | sort -nr
-echo type:
-cat $1 | grep '<paragraph' | grep 'type="' | perl -pe 's/.*type="([^"]+)".*/\1/;' | sort | uniq -c | sort -nr
+for attr in group role type
+do
+    echo $attr:
+    cat $1 | grep '<paragraph' | grep $attr'="' | perl -pe 's/.*'$attr'="([^"]+)".*/\1/;' | sort | uniq -c | sort -nr
+done
+echo participant:
+cat $1 | grep '<paragraph' | grep 'participant="' | perl -pe 's/.*participant="([^"]*)".*/\1/;' | sort | uniq -c | sort -nr
