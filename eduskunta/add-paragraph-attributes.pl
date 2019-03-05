@@ -1,7 +1,15 @@
 #!/usr/bin/perl
 
-# Add attribute '(parliamentary) group' to paragraph elements,
-# if it can be extracted from attribute 'participant' of paragraph.
+# Read vrt format from standard input and extract additional
+# attributes from participant attribute of each paragraph element
+# and append them as new attributes to the given paragraph element
+# and remove extracted data from value of participant. If an
+# attribute cannot be extracted, give it an empty value "".
+# Attributes extracted from participant are:
+#
+# * group: parliamentary group, e.g. "kesk"
+# * type: speech type, e.g. "vastauspuheenvuoro"
+# * role: speaker role, e.g. "puhemies"
 
 use strict;
 use warnings;
