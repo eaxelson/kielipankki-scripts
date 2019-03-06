@@ -163,6 +163,9 @@ foreach my $line ( <STDIN> ) {
 	    $line =~ s/<asi:IdentifiointiOsa>/¤link id="identifiointiosa"¤/g;
 	    $line =~ s/<\/asi:IdentifiointiOsa>/¤\/link¤/g;
 	}
+
+	# mark MomenttiAlakohtaKooste tag to signal that sentence boundary can be inserted there, if needed
+	$line =~ s/<saa:MomenttiAlakohtaKooste>/<>/g;
 	
 	# get rid of xml tags (other than <> and <->)
 	$line =~ s/<[^>][^>]+>//g;
