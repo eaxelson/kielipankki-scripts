@@ -1,5 +1,12 @@
 #!/usr/bin/perl
 
+# Read a statute in XML format from standard input, extract text,
+# add vrt links around Pykala, AllekirjoitusOsa, SaadosNimeke,
+# Johtolause and IdentifiointiOsa tags. Replace MomenttiKooste,
+# MomenttiKohtaKooste, MomenttiAlakohtaKooste and
+# SaadosValiotsikkoKooste tags with <> which marks a possible
+# sentence boundary in later stages. Output to standard output.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);
@@ -7,10 +14,10 @@ use open qw(:std :utf8);
 my $sentence_number = 0;
 my $continu = 0; # for handling statutes
 my $link = 1; # whether links are added
-my $link_prefix = "";
+my $link_prefix = ""; # prefix used in naming links
 my $link_depth = 0;
 my $link_rejected = 0;
-my $luku_id = ""; # <saa:Luku>
+my $luku_id = ""; # <saa:Luku> used in naming links
 
 if (@ARGV)
 {
@@ -19,7 +26,7 @@ if (@ARGV)
 	if ($ARGV[$argnum] eq "--help" || $ARGV[$argnum] eq "-h")
 	{
 	    print $0;
-	    print ": [--link] [--link-prefix FILENAME]\n";
+	    print ": [--no-links] [--link-prefix FILENAME]\n";
 	    exit(0);
 	}
 	if ($ARGV[$argnum] eq "--no-links")
@@ -164,8 +171,9 @@ foreach my $line ( <STDIN> ) {
 	    $line =~ s/<\/asi:IdentifiointiOsa>/¤\/link¤/g;
 	}
 
-	# mark MomenttiAlakohtaKooste tag to signal that sentence boundary can be inserted there, if needed
-	$line =~ s/<saa:MomenttiAlakohtaKooste>/<>/g;
+	# mark tags to signal that sentence boundary can be inserted there, if needed
+	$line =~ s/<saa:Momentti(Alakohta|Kohta)?Kooste>/<>/g;
+	$line =~ s/<saa:SaadosValiotsikkoKooste>/<>/g;
 	
 	# get rid of xml tags (other than <> and <->)
 	$line =~ s/<[^>][^>]+>//g;
