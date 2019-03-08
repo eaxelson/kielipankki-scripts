@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Read VRT from standard input. Add sentence tags and write
+# result to standard output. Input comes by default from script
+# statute-handle-punctuation.pl.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

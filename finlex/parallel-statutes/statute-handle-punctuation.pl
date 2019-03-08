@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+# Read VRT from standard input. Separate punctuation characters
+# on their own lines. Write result to standard output.
+# The input comes by default from script
+# statute-extract-text-and-add-links.pl
+
 use strict;
 use warnings;
 use open qw(:std :utf8);
