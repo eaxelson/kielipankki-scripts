@@ -62,7 +62,7 @@ foreach my $line ( <STDIN> ) {
 	}
 
 	# skip tables
-	if ( $line =~ /<tau:table>/ )
+	if ( $line =~ /<tau:table[^>]*>/ )
 	{
 	    if ( $line =~ /<\/tau:table>/ )
 	    {

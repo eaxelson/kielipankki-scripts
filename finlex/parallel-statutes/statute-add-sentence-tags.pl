@@ -13,9 +13,13 @@ my $first_line = "true"; # control sentence tags
 my $end_tag_printed = "true"; # control sentence tags
 my $sentence = ""; # the current sentence
 my $words = 0; # number of words in a sentence, including punctuation
-my $limit = 100000; # limit of sentence length
-my $tag_threshold = 100000; # interpret <> as a sentence separator if sentence contains more words
-my $comma_threshold = 100000; # interpret comma as a sentence separator if sentence contains more words
+my $limit = 100000; # limit of sentence length, print warning if exceeded
+
+# interpret the following symbols as sentence separators if the respective threshold is exceeded:
+my $tag_threshold = 100000; # <>
+my $comma_threshold = 100000; # comma
+my $threshold = 100000; # hyphen, hyphen-minus, n dash and m dash
+
 my $delayed = "false"; # delayed printing of sentences, required automatically if --limit is set
 my $filename = ""; # for more informative warning messages
 
@@ -25,11 +29,13 @@ foreach (@ARGV)
     elsif ( $_ eq "--limit" ) { $limit = -1; $delayed = "true"; }
     elsif ( $_ eq "--comma-threshold" ) { $comma_threshold = -1; }
     elsif ( $_ eq "--tag-threshold" ) { $tag_threshold = -1; }
+    elsif ( $_ eq "--threshold" ) { $threshold = -1; }
     elsif ( $_ eq "--filename" ) { $filename = "next..."; }
-    elsif ( $_ eq "--help" || $_ eq "-h" ) { print "Usage: $0 [--limit LIMIT] [--comma-threshold CT] [--tag-threshold TT] [--delayed] [--filename FILENAME]\n"; exit 0; }
+    elsif ( $_ eq "--help" || $_ eq "-h" ) { print "Usage: $0 [--limit LIMIT] [--comma-threshold CT] [--tag-threshold TT] [--threshold T] [--delayed] [--filename FILENAME]\n"; exit 0; }
     elsif ( $limit == -1 ) { $limit = $_; }
     elsif ( $comma_threshold == -1 ) { $comma_threshold = $_; }
     elsif ( $tag_threshold == -1 ) { $tag_threshold = $_; }
+    elsif ( $threshold == -1 ) { $threshold = $_; }
     elsif ( $filename eq "next..." ) { $filename = $_; }
     else { print "Error: argument "; print $_; print " not recognized\n"; exit 1; }
 }
@@ -61,7 +67,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
     # end of sentence
-    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/  || ( $words > $tag_threshold && $line =~ /^<>$/ ) || ( $words > $comma_threshold && $line =~ /^,$/ ) )
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/  || ( $words > $tag_threshold && $line =~ /^<>$/ ) || ( $words > $comma_threshold && $line =~ /^,$/ ) || ($words > $threshold && $line =~ /^\-|\x{002D}|\x{2013}|\x{2014}$/ ) )
     {
 	unless ( $line =~ /^<>$/ )
 	{
