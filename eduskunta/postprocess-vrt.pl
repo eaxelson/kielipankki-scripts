@@ -2,7 +2,6 @@
 
 # Read vrt from standard input and perform the following substitutions:
 #
-# * rename paragraph attribute 'participant' to 'speaker'
 # * substitute speaker value "UNKNOWN" with the empty string ""
 #
 # Output vrt to standard output.
@@ -15,7 +14,6 @@ foreach my $line ( <STDIN> ) {
 
     if ( $line =~ /^<paragraph/ )
     {
-	$line =~ s/participant="([^"]*)"/speaker="$1"/;
 	$line =~ s/speaker="UNKNOWN"/speaker=""/;
     }
     print $line;

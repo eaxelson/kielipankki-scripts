@@ -37,6 +37,7 @@ foreach my $line ( <STDIN> ) {
 	# extract value of participant and modify it to get additional attributes
 	my $participant = $line;
 	$participant =~ s/.*participant="([^"]+)".*/$1/;
+	my $orig_participant = $participant;
 
 	# group given after slash, e.g. "/kesk", "/kok", "/sd" etc.
 	my $group = $participant;
@@ -170,6 +171,11 @@ foreach my $line ( <STDIN> ) {
 	    print STDERR "\"\n";
 	    $line =~ s/(.*participant=")[^"]+(".*)/$1$2/;
 	}
+	# rename participant to speaker
+	$line =~ s/participant="/speaker="/;
+	# append orginal participant
+	$orig_participant =~ s/\n//;
+	$line =~ s/>/ participant="${orig_participant}">/;
     }
 
     print $line;
