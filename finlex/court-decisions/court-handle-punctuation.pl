@@ -30,9 +30,9 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/\&((amp)|(quot)|(apos)|(lt)|(gt))¤/\&$1\;/g;
 	
 	# . at the end of a word (followed by space and capital letter or parenthesis) or line is separated
-	# with the exception of v. = vuosi|vuonna
-	$line =~ s/([^v])\. (\p{Upper}|\()/$1 \. $2/g;
-	$line =~ s/\.$/ \./;
+	# with the exception of v. = vuosi|vuonna and ... = (omitted text)
+	$line =~ s/([^v\.])\. (\p{Upper}|\()/$1 \. $2/g;
+	$line =~ s/([^\.])\.$/$1 \./;
 
 	# separate content inside parentheses from parentheses
 	$line =~ s/\(([^\)]+)\)/\( $1 \)/g;
