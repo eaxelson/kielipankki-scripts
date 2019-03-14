@@ -37,6 +37,10 @@ foreach my $line ( <STDIN> ) {
 	}
 	# get rid of <p>.</p>
 	$line =~ s/<p>\.<\/p>//g;
+	# and " ( )."
+	$line =~ s/ \( \)\.//g;
+	# and replace ";  . " with "; "
+	$line =~ s/\;  \. /\; /g;
 
 	$line =~ s/<p>//g;
 	$line =~ s/<\/p>/<>/g; # mark paragraph end as sentence boundary
