@@ -18,7 +18,7 @@ my $limit = 100000; # limit of sentence length, print warning if exceeded
 # interpret the following symbols as sentence separators if the respective threshold is exceeded:
 my $tag_threshold = 100000; # <>
 my $comma_threshold = 100000; # comma
-my $threshold = 100000; # hyphen, hyphen-minus, n dash and m dash
+my $threshold = 100000; # hyphen, hyphen-minus, n dash, m dash and horizontal bar
 
 my $delayed = "false"; # delayed printing of sentences, required automatically if --limit is set
 my $filename = ""; # for more informative warning messages
@@ -67,7 +67,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
     # end of sentence
-    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/  || ( $words > $tag_threshold && $line =~ /^<>$/ ) || ( $words > $comma_threshold && $line =~ /^,$/ ) || ($words > $threshold && $line =~ /^\-|\x{002D}|\x{2013}|\x{2014}$/ ) )
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/  || ( $words > $tag_threshold && $line =~ /^<>$/ ) || ( $words > $comma_threshold && $line =~ /^,$/ ) || ($words > $threshold && $line =~ /^\-|\x{002D}|\x{2013}|\x{2014}|\x{2015}$/ ) )
     {
 	unless ( $line =~ /^<>$/ )
 	{
