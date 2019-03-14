@@ -39,15 +39,15 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/<p>\.<\/p>//g;
 
 	$line =~ s/<p>//g;
-	$line =~ s/<\/p>//g;
+	$line =~ s/<\/p>/<>/g; # mark paragraph end as sentence boundary
 	# replace <br/> with space
 	$line =~ s/<br\/>/ /g;
 	$line =~ s/\t//g;
 	$line =~ s/ +/ /g;
 	$line =~ s/^ //g;
 	$line =~ s/ $//g;
-	# get rid of xml tags
-	$line =~ s/<[^>]*>//g;
+	# get rid of xml tags (other than <>)
+	$line =~ s/<[^>]+>//g;
 	# get rid of ( .. .. .) lines
 	$line =~ s/\(( |\.)+\)//g;
 	print $line;
