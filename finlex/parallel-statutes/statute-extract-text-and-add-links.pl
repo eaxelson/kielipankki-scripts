@@ -109,7 +109,7 @@ foreach my $line ( <STDIN> ) {
 	    # Luku end tag encountered
 	    if ($line =~ /<\/saa:Luku>/)
 	    {
-		$luku_id = "";
+		# $luku_id = "";
 	    }	    
 	    # Pykala tag encountered
 	    if ($line =~ /<saa:Pykala(>| )/)
@@ -122,21 +122,24 @@ foreach my $line ( <STDIN> ) {
 		elsif ($line =~ /<saa:Pykala>/)
 		{
 		    $link_rejected = 1; # tag without identification
-		}	
+		}
 		elsif ($line =~ /<saa:Pykala ([^ ]+ )?saa1:identifiointiTunnus="[^"]{12,}">/)
 		{
 		    $link_rejected = 1; # too long identification attribute, probably quoted language-dependent text
 		}
-		elsif ($line =~ /<saa:Pykala [^>]*"([^" \.§]+).*">/)
+		elsif ($line =~ /<saa:Pykala [^>]*"([^"\.§]+).*">/)
 		{
+		    my $pykala = $1;
+		    $pykala =~ s/\&amp\;//g; # sometimes this is part of tag
+		    $pykala =~ s/ //g; # e.g. "21 a " -> "21a"
 		    # add <link> elements and escape them as ¤link¤
 		    if ($luku_id eq "")
 		    {
-			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="pykala_$1"¤/g;
+			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="pykala_${pykala}"¤/g;
 		    }
 		    else
 		    {
-			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="luku_${luku_id}_pykala_$1"¤/g;
+			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="luku_${luku_id}_pykala_${pykala}"¤/g;
 		    }
 		}
 		else
