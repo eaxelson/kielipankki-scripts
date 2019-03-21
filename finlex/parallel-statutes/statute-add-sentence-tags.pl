@@ -67,7 +67,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
     # metadata
-    elsif ( $line =~ /^</ )
+    elsif ( $line =~ /^<[^>]/ )
     {
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
