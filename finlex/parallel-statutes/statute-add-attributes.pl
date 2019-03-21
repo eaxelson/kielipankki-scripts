@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Extract information from link id and append it to all
+# sentences inside the link. Appended attributes include
+# type, luku_id and pykala_id.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);
@@ -20,14 +24,11 @@ foreach my $line ( <STDIN> ) {
 	elsif ( $line =~ /_allekirjoitusosa/ ) { $type = "allekirjoitusosa"; }
 	else { $type = "undefined"; }
 
-	if ( $line =~ /_luku_([^_"]+)[_"]/ )
-	{
-	    $luku_id = $1;
-	}
-	if ( $line =~ /_pykala_([^"]+)"/ )
-	{
-	    $pykala_id = $1;
-	}
+	if ( $line =~ /_luku_([^_"]+)[_"]/ ) { $luku_id = $1; }
+	else { $luku_id = "undefined"; }
+
+	if ( $line =~ /_pykala_([^"]+)"/ ) { $pykala_id = $1; }
+	else { $pykala_id = "undefined"; }
     }
     elsif ( $line =~ /<\/link>/ )
     {
