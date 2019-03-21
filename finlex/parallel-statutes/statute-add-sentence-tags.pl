@@ -66,6 +66,11 @@ foreach my $line ( <STDIN> ) {
 	}
 	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
     }
+    # metadata
+    elsif ( $line =~ /^</ )
+    {
+	if ( $delayed eq "true" ) { $sentence .= $line;	} else { print $line; }
+    }
     # end of sentence
     elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/  || ( $words > $tag_threshold && $line =~ /^<>$/ ) || ( $words > $comma_threshold && $line =~ /^,$/ ) || ($words > $threshold && $line =~ /^(\-|\x{002D}|\x{2013}|\x{2014}|\x{2015})$/ ) )
     {

@@ -18,6 +18,7 @@ my $link_prefix = ""; # prefix used in naming links
 my $link_depth = 0;
 my $link_rejected = 0;
 my $luku_id = ""; # <saa:Luku> used in naming links
+my $type_found = 1;
 
 if (@ARGV)
 {
@@ -49,6 +50,16 @@ if (@ARGV)
 }
 
 foreach my $line ( <STDIN> ) {
+
+    if ( $type_found != 0 && $line =~ /<saa:Saados met1:kieliKoodi=".." saa1:saadostyyppiNimi="([^"]*)">/ )
+    {
+	my $type = $1;
+	$type =~ s/\x{00E4}/a/g;
+	$type =~ s/\x{00F6}/o/g;
+	$type = lc $type;
+	print '<type="'; print $type; print '">'; print "\n";
+	$type_found = 0;
+    }
 
     if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/ || $line =~ /<asi:IdentifiointiOsa>/)
     {
