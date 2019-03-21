@@ -185,7 +185,7 @@ do
 	    fi
 	fi
 	# extract document type from vrt file
-	doctype=`egrep -m 1 '^<type=' $vrtfile | perl -pe 's/<type="([^"]*)">/\1/;'`
+	doctype=`egrep -m 1 '^<type=' $sentfile | perl -pe 's/<type="([^"]*)">/\1/;'`
 
 	# add text tags around the output
 	echo '<text filename="'$vrtfile'" datefrom="'$datefrom'" dateto="'$dateto'" timefrom="000000" timeto="235959" url="'$url'" type="'$doctype'">' > $vrtfile
