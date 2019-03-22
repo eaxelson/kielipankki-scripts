@@ -187,11 +187,12 @@ foreach my $line ( <STDIN> ) {
 
 	# mark tags to signal that sentence boundary can be inserted there, if needed
 	$line =~ s/<saa:Momentti(Alakohta|Kohta)?Kooste>/<>/g;
-	$line =~ s/<saa:SaadosValiotsikkoKooste>/<>/g;
+	# and must be inserted here
+	$line =~ s/<\/saa:Saados(Valiotsikko|Otsikko)Kooste>/<.>/g;
 	
-	# get rid of xml tags (other than <> and <->)
+	# get rid of xml tags (other than <>, <.> and <->)
 	$line =~ s/<[^>][^>]+>//g;
-	$line =~ s/<[^>\-]>//g;
+	$line =~ s/<[^>\-\.]>//g;
 
 	if ($link eq 1)
 	{
