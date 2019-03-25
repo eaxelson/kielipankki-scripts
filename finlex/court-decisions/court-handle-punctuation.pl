@@ -29,6 +29,9 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/\;$/ \;/;
 	$line =~ s/:$/ :/;
 
+	# / is separated if surrounded by alpha characters
+	$line =~ s/([a-z\x{00E5}\x{00E4}\x{00F6}\x{00E9}A-Z\x{00C5}\x{00C4}\x{00D6}])\/([a-z\x{00E5}\x{00E4}\x{00F6}\x{00E9}A-Z\x{00C5}\x{00C4}\x{00D6}])/$1 \/ $2/g;
+
 	# unescape &amp; &quot; &apos; &lt; &gt;
 	$line =~ s/\&((amp)|(quot)|(apos)|(lt)|(gt))¤/\&$1\;/g;
 	
