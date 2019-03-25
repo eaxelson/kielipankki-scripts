@@ -18,6 +18,8 @@ foreach my $line ( <STDIN> ) {
 
 	$line =~ s/<p>//g;
 	$line =~ s/<\/p>/<>/g; # mark paragraph end as sentence boundary
+	$line =~ s/(<\/span>)/<> $1/g; # mark <span> end as sentence boundary
+	$line =~ s/(<\/strong>)/<> $1/g; # mark <strong> end as sentence boundary
 	$line =~ s/\t//g;
 	$line =~ s/ +/ /g;
 	$line =~ s/^ //g;
