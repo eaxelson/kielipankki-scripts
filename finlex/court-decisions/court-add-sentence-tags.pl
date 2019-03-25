@@ -12,6 +12,11 @@ my $limit = 100000;
 my $threshold = 100000;
 my $filename = "";
 
+# Information extracted from tags
+my $continu_h = 0; # for handling headers
+my $continu_d = 0; # for handling descriptions
+my $continu_a = 0; # for handling abstracts
+
 foreach (@ARGV)
 {
     if ( $_ eq "--limit" ) { $limit = -1; }
@@ -25,10 +30,20 @@ foreach (@ARGV)
 
 foreach my $line ( <STDIN> ) {
 
-    # This case should already have been handled by court-handle-punctuation.pl.
+    # Skip empty lines
     if ( $line =~ /^ *$/ )
     {
 	;
+    }
+    # Skip tags other than <> and extract information from them
+    elsif ( $line =~ /^<\// || $line =~ /^<[^>]/ )
+    {
+	if ( $line =~ /^<dcterms:description/ ) { $continu_d = 1; }
+	elsif ( $line =~ /^<\/dcterms:description/ ) { $continu_d = 0; }
+	elsif ( $line =~ /^<dcterms:abstract/ ) { $continu_a = 1; }
+	elsif ( $line =~ /^<\/dcterms:abstract/ ) { $continu_a = 0; }
+	elsif ( $line =~ /^<h[123]/ ) { $continu_h = 1; }
+	elsif ( $line =~ /^<\/h[123]/ ) { $continu_h = 0; }
     }
     elsif ( $line =~ /^(\.|\;|\:)$/ || ( $words > $threshold && $line =~ /^(,|\-)$/ ) || $line =~ /^<>$/ )
     {
@@ -58,6 +73,11 @@ foreach my $line ( <STDIN> ) {
 	{
 	    print '<sentence n="';
 	    print ++$sentence_number;
+	    print '" type="';
+	    if ( $continu_h eq 1 ) { print 'header'; }
+	    elsif ( $continu_a eq 1 ) { print 'abstract'; }
+	    elsif ( $continu_d eq 1 ) { print 'description'; }
+	    else { print 'undefined'; }
 	    print '">';
 	    print "\n";
 	    $end_tag_printed = "false";

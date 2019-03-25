@@ -11,8 +11,8 @@ foreach my $line ( <STDIN> ) {
 	# literal '\n'
 	$line =~ s/\\n/ /g;
 
-	# separate sentence boundary marker
-	$line =~ s/<>/ <> /g;
+	# separate sentence boundary marker and other tags
+	$line =~ s/<([^>]*)>/ <$1> /g;
 
 	# separate parentheses
 	$line =~ s/([^ ])\(/$1 \(/g;
@@ -51,7 +51,7 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/^ +//g;
 	$line =~ s/ +$//g;
 	$line =~ s/ /\n/g;
-	
+
     }
 
     print $line;
