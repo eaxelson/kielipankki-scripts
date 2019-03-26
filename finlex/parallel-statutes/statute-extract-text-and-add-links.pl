@@ -20,6 +20,11 @@ my $link_rejected = 0;
 my $luku_id = ""; # <saa:Luku> used in naming links
 my $type_found = 1;
 
+my $begin_paragraph = "";
+my $end_paragraph = "";
+my $begin_chapter = "";
+my $end_chapter = "";
+
 if (@ARGV)
 {
     foreach my $argnum (0 .. $#ARGV)
@@ -116,11 +121,13 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $luku_id = "foo";
 		}
+		$begin_chapter = "<chapter>\n"
 	    }
 	    # Luku end tag encountered
 	    if ($line =~ /<\/saa:Luku>/)
 	    {
 		# $luku_id = "";
+		$end_chapter = "<\/chapter>\n"
 	    }	    
 	    # Pykala tag encountered
 	    if ($line =~ /<saa:Pykala(>| )/)
@@ -157,6 +164,7 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $link_rejected = 1; # something wrong with identification attribute
 		}
+		$begin_paragraph = "<paragraph>\n";
 	    }
 	    # Pykala end tag encountered
 	    if ($line =~ /<\/saa:Pykala>/)
@@ -170,19 +178,27 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $line =~ s/<\/saa:Pykala>/¤\/link¤/g;
 		}
+		$end_paragraph = "<\/paragraph>\n";
 	    }
-	    
-	    $line =~ s/<asi:AllekirjoitusOsa>/¤link id="allekirjoitusosa"¤/g;
-	    $line =~ s/<\/asi:AllekirjoitusOsa>/¤\/link¤/g;
-	    
-	    $line =~ s/<saa:SaadosNimeke>/¤link id="saadosnimeke"¤/g;
-	    $line =~ s/<\/saa:SaadosNimeke>/¤\/link¤/g;
-	    
-	    $line =~ s/<saa:Johtolause>/¤link id="johtolause"¤/g;
-	    $line =~ s/<\/saa:Johtolause>/¤\/link¤/g;
-	    
-	    $line =~ s/<asi:IdentifiointiOsa>/¤link id="identifiointiosa"¤/g;
-	    $line =~ s/<\/asi:IdentifiointiOsa>/¤\/link¤/g;
+
+	    # insert <paragraph> and <link> around these tags
+	    my @tags = ("asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa");
+	    for my $tag (@tags)
+	    {
+		if ( $line =~ /<${tag}>/ )
+		{
+		    my $ptype = $tag;
+		    $ptype =~ s/asi\:|saa\://;
+		    $ptype = lc $ptype;
+		    $begin_paragraph = join('','<paragraph type="',$ptype,'">',"\n");
+		    $line =~ s/<${tag}>/¤link id="${ptype}"¤/g;
+		}
+		if ( $line =~ /<\/${tag}>/ )
+		{
+		    $end_paragraph = "<\/paragraph>\n";
+		    $line =~ s/<\/${tag}>/¤\/link¤/g;
+		}
+	    }
 	}
 
 	# mark tags to signal that sentence boundary can be inserted there, if needed
@@ -213,6 +229,15 @@ foreach my $line ( <STDIN> ) {
 	# todo: get rid of empty links:
 	# perl -pe 's/>\n/>/g;' | perl -pe 's/<link[^>]*><\/link>//g;' | perl -pe 's/>/>\n/g;'
 
+	print $begin_chapter;
+	print $begin_paragraph;
 	print $line;
+	print $end_paragraph;
+	print $end_chapter;
+
+	$begin_paragraph = "";
+	$end_paragraph = "";
+	$begin_chapter = "";
+	$end_chapter = "";
     }
 }
