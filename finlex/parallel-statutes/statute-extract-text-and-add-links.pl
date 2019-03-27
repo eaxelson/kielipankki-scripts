@@ -23,8 +23,12 @@ my $osa_id = ""; # <saa:Osa> used in naming links
 
 my $begin_paragraph = "";
 my $end_paragraph = "";
+my $begin_section = "";
+my $end_section = "";
 my $begin_chapter = "";
 my $end_chapter = "";
+my $begin_part = "";
+my $end_part = "";
 
 if (@ARGV)
 {
@@ -123,11 +127,14 @@ foreach my $line ( <STDIN> ) {
 		$osa_id =~ s/^ +//;
 		$osa_id =~ s/ +$//;
 		$osa_id =~ s/ /_/g;
+
+		$begin_part = "<part>";
 	    }
 	    # Osa end tag encountered
 	    if ($line =~ /<\/saa:Osa>/)
 	    {
 		$osa_id = "";
+		$end_part = "<\/part>"
 	    }
 	    # Luku tag encountered
 	    if ($line =~ /<saa:Luku saa1:identifiointiTunnus="([^"]+)">/)
@@ -146,13 +153,13 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $luku_id = "foo";
 		}
-		$begin_chapter = "<chapter>\n"
+		$begin_chapter = "<chapter>\n";
 	    }
 	    # Luku end tag encountered
 	    if ($line =~ /<\/saa:Luku>/)
 	    {
 		# $luku_id = "";
-		$end_chapter = "<\/chapter>\n"
+		$end_chapter = "<\/chapter>\n";
 	    }
 	    # Pykala tag encountered
 	    if ($line =~ /<saa:Pykala(>| )/)
@@ -186,7 +193,7 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $link_rejected = 1; # something wrong with identification attribute
 		}
-		$begin_paragraph = "<paragraph>\n";
+		$begin_section = "<section>\n";
 	    }
 	    # Pykala end tag encountered
 	    if ($line =~ /<\/saa:Pykala>/)
@@ -200,10 +207,21 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $line =~ s/<\/saa:Pykala>/¤\/link¤/g;
 		}
+		$end_section = "<\/section>\n";
+	    }
+	    # Momentti tag encountered (these do not overlap with each other or with
+	    # "asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa").
+	    if ($line =~ /<saa:MomenttiKooste>|<saa:KohdatMomentti>/)
+	    {
+		$begin_paragraph = join('','<paragraph type="paragraph">',"\n");
+	    }
+	    # Momentti end tag encountered
+	    if ($line =~ /<\/saa:MomenttiKooste>|<\/saa:KohdatMomentti>/)
+	    {
 		$end_paragraph = "<\/paragraph>\n";
 	    }
 
-	    # insert <paragraph> and <link> around these tags
+	    # Insert <paragraph> and <link> around these tags
 	    # (e.g. <paragraph type="saadosnimeke"> and <link id="saadosnimeke">)
 	    my @tags = ("asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa");
 	    for my $tag (@tags)
@@ -225,7 +243,7 @@ foreach my $line ( <STDIN> ) {
 	}
 
 	# mark tags with <> to signal that sentence boundary can be inserted here, if needed
-	$line =~ s/<saa:Momentti(Alakohta|Kohta)?Kooste>/<>/g;
+	$line =~ s/<saa:Momentti(Alakohta|Kohta|Johdanto)?Kooste>/<>/g;
 	# and with <.> to signal that it must be inserted here
 	$line =~ s/<\/saa:Saados(Valiotsikko|Otsikko)Kooste>/<.>/g;
 	
@@ -252,15 +270,23 @@ foreach my $line ( <STDIN> ) {
 	# todo: get rid of empty links:
 	# perl -pe 's/>\n/>/g;' | perl -pe 's/<link[^>]*><\/link>//g;' | perl -pe 's/>/>\n/g;'
 
+	# <part><chapter><section><paragraph>
+	print $begin_part;
 	print $begin_chapter;
+	print $begin_section;
 	print $begin_paragraph;
-	print $line;
-	print $end_paragraph;
-	print $end_chapter;
 
-	$begin_paragraph = "";
-	$end_paragraph = "";
-	$begin_chapter = "";
-	$end_chapter = "";
+	print $line;
+
+	# </paragraph></section></chapter></part>
+	print $end_paragraph;
+	print $end_section;
+	print $end_chapter;
+	print $end_part;
+
+	$begin_paragraph = ""; $end_paragraph = "";
+	$begin_section = ""; $end_section = "";
+	$begin_chapter = "";  $end_chapter = "";
+	$begin_part = "";  $end_part = "";
     }
 }
