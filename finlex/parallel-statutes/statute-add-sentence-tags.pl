@@ -37,7 +37,7 @@ foreach (@ARGV)
     elsif ( $tag_threshold == -1 ) { $tag_threshold = $_; }
     elsif ( $threshold == -1 ) { $threshold = $_; }
     elsif ( $filename eq "next..." ) { $filename = $_; }
-    else { print "Error: argument "; print $_; print " not recognized\n"; exit 1; }
+    else { print join("","Error: argument ",$_," not recognized\n"); exit 1; }
 }
 
 foreach my $line ( <STDIN> ) {
@@ -50,7 +50,7 @@ foreach my $line ( <STDIN> ) {
 	    if ( $delayed eq "true" )
 	    {
 		$sentence .= '</sentence>';
-		if ( $words > $limit ) { print STDERR "warning: sentence length is "; print STDERR $words; print STDERR " words in sentence number "; print STDERR $sentence_number; print STDERR " in file "; print STDERR $filename; print STDERR "\n"; }
+		if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
 		$sentence .= "\n";
 		print $sentence;
 		$sentence = "";
@@ -93,7 +93,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $delayed eq "true" )
 	{
 	    $sentence .= '</sentence>';
-	    if ( $words > $limit ) { print STDERR "warning: sentence length is "; print STDERR $words; print STDERR " words in sentence number "; print STDERR $sentence_number; print STDERR " in file "; print STDERR $filename; print STDERR "\n"; }
+	    if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
 	    $sentence .= "\n";
 	    print $sentence;
 	    $sentence = "";
@@ -117,17 +117,11 @@ foreach my $line ( <STDIN> ) {
 	{
 	    if ( $delayed eq "true" )
 	    {
-		$sentence .= '<sentence n="';
-		$sentence .= ++$sentence_number;
-		$sentence .= '">';
-		$sentence .= "\n";
+		$sentence .= join("",'<sentence n="',++$sentence_number,'">',"\n");
 	    }
 	    else
 	    {
-		print '<sentence n="';
-		print ++$sentence_number;
-		print '">';
-		print "\n";
+		print join("",'<sentence n="',++$sentence_number,'">',"\n");
 	    }
 	    $end_tag_printed = "false";
 	}
@@ -146,7 +140,7 @@ if ($end_tag_printed eq "false")
     if ( $delayed eq "true" )
     {
 	$sentence .= '</sentence>';
-	if ( $words > $limit ) { print STDERR "warning: sentence length is "; print STDERR $words; print STDERR " words in sentence number "; print STDERR $sentence_number; print STDERR " in file "; print STDERR $filename; print STDERR "\n"; }
+	if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
 	$sentence .= "\n";
 	print $sentence;
     }

@@ -18,7 +18,7 @@ my $link_prefix = ""; # prefix used in naming links
 my $link_depth = 0;
 my $link_rejected = 0;
 my $luku_id = ""; # <saa:Luku> used in naming links
-my $type_found = 1;
+my $type_found = 1; # whether type of statute has been extracted
 my $osa_id = ""; # <saa:Osa> used in naming links
 
 my $begin_paragraph = "";
@@ -57,16 +57,20 @@ if (@ARGV)
 
 foreach my $line ( <STDIN> ) {
 
+    # Extract type of statute and print it as a separate line <type="type_of_statute">.
+    # This line is used later when inserting <text> tag and finally removed from the vrt file.
     if ( $type_found != 0 && $line =~ /<saa:Saados met1:kieliKoodi=".." saa1:saadostyyppiNimi="([^"]*)">/ )
     {
 	my $type = $1;
+	# convert to lowercase ascii
 	$type =~ s/\x{00E4}/a/g;
 	$type =~ s/\x{00F6}/o/g;
 	$type = lc $type;
-	print '<type="'; print $type; print '">'; print "\n";
+	print join('','<type="',$type,'">',"\n");
 	$type_found = 0;
     }
 
+    # Extract IdentifiointiOsa, SaadosOsa, AllekirjoitusOsa
     if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/ || $line =~ /<asi:IdentifiointiOsa>/)
     {
 	unless ( $line =~ /<\/saa:SaadosOsa>/ || $line =~ /<\/asi:AllekirjoitusOsa>/ || $line =~ /<\/asi:IdentifiointiOsa>/)
@@ -89,9 +93,9 @@ foreach my $line ( <STDIN> ) {
 	    next;
 	}
 
-	# replace <br/> with space
+	# Replace <br/> with space
 	$line =~ s/<br\/>/ /g;
-	
+	# Get rid of extra whitespace
 	$line =~ s/\t//g;
 	$line =~ s/ +/ /g;
 	$line =~ s/^ //g;
@@ -109,12 +113,13 @@ foreach my $line ( <STDIN> ) {
 	    if ($line =~ /<saa:Osa saa1:identifiointiTunnus="([^"]+)">/)
 	    {
 		$osa_id = $1;
-		# Finnish
+		# Finnish: OSA, OSASTO, Osa, Osasto, osa, osasto
 		$osa_id =~ s/(((O|o)sa(sto)?)|(OSA(STO)?))\.?//g;
-		# Swedish
+		# Swedish: DEL, AVDELNINGEN, AVDELNING, Avdelning, Avdelningen, avdelning, avdelningen
 		$osa_id =~ s/(AVDELNING(EN)?|(A|a)vdelning(en)?)\.?//;
 		$osa_id =~ s/DEL//;
 
+		# e.g. " II A " -> "II_A"
 		$osa_id =~ s/^ +//;
 		$osa_id =~ s/ +$//;
 		$osa_id =~ s/ /_/g;
@@ -170,7 +175,7 @@ foreach my $line ( <STDIN> ) {
 		    my $pykala = $1;
 		    $pykala =~ s/\&amp\;//g; # sometimes this is part of tag
 		    $pykala =~ s/ //g; # e.g. "21 a " -> "21a"
-		    # add <link> elements and escape them as ¤link¤
+		    # add <link> elements (e.g. <link id="osa_2_luku_4_pykala_15">) and escape them as ¤link¤
 		    my $link_id = "";
 		    if ( $osa_id ne "" ) { $link_id = join("","osa_",$osa_id,"_"); }
 		    if ( $luku_id ne "" ) { $link_id .= join("","luku_",$luku_id,"_"); }
@@ -199,6 +204,7 @@ foreach my $line ( <STDIN> ) {
 	    }
 
 	    # insert <paragraph> and <link> around these tags
+	    # (e.g. <paragraph type="saadosnimeke"> and <link id="saadosnimeke">)
 	    my @tags = ("asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa");
 	    for my $tag (@tags)
 	    {
@@ -218,9 +224,9 @@ foreach my $line ( <STDIN> ) {
 	    }
 	}
 
-	# mark tags to signal that sentence boundary can be inserted there, if needed
+	# mark tags with <> to signal that sentence boundary can be inserted here, if needed
 	$line =~ s/<saa:Momentti(Alakohta|Kohta)?Kooste>/<>/g;
-	# and must be inserted here
+	# and with <.> to signal that it must be inserted here
 	$line =~ s/<\/saa:Saados(Valiotsikko|Otsikko)Kooste>/<.>/g;
 	
 	# get rid of xml tags (other than <>, <.> and <->)
