@@ -19,6 +19,7 @@ my $link_depth = 0;
 my $link_rejected = 0;
 my $luku_id = ""; # <saa:Luku> used in naming links
 my $type_found = 1;
+my $osa_id = ""; # <saa:Osa> used in naming links
 
 my $begin_paragraph = "";
 my $end_paragraph = "";
@@ -104,6 +105,25 @@ foreach my $line ( <STDIN> ) {
 	
 	if ($link eq 1)
 	{
+	    # Osa tag encountered
+	    if ($line =~ /<saa:Osa saa1:identifiointiTunnus="([^"]+)">/)
+	    {
+		$osa_id = $1;
+		# Finnish
+		$osa_id =~ s/(((O|o)sa(sto)?)|(OSA(STO)?))\.?//g;
+		# Swedish
+		$osa_id =~ s/(AVDELNING(EN)?|(A|a)vdelning(en)?)\.?//;
+		$osa_id =~ s/DEL//;
+
+		$osa_id =~ s/^ +//;
+		$osa_id =~ s/ +$//;
+		$osa_id =~ s/ /_/g;
+	    }
+	    # Osa end tag encountered
+	    if ($line =~ /<\/saa:Osa>/)
+	    {
+		$osa_id = "";
+	    }
 	    # Luku tag encountered
 	    if ($line =~ /<saa:Luku saa1:identifiointiTunnus="([^"]+)">/)
 	    {
@@ -128,7 +148,7 @@ foreach my $line ( <STDIN> ) {
 	    {
 		# $luku_id = "";
 		$end_chapter = "<\/chapter>\n"
-	    }	    
+	    }
 	    # Pykala tag encountered
 	    if ($line =~ /<saa:Pykala(>| )/)
 	    {
@@ -151,14 +171,11 @@ foreach my $line ( <STDIN> ) {
 		    $pykala =~ s/\&amp\;//g; # sometimes this is part of tag
 		    $pykala =~ s/ //g; # e.g. "21 a " -> "21a"
 		    # add <link> elements and escape them as ¤link¤
-		    if ($luku_id eq "")
-		    {
-			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="pykala_${pykala}"¤/g;
-		    }
-		    else
-		    {
-			$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="luku_${luku_id}_pykala_${pykala}"¤/g;
-		    }
+		    my $link_id = "";
+		    if ( $osa_id ne "" ) { $link_id = join("","osa_",$osa_id,"_"); }
+		    if ( $luku_id ne "" ) { $link_id .= join("","luku_",$luku_id,"_"); }
+		    $link_id .= join("","pykala_",$pykala);
+		    $line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="${link_id}"¤/g;
 		}
 		else
 		{
