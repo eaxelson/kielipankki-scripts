@@ -56,7 +56,7 @@ if ! (cat tmp | $path/court-extract-text.pl > TMP); then
     exit 1
 fi
 $path/court-handle-punctuation.pl < TMP > tmp
-if ! ($path/court-add-sentence-tags.pl < tmp > TMP); then
+if ! ($path/court-add-sentence-tags.pl --filename $1 --limit 200 --threshold 150 < tmp > TMP); then
     echo "Error: in court-add-sentence-tags.pl("$1", "$2"), exiting..."
     exit 1
 fi

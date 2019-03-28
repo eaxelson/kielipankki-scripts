@@ -30,6 +30,9 @@ my $end_chapter = "";
 my $begin_part = "";
 my $end_part = "";
 
+my $begin_heading_paragraph = "";
+my $end_heading_paragraph = "";
+
 if (@ARGV)
 {
     foreach my $argnum (0 .. $#ARGV)
@@ -110,6 +113,15 @@ foreach my $line ( <STDIN> ) {
         # table entries sometimes contain hyphenated words extending to several lines
 	# (,- is used when referring to money such as 200,-)
 	# $line =~ s/^<te>(.*)[^, \t]\-<\/te>\n/$1<\->/g;
+
+	if ( $line =~ /<saa:(Osa|Luku|Pykala)TunnusKooste>/ || $line =~ /<saa:SaadosOtsikkoKooste>/ )
+	{
+	    $begin_heading_paragraph = "<heading_paragraph>\n";
+	}
+	if ( $line =~ /<\/saa:(Osa|Luku|Pykala)TunnusKooste>/ || $line =~ /<\/saa:SaadosOtsikkoKooste>/ )
+	{
+	    $end_heading_paragraph = "<\/heading_paragraph>\n";
+	}
 	
 	if ($link eq 1)
 	{
@@ -128,13 +140,13 @@ foreach my $line ( <STDIN> ) {
 		$osa_id =~ s/ +$//;
 		$osa_id =~ s/ /_/g;
 
-		$begin_part = "<part>";
+		$begin_part = "<part>\n";
 	    }
 	    # Osa end tag encountered
 	    if ($line =~ /<\/saa:Osa>/)
 	    {
 		$osa_id = "";
-		$end_part = "<\/part>"
+		$end_part = "<\/part>\n"
 	    }
 	    # Luku tag encountered
 	    if ($line =~ /<saa:Luku saa1:identifiointiTunnus="([^"]+)">/)
@@ -274,16 +286,21 @@ foreach my $line ( <STDIN> ) {
 	print $begin_part;
 	print $begin_chapter;
 	print $begin_section;
+	if ( $begin_paragraph ne "" && $begin_heading_paragraph ne "" ) { print "ERROR\n"; exit 1; }
 	print $begin_paragraph;
+	print $begin_heading_paragraph;
 
 	print $line;
 
 	# </paragraph></section></chapter></part>
+	if ( $end_paragraph ne "" && $end_heading_paragraph ne "" ) { print "ERROR\n"; exit 1; }
+	print $end_heading_paragraph;
 	print $end_paragraph;
 	print $end_section;
 	print $end_chapter;
 	print $end_part;
 
+	$begin_heading_paragraph = ""; $end_heading_paragraph = "";
 	$begin_paragraph = ""; $end_paragraph = "";
 	$begin_section = ""; $end_section = "";
 	$begin_chapter = "";  $end_chapter = "";
