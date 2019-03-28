@@ -22,6 +22,7 @@ foreach my $line ( <STDIN> ) {
 	$title =~ s/^ +//g;
 	$title =~ s/ +$//g;
 	$title =~ s/ +/ /g;
+	if ( $title eq "" ) { $title = "empty"; } # { print STDERR "ERROR: empty title\n"; exit 1; }
 	$title =~ s/^(.*)$/<title="$1">/;
 	$title .= "\n";
 	print $title;
