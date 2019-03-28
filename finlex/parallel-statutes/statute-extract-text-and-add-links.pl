@@ -198,8 +198,8 @@ foreach my $line ( <STDIN> ) {
 		    $pykala =~ s/\&amp\;//g; # sometimes this is part of tag
 		    $pykala =~ s/ //g; # e.g. "21 a " -> "21a"
 		    # add <link> elements (e.g. <link id="osa_2_luku_4_pykala_15">) and escape them as ¤link¤
-		    my $link_id = "";
-		    if ( $osa_id ne "" ) { $link_id = join("","osa_",$osa_id,"_"); }
+		    my $link_id = $link_prefix;
+		    if ( $osa_id ne "" ) { $link_id .= join("","osa_",$osa_id,"_"); }
 		    if ( $luku_id ne "" ) { $link_id .= join("","luku_",$luku_id,"_"); }
 		    $link_id .= join("","pykala_",$pykala);
 		    $begin_section = join('','<link id=',$link_id,'">',"\n");
@@ -211,6 +211,7 @@ foreach my $line ( <STDIN> ) {
 		}
 		$begin_section .= "<section>\n";
 	    }
+
 	    # Pykala end tag encountered
 	    if ($line =~ /<\/saa:Pykala>/)
 	    {
@@ -230,6 +231,7 @@ foreach my $line ( <STDIN> ) {
 		    $end_section = "<\/section>\n";
 		}
 	    }
+
 	    # Momentti tag encountered (these do not overlap with each other or with
 	    # "asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa").
 	    if ($line =~ /<saa:MomenttiKooste>|<saa:KohdatMomentti>/)
@@ -252,7 +254,7 @@ foreach my $line ( <STDIN> ) {
 		    my $ptype = $tag;
 		    $ptype =~ s/asi\:|saa\://;
 		    $ptype = lc $ptype;
-		    $begin_paragraph = join('','<link id="',$ptype,'">',"\n",'<paragraph type="',$ptype,'">',"\n");
+		    $begin_paragraph = join('','<link id="',$link_prefix,$ptype,'">',"\n",'<paragraph type="',$ptype,'">',"\n");
 		    #$line =~ s/<${tag}>/¤link id="${ptype}"¤/g;
 		}
 		if ( $line =~ /<\/${tag}>/ )
@@ -271,19 +273,6 @@ foreach my $line ( <STDIN> ) {
 	# get rid of xml tags (other than <>, <.> and <->)
 	$line =~ s/<[^>][^>]+>//g;
 	$line =~ s/<[^>\-\.]>//g;
-
-	if ($link eq 1)
-	{
-	    # remove escape from ¤link¤ elements
-	    $line =~ s/¤\/link/<\/link/g;
-	    $line =~ s/¤link/<link/g;
-	    $line =~ s/¤/>/g;
-	    unless ($link_prefix eq "")
-	    {
-		# add filename to link ids
-		$line =~ s/<link id="/<link id="${link_prefix}/g;
-	    }
-	}
 
 	# get rid of empty lines
 	$line =~ s/^ *\n//g;
