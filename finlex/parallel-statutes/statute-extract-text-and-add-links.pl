@@ -126,7 +126,7 @@ foreach my $line ( <STDIN> ) {
 	if ($link eq 1)
 	{
 	    # Osa tag encountered
-	    if ($line =~ /<saa:Osa saa1:identifiointiTunnus="([^"]+)">/)
+	    if ($line =~ /<saa:Osa saa1:identifiointiTunnus="([^"]*)">/)
 	    {
 		$osa_id = $1;
 		# Finnish: OSA, OSASTO, Osa, Osasto, osa, osasto
@@ -140,6 +140,8 @@ foreach my $line ( <STDIN> ) {
 		$osa_id =~ s/ +$//;
 		$osa_id =~ s/ /_/g;
 
+		if ( $osa_id eq "" ) { $osa_id = "EMPTY"; }
+
 		$begin_part = "<part>\n";
 	    }
 	    # Osa end tag encountered
@@ -149,7 +151,7 @@ foreach my $line ( <STDIN> ) {
 		$end_part = "<\/part>\n"
 	    }
 	    # Luku tag encountered
-	    if ($line =~ /<saa:Luku saa1:identifiointiTunnus="([^"]+)">/)
+	    if ($line =~ /<saa:Luku saa1:identifiointiTunnus="([^"]*)">/)
 	    {
 		$luku_id = $1;
 		if ($luku_id =~ /([0-9]+( [a-z] )?)/)
@@ -163,7 +165,7 @@ foreach my $line ( <STDIN> ) {
 		}
 		else
 		{
-		    $luku_id = "foo";
+		    $luku_id = "EMPTY";
 		}
 		$begin_chapter = "<chapter>\n";
 	    }
@@ -189,9 +191,10 @@ foreach my $line ( <STDIN> ) {
 		{
 		    $link_rejected = 1; # too long identification attribute, probably quoted language-dependent text
 		}
-		elsif ($line =~ /<saa:Pykala [^>]*"([^"\.§]+).*">/)
+		elsif ($line =~ /<saa:Pykala [^>]*saa1:identifiointiTunnus="([^"]+)">/)
 		{
 		    my $pykala = $1;
+		    $pykala =~ s/[\.§]//g;
 		    $pykala =~ s/\&amp\;//g; # sometimes this is part of tag
 		    $pykala =~ s/ //g; # e.g. "21 a " -> "21a"
 		    # add <link> elements (e.g. <link id="osa_2_luku_4_pykala_15">) and escape them as ¤link¤
