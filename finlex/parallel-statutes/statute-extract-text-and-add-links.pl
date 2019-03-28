@@ -202,13 +202,14 @@ foreach my $line ( <STDIN> ) {
 		    if ( $osa_id ne "" ) { $link_id = join("","osa_",$osa_id,"_"); }
 		    if ( $luku_id ne "" ) { $link_id .= join("","luku_",$luku_id,"_"); }
 		    $link_id .= join("","pykala_",$pykala);
-		    $line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="${link_id}"¤/g;
+		    $begin_section = join('','<link id=',$link_id,'">',"\n");
+		    #$line =~ s/<saa:Pykala [^>]*"([^" \.§]+).*">/¤link id="${link_id}"¤/g;
 		}
 		else
 		{
 		    $link_rejected = 1; # something wrong with identification attribute
 		}
-		$begin_section = "<section>\n";
+		$begin_section .= "<section>\n";
 	    }
 	    # Pykala end tag encountered
 	    if ($line =~ /<\/saa:Pykala>/)
@@ -217,12 +218,17 @@ foreach my $line ( <STDIN> ) {
 		if ($link_depth eq 0 && $link_rejected eq 1)
 		{
 		    $link_rejected = 0;
+		    $end_section = "<\/section>\n";
 		}
 		elsif ($link_depth eq 0)
 		{
-		    $line =~ s/<\/saa:Pykala>/¤\/link¤/g;
+		    $end_section = "<\/section>\n<\/link>\n"
+		    #$line =~ s/<\/saa:Pykala>/¤\/link¤/g;
 		}
-		$end_section = "<\/section>\n";
+		else
+		{
+		    $end_section = "<\/section>\n";
+		}
 	    }
 	    # Momentti tag encountered (these do not overlap with each other or with
 	    # "asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa").
@@ -246,13 +252,13 @@ foreach my $line ( <STDIN> ) {
 		    my $ptype = $tag;
 		    $ptype =~ s/asi\:|saa\://;
 		    $ptype = lc $ptype;
-		    $begin_paragraph = join('','<paragraph type="',$ptype,'">',"\n");
-		    $line =~ s/<${tag}>/¤link id="${ptype}"¤/g;
+		    $begin_paragraph = join('','<link id="',$ptype,'">',"\n",'<paragraph type="',$ptype,'">',"\n");
+		    #$line =~ s/<${tag}>/¤link id="${ptype}"¤/g;
 		}
 		if ( $line =~ /<\/${tag}>/ )
 		{
-		    $end_paragraph = "<\/paragraph>\n";
-		    $line =~ s/<\/${tag}>/¤\/link¤/g;
+		    $end_paragraph = "<\/paragraph>\n<\/link>\n";
+		    #$line =~ s/<\/${tag}>/¤\/link¤/g;
 		}
 	    }
 	}
@@ -261,7 +267,7 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/<saa:Momentti(Alakohta|Kohta|Johdanto)?Kooste>/<>/g;
 	# and with <.> to signal that it must be inserted here
 	$line =~ s/<\/saa:Saados(Valiotsikko|Otsikko)Kooste>/<.>/g;
-	
+
 	# get rid of xml tags (other than <>, <.> and <->)
 	$line =~ s/<[^>][^>]+>//g;
 	$line =~ s/<[^>\-\.]>//g;
@@ -284,6 +290,10 @@ foreach my $line ( <STDIN> ) {
 
 	# todo: get rid of empty links:
 	# perl -pe 's/>\n/>/g;' | perl -pe 's/<link[^>]*><\/link>//g;' | perl -pe 's/>/>\n/g;'
+
+	# Do not print empty heading paragraphs
+	if ( $begin_heading_paragraph ne "" && $line eq "" ) { $begin_heading_paragraph = ""; }
+	if ( $end_heading_paragraph ne "" && $line eq "" ) { $end_heading_paragraph = ""; }
 
 	# <part><chapter><section><paragraph>
 	print $begin_part;
