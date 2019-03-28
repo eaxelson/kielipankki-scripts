@@ -21,7 +21,7 @@ if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
     echo "The script depends on other scripts whose path can be given with"
     echo "option --script-path (statute-extract-text-and-add-links.pl,"
-    echo "statute-handle-punctuation.pl and statute-add-sentence-tags.pl)."
+    echo "statute-handle-punctuation.pl and statute-add-sentence-tags-new.pl)."
     echo ""
     exit 0
 fi
@@ -72,7 +72,7 @@ done
 
 for script in statute-extract-text-and-add-links.pl \
 	      statute-handle-punctuation.pl \
-	      statute-add-sentence-tags.pl
+	      statute-add-sentence-tags-new.pl
 do
     if !(ls $path/$script > /dev/null 2> /dev/null)
     then
@@ -123,7 +123,7 @@ do
 	if [ "$only_vrt_step" != "true" ]; then
 	    echo "processing xml file "$f"..."
 
-	    if ! ($path/statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f | $path/statute-remove-empty-links.sh > $extfile); then
+	    if ! ($path/statute-extract-text-and-add-links.pl --link-prefix $link_prefix < $f | $path/statute-remove-empty-links.pl | $path/statute-bundle-heading-paragraphs.pl > $extfile); then
 		echo "Error: in statute-extract-text-and-add-links.pl, exiting..."
 		exit 1
 	    fi
@@ -131,8 +131,8 @@ do
 		echo "Error: in statute-handle-punctuation.pl, exiting..."
 		exit 1
 	    fi
-	    if ! ($path/statute-add-sentence-tags.pl --tag-threshold 100 --comma-threshold 150 --threshold 175 --limit 200 --filename $sentfile < $punctfile | $path/statute-add-attributes.pl | $path/statute-add-missing-paragraphs.pl > $sentfile); then
-		echo "Error: in statute-add-sentence-tags.pl, exiting..."
+	    if ! ($path/statute-add-sentence-tags-new.pl --tag-threshold 100 --comma-threshold 150 --threshold 175 --limit 200 --filename $sentfile < $punctfile | $path/statute-add-titles.pl | $path/statute-move-titles.pl | $path/statute-rename-heading-paragraphs.pl | $path/statute-add-missing-paragraphs.pl > $sentfile); then
+		echo "Error: in statute-add-sentence-tags-new.pl, exiting..."
 		exit 1
 	    fi
 	else
