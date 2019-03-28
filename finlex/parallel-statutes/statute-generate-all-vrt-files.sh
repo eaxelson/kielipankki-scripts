@@ -131,7 +131,7 @@ do
 		echo "Error: in statute-handle-punctuation.pl, exiting..."
 		exit 1
 	    fi
-	    if ! ($path/statute-add-sentence-tags-new.pl --tag-threshold 100 --comma-threshold 150 --threshold 175 --limit 200 --filename $sentfile < $punctfile | $path/statute-add-titles.pl | $path/statute-move-titles.pl | $path/statute-rename-heading-paragraphs.pl | $path/statute-add-missing-paragraphs.pl > $sentfile); then
+	    if ! ($path/statute-add-sentence-tags-new.pl --tag-threshold 100 --comma-threshold 150 --threshold 175 --limit 200 --filename $sentfile < $punctfile | $path/statute-add-titles.pl | $path/statute-move-titles.pl | $path/statute-rename-heading-paragraphs.pl > $sentfile); then
 		echo "Error: in statute-add-sentence-tags-new.pl, exiting..."
 		exit 1
 	    fi
