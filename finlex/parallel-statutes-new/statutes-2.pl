@@ -10,9 +10,9 @@ my $continu = 0;
 foreach my $line ( <STDIN> ) {
 
     # Extract IdentifiointiOsa, SaadosOsa, AllekirjoitusOsa
-    if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/ || $line =~ /<asi:IdentifiointiOsa>/ || $line =~ /<asi:LiiteOsa>/)
+    if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/ || $line =~ /<asi:PaivaysKooste[ >]/ || $line =~ /<asi1:JohdantoTeksti[ >]/ || $line =~ /<asi:Allekirjoittaja[ >]/ || $line =~ /<asi:IdentifiointiOsa>/ || $line =~ /<asi:LiiteOsa>/)
     {
-	unless ( $line =~ /<\/saa:SaadosOsa>/ || $line =~ /<\/asi:AllekirjoitusOsa>/ || $line =~ /<\/asi:IdentifiointiOsa>/ || $line =~ /<\/asi:LiiteOsa>/ )
+	unless ( $line =~ /<\/saa:SaadosOsa>/ || $line =~ /<\/asi:AllekirjoitusOsa>/ || $line =~ /<\/asi:PaivaysKooste[ >]/ || $line =~ /<\/asi1:JohdantoTeksti[ >]/ || $line =~ /<\/asi:Allekirjoittaja[ >]/ || $line =~ /<\/asi:IdentifiointiOsa>/ || $line =~ /<\/asi:LiiteOsa>/ )
 	{
 	    $continu = 1;
 	}
