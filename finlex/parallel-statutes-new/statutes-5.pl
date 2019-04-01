@@ -28,7 +28,7 @@ while (<>) {
 
 	$before = join('','<<part id="',$osa_id,'">>',"\n");
     }
-    elsif (/^<\/saa:Osa>/) { $after = "<<\/part>>\n"; }
+    elsif (/^<\/saa:Osa>/) { $after = "<</part>>\n"; }
 
     ## CHAPTERS
     # <saa:Luku saa1:identifiointiTunnus="6 luku">
@@ -57,7 +57,7 @@ while (<>) {
     {
 	$before = join('','<<chapter id="EMPTY"',">>\n");
     }
-    elsif (/^<\/saa:Luku>/) { $after = "<<\/chapter>>\n"; }
+    elsif (/^<\/saa:Luku>/) { $after = "<</chapter>>\n"; }
 
     ## SECTIONS    
     # <saa:Pykala saa1:pykalaLuokitusKoodi="VoimaantuloPykala" saa1:identifiointiTunnus="27 §.">
@@ -86,7 +86,7 @@ while (<>) {
     {
 	$before = join('','<<section id="EMPTY"',">>\n");
     }
-    elsif (/^<\/saa:Pykala>/) { $after = "<<\/section>>\n"; }
+    elsif (/^<\/saa:Pykala>/) { $after = "<</section>>\n"; }
 
     ## PARAGRAPHS
     # <saa:KohdatMomentti>
@@ -96,13 +96,13 @@ while (<>) {
     # <saa:SaadosNimeke>
     # <saa:Johtolause>
     elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">>',"\n"); }
-    elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<asi:(Sisalto|Saados)Liite>/) { $before = join('','<<paragraph type="LIITE">>',"\n"); }
-    elsif (/^<\/asi:(Sisalto|Saados)Liite>/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<\/asi:(Sisalto|Saados)Liite>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">>',"\n"); }
-    elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">>',"\n"); }
-    elsif (/^<\/saa:Johtolause>/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<\/saa:Johtolause>/) { $after = join('',"<</paragraph>>\n"); }
 
     ## SENTENCES
     # <sis:KappaleKooste>

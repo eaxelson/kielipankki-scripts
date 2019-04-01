@@ -34,19 +34,19 @@ if ( $allekirjoitusosa eq "" ) { print "missing allekirjoitusosa\n"; $retval = 1
 # Surround different parts of documents with << ... >> tags 
 print "<<identifiointiosa>>\n";
 print $identifiointiosa;
-print "<<\/identifiointiosa>>\n";
+print "<</identifiointiosa>>\n";
 print "<<saadososa>>\n";
 print $saadososa;
-print "<<\/saadososa>>\n";
+print "<</saadososa>>\n";
 print "<<allekirjoitusosa>>\n";
 print $allekirjoitusosa;
-print "<<\/allekirjoitusosa>>\n";
+print "<</allekirjoitusosa>>\n";
 
 if ($liiteosat ne "")
 {
     print "<<liiteosat>>\n";
     print $liiteosat;
-    print "<<\/liiteosat>>\n"
+    print "<</liiteosat>>\n"
 }
 
 exit $retval;

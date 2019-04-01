@@ -32,11 +32,11 @@ $identifiointiosa =~ s/^\n//g;
 
 print join('','<<paragraph type="IDENTIFIOINTIOSA">>',"\n");
 print $identifiointiosa;
-print "<<\/paragraph>>\n";
+print "<</paragraph>>\n";
 unless ($viitteet eq "")
 {
 print join('','<<paragraph type="VIITTEET">>',"\n");
 print $viitteet;
-print "<<\/paragraph>>\n";
+print "<</paragraph>>\n";
 }
 print $delayed;
