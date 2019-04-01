@@ -20,7 +20,7 @@ $allekirjoitusosa =~ s/<\/asi:PaivaysKooste>/<>/g;
 $allekirjoitusosa =~ s/<[^>]+>\n//g;
 $allekirjoitusosa =~ s/^\n//g;
 
-print join('','<<paragraph type="ALLEKIRJOTUSOSA">',"\n");
+print join('','<<paragraph type="ALLEKIRJOITUSOSA">',"\n");
 print $allekirjoitusosa;
 print "<<\/paragraph>>\n"
 

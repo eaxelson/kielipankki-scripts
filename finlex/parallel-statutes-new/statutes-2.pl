@@ -5,44 +5,43 @@ use strict;
 use warnings;
 use open qw(:std :utf8);
 
-my $continu = 0;
+my $table = 0;
+my $te = 0;
 
 foreach my $line ( <STDIN> ) {
 
-    # Extract IdentifiointiOsa, SaadosOsa, AllekirjoitusOsa
-    if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/ || $line =~ /<asi:PaivaysKooste[ >]/ || $line =~ /<asi1:JohdantoTeksti[ >]/ || $line =~ /<asi:Allekirjoittaja[ >]/ || $line =~ /<asi:IdentifiointiOsa>/ || $line =~ /<asi:LiiteOsa>/)
+    # skip tables
+    if ($table eq 1)
     {
-	unless ( $line =~ /<\/saa:SaadosOsa>/ || $line =~ /<\/asi:AllekirjoitusOsa>/ || $line =~ /<\/asi:PaivaysKooste[ >]/ || $line =~ /<\/asi1:JohdantoTeksti[ >]/ || $line =~ /<\/asi:Allekirjoittaja[ >]/ || $line =~ /<\/asi:IdentifiointiOsa>/ || $line =~ /<\/asi:LiiteOsa>/ )
-	{
-	    $continu = 1;
-	}
-	else
-	{
-	    $continu = 0;
-	}
-
-	# skip tables
-	if ( $line =~ /<tau:table[^>]*>/ )
-	{
-	    if ( $line =~ /<\/tau:table>/ )
-	    {
-		next;
-	    }
-	    $continu = 0;
-	    next;
-	}
-
-	# Replace <br/> with space
-	$line =~ s/<br\/>/ /g;
-	# Get rid of extra whitespace
-	$line =~ s/\t//g;
-	$line =~ s/ +/ /g;
-	$line =~ s/^ //g;
-	$line =~ s/ $//g;
-
-	# table entries are sometimes not inside <tau:table>, get rid of them
-	$line =~ s/^<te>.*<\/te>\n//g;
-
-	print $line;
+	if ($line =~ /<\/tau:table>/) { $table = 0; }
+	next;
     }
+    if ( $line =~ /<tau:table[^>]*>/ )
+    {
+	$table = 1;
+	next;
+    }
+    # skip table entries
+    if ($te eq 1)
+    {
+	if ($line =~ /<\/te>/) { $te = 0; }
+	next;
+    }
+    if ( $line =~ /<te>/ )
+    {
+	$te = 1;
+	next;
+    }
+    
+    # Replace <br/> with space
+    $line =~ s/<br\/>/ /g;
+    
+    # Get rid of extra whitespace
+    $line =~ s/\t//g;
+    $line =~ s/ +/ /g;
+    $line =~ s/^ //g;
+    $line =~ s/ $//g;
+    
+    print $line;
+
 }

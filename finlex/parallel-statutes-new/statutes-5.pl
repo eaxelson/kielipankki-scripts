@@ -107,8 +107,12 @@ while (<>) {
     ## SENTENCES
     # <sis:KappaleKooste>
     # <sis:SaadosKappaleKooste>
-    # <asi:PaivaysKooste>
-    # <asi:Allekirjoittaja>
+    # <saa:MomenttiJohdantoKooste>
+    # <saa:MomenttiKohtaKooste>
+    # <saa:MomenttiAlakohtaKooste>
+
+    elsif (/^<\/sis:(Saados)?KappaleKooste>/) { $before = "<>\n"; }
+    elsif (/^<\/saa:Momentti(Johdanto|Kohta|Alakohta)Kooste>/) { $before = "<>\n"; }
 
     print $before;
     $before = "";

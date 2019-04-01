@@ -36,7 +36,7 @@ foreach (@ARGV)
     elsif ( $threshold == -1 ) { $threshold = $_; }
     elsif ( $filename eq "next..." ) { $filename = $_; }
     else { print join("","Error: argument ",$_," not recognized\n"); exit 1; }
-}
+}    
 
 foreach my $line ( <STDIN> ) {
 

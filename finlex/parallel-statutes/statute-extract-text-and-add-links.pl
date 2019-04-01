@@ -244,6 +244,33 @@ foreach my $line ( <STDIN> ) {
 		$end_paragraph = "<\/paragraph>\n";
 	    }
 
+	    if ($line =~ /<saa:SisaltoMuuSaados>/)
+	    {
+		$begin_paragraph = join('','<paragraph type="other">',"\n");
+	    }
+	    if ($line =~ /<\/saa:SisaltoMuuSaados>/)
+	    {
+		$end_paragraph = "<\/paragraph>\n";
+	    }
+
+	    if ($line =~ /<saa:SaadosValiotsikkoKooste>/)
+	    {
+		$begin_paragraph = join('','<paragraph type="other">',"\n");
+	    }
+	    if ($line =~ /<\/saa:SaadosValiotsikkoKooste>/)
+	    {
+		$end_paragraph = "<\/paragraph>\n";
+	    }
+
+	    if ($line =~ /<ete>/)
+	    {
+		$begin_paragraph = join('','<paragraph type="other">',"\n");
+	    }
+	    if ($line =~ /<\/ete>/)
+	    {
+		$end_paragraph = "<\/paragraph>\n";
+	    }
+	    
 	    # Insert <paragraph> and <link> around these tags
 	    # (e.g. <paragraph type="saadosnimeke"> and <link id="saadosnimeke">)
 	    my @tags = ("asi:AllekirjoitusOsa","saa:SaadosNimeke","saa:Johtolause","asi:IdentifiointiOsa");
