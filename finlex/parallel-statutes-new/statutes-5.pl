@@ -9,6 +9,7 @@ my $after = "";
 
 while (<>) {
 
+    ## PARTS
     if (/^<saa:Osa saa1:identifiointiTunnus="([^"]*)">/)
     {
 	my $osa_id = $1;
@@ -29,6 +30,7 @@ while (<>) {
     }
     elsif (/^<\/saa:Osa>/) { $after = "<<\/part>>\n"; }
 
+    ## CHAPTERS
     # <saa:Luku saa1:identifiointiTunnus="6 luku">
     # <saa:Luku saa1:identifiointiTunnus="">
     # 2 LUKU (31.3.1879/12)
@@ -56,8 +58,8 @@ while (<>) {
 	$before = join('','<<chapter id="EMPTY"',">>\n");
     }
     elsif (/^<\/saa:Luku>/) { $after = "<<\/chapter>>\n"; }
-    
-    
+
+    ## SECTIONS    
     # <saa:Pykala saa1:pykalaLuokitusKoodi="VoimaantuloPykala" saa1:identifiointiTunnus="27 §.">
     # <saa:Pykala saa1:pykalaLuokitusKoodi="Pykala" saa1:identifiointiTunnus="32 §.">
     # <saa:Pykala saa1:identifiointiTunnus="Voimaantulo" saa1:pykalaLuokitusKoodi="VoimaantuloSaannos">
@@ -86,21 +88,31 @@ while (<>) {
     }
     elsif (/^<\/saa:Pykala>/) { $after = "<<\/section>>\n"; }
 
+    ## PARAGRAPHS
     # <saa:KohdatMomentti>
     # <saa:MomenttiKooste>
-    elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/)
-    {
-	$before = join('','<<paragraph type="paragraph>"',"\n");
-    }
-    elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/)
-    {
-	$after = join('','<<\/paragraph"',"\n");
-    }
+    # <asi:SisaltoLiite>
+    # <asi:SaadosLiite>
+    # <saa:SaadosNimeke>
+    # <saa:Johtolause>
+    elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">',"\n"); }
+    elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<asi:(Sisalto|Saados)Liite>/) { $before = join('','<<paragraph type="LIITE">',"\n"); }
+    elsif (/^<\/asi:(Sisalto|Saados)Liite>/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">',"\n"); }
+    elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<<\/paragraph>>\n"); }
+    elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">',"\n"); }
+    elsif (/^<\/saa:Johtolause>/) { $after = join('',"<<\/paragraph>>\n"); }
+
+    ## SENTENCES
+    # <sis:KappaleKooste>
+    # <sis:SaadosKappaleKooste>
+    # <asi:PaivaysKooste>
+    # <asi:Allekirjoittaja>
 
     print $before;
+    $before = "";
     print;
     print $after;
-
-    $before = "";
     $after = "";
 }
