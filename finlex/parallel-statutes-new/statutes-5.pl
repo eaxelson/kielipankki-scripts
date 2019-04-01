@@ -95,13 +95,13 @@ while (<>) {
     # <asi:SaadosLiite>
     # <saa:SaadosNimeke>
     # <saa:Johtolause>
-    elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">',"\n"); }
+    elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">>',"\n"); }
     elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<<\/paragraph>>\n"); }
-    elsif (/^<asi:(Sisalto|Saados)Liite>/) { $before = join('','<<paragraph type="LIITE">',"\n"); }
+    elsif (/^<asi:(Sisalto|Saados)Liite>/) { $before = join('','<<paragraph type="LIITE">>',"\n"); }
     elsif (/^<\/asi:(Sisalto|Saados)Liite>/) { $after = join('',"<<\/paragraph>>\n"); }
-    elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">',"\n"); }
+    elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">>',"\n"); }
     elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<<\/paragraph>>\n"); }
-    elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">',"\n"); }
+    elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">>',"\n"); }
     elsif (/^<\/saa:Johtolause>/) { $after = join('',"<<\/paragraph>>\n"); }
 
     ## SENTENCES

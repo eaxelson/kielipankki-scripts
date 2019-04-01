@@ -30,12 +30,12 @@ if ($identifiointiosa =~ /<met:AsiakirjaViitteet>((.|\n)*)<\/met:AsiakirjaViitte
 $identifiointiosa =~ s/<[^>]+>\n//g;
 $identifiointiosa =~ s/^\n//g;
 
-print join('','<<paragraph type="IDENTIFIOINTIOSA"',"\n");
+print join('','<<paragraph type="IDENTIFIOINTIOSA">>',"\n");
 print $identifiointiosa;
 print "<<\/paragraph>>\n";
 unless ($viitteet eq "")
 {
-print join('','<<paragraph type="VIITTEET"',"\n");
+print join('','<<paragraph type="VIITTEET">>',"\n");
 print $viitteet;
 print "<<\/paragraph>>\n";
 }
