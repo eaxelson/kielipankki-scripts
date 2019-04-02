@@ -63,6 +63,7 @@ while (<>) {
     # <saa:Pykala saa1:pykalaLuokitusKoodi="VoimaantuloPykala" saa1:identifiointiTunnus="27 §.">
     # <saa:Pykala saa1:pykalaLuokitusKoodi="Pykala" saa1:identifiointiTunnus="32 §.">
     # <saa:Pykala saa1:identifiointiTunnus="Voimaantulo" saa1:pykalaLuokitusKoodi="VoimaantuloSaannos">
+    # <saa:Pykala saa1:pykalaLuokitusKoodi="Pykala">
     # <saa:Pykala>
     elsif (/^<saa:Pykala /)
     {
@@ -80,7 +81,11 @@ while (<>) {
 		$pykala_id =~ s/ //g; # e.g. "21 a " -> "21a"
 	    }
 	    $before = join('','<<section id="',$pykala_id,'"',">>\n");
-	}	
+	}
+	else # saa1:identifiointiTunnus has an empty value or is not given at all
+	{
+	    $before = join('','<<section id="EMPTY"',">>\n");
+	}
     }
     elsif (/^<saa:Pykala>/)
     {
@@ -91,24 +96,31 @@ while (<>) {
     ## PARAGRAPHS
     # <saa:KohdatMomentti>
     # <saa:MomenttiKooste>
-    # <asi:SisaltoLiite>
-    # <asi:SaadosLiite>
+    # <saa:SaadosLiite>
     # <saa:SaadosNimeke>
     # <saa:Johtolause>
+    # <saa:SaadosValiotsikkoKooste>
+    # <asi:SisaltoLiite>
     elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">>',"\n"); }
     elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<</paragraph>>\n"); }
-    elsif (/^<asi:(Sisalto|Saados)Liite>/) { $before = join('','<<paragraph type="LIITE">>',"\n"); }
-    elsif (/^<\/asi:(Sisalto|Saados)Liite>/) { $after = join('',"<</paragraph>>\n"); }
+    elsif (/^<saa:SaadosLiite>/) { $before = join('','<<paragraph type="SAADOSLIITE">>',"\n"); }
+    elsif (/^<\/saa:SaadosLiite>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">>',"\n"); }
     elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">>',"\n"); }
     elsif (/^<\/saa:Johtolause>/) { $after = join('',"<</paragraph>>\n"); }
+    elsif (/^<saa:SaadosValiotsikkoKooste>/) { $before = join('','<<paragraph type="heading">>',"\n"); }
+    elsif (/^<\/saa:SaadosValiotsikkoKooste>/) { $after = join('',"<</paragraph>>\n"); }
+    elsif (/^<asi:SisaltoLiite>/) { $before = join('','<<paragraph type="SISALTOLIITE">>',"\n"); }
+    elsif (/^<\/asi:SisaltoLiite>/) { $after = join('',"<</paragraph>>\n"); }
+
+    # <saa:SaadosOtsikkoKooste>: possible paragraph boundary
 
     ## SENTENCES
     # <sis:KappaleKooste>
     # <sis:SaadosKappaleKooste>
     # <saa:MomenttiJohdantoKooste>
-    # <saa:MomenttiKohtaKooste>
+    # <saa:MomenttiKohtaKooste> (can be directly inside saa:Pykala)
     # <saa:MomenttiAlakohtaKooste>
 
     elsif (/^<\/sis:(Saados)?KappaleKooste>/) { $before = "<>\n"; }
