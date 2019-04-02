@@ -122,8 +122,11 @@ while (<>) {
     # <saa:MomenttiKohtaKooste> (can be directly inside saa:Pykala)
     # <saa:MomenttiAlakohtaKooste>
 
+    elsif (/^<saa:MomenttiKohtaKooste>/) { $before = join('','<<?paragraph type="paragraph">>',"\n"); }
+    elsif (/^<\/saa:MomenttiKohtaKooste>/) { $before = "<>\n<</?paragraph>>\n"; }
+
     elsif (/^<\/sis:(Saados)?KappaleKooste>/) { $before = "<>\n"; }
-    elsif (/^<\/saa:Momentti(Johdanto|Kohta|Alakohta)Kooste>/) { $before = "<>\n"; }
+    elsif (/^<\/saa:Momentti(Johdanto|Alakohta)Kooste>/) { $before = "<>\n"; }
 
     print $before;
     $before = "";

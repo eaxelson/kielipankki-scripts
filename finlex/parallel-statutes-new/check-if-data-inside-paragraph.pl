@@ -5,11 +5,24 @@ use warnings;
 use open qw(:std :utf8);
 
 my $paragraph = 0;
+my $possible_paragraph = 0;
 my $line = 0;
 
 while ( <> ) {
     ++$line;
-    if (/^<paragraph/) 
+    # possible paragraph
+    if (/^<\?paragraph/)
+    {
+	if ($paragraph ne 0) { next; }
+	else { s/^<\?paragraph/<paragraph/; ++$paragraph; $possible_paragraph = 1; }
+    }
+    # possible paragraph end
+    elsif (/^<\/\?paragraph/)
+    {
+	if ($possible_paragraph ne 1) { next; }
+	else { s/^<\/\?paragraph/<\/paragraph/; $paragraph = 0; $possible_paragraph = 0; }
+    }
+    elsif (/^<paragraph/)
     {
 	if(++$paragraph > 1)
 	{
