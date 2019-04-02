@@ -20,5 +20,16 @@ while (<>) {
     elsif ($waiting eq 1) { $waiting = 0; $delayed .= join('','<</paragraph>>',"\n"); $title =~ s/^ +//; $title =~ s/ +$//; $delayed = join('','<<title="',$title,'">>',"\n",$delayed); $title = ""; }
 
     if ($tunnuskooste eq 1 || $saadosotsikkokooste eq 1 || $waiting eq 1) { $delayed .= $_; }
-    else { print $delayed; $delayed = ""; print; }
+    else
+    {
+	# remove SaadosOtsikkoKooste as it is already inside paragraph and mark it as a sentence boundary
+	if ($delayed =~ /<<paragraph type="heading">>/)
+	{
+	    $delayed =~ s/<saa:SaadosOtsikkoKooste>/<>/g;
+	    $delayed =~ s/<\/saa:SaadosOtsikkoKooste>\n//g;
+	}
+	print $delayed;
+	$delayed = "";
+	print;
+    }
 }
