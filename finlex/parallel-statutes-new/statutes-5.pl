@@ -98,6 +98,7 @@ while (<>) {
     # <saa:MomenttiKooste>
     # <saa:SaadosLiite>
     # <saa:SaadosNimeke>
+    # <saa:UusiNimeke>
     # <saa:Johtolause>
     # <saa:SaadosValiotsikkoKooste>
     # <saa:SaadosOtsikkoKooste>
@@ -108,6 +109,8 @@ while (<>) {
     elsif (/^<\/saa:SaadosLiite>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">>',"\n"); }
     elsif (/^<\/saa:SaadosNimeke>/) { $after = join('',"<</paragraph>>\n"); }
+    elsif (/^<saa:UusiNimeke>/) { $before = join('','<<paragraph type="UUSI_NIMEKE">>',"\n"); }
+    elsif (/^<\/saa:UusiNimeke>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:Johtolause>/) { $before = join('','<<paragraph type="JOHTOLAUSE">>',"\n"); }
     elsif (/^<\/saa:Johtolause>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:Saados(Valiotsikko|Otsikko)Kooste>/) { $before = join('','<<paragraph type="heading">>',"\n"); }
