@@ -7,6 +7,8 @@ use open qw(:std :utf8);
 
 my $table = 0;
 my $te = 0;
+my $ete = 0;
+my $pdf = 0;
 
 foreach my $line ( <STDIN> ) {
 
@@ -32,7 +34,29 @@ foreach my $line ( <STDIN> ) {
 	$te = 1;
 	next;
     }
-    
+    # skip <ete>
+    if ($ete eq 1)
+    {
+	if ($line =~ /<\/ete>/) { $ete = 0; }
+	next;
+    }
+    if ( $line =~ /<ete>/ )
+    {
+	$ete = 1;
+	next;
+    }
+    # skip <pdf>
+    if ($pdf eq 1)
+    {
+	if ($line =~ /<\/pdf>/) { $pdf = 0; }
+	next;
+    }
+    if ( $line =~ /<pdf>/ )
+    {
+	$pdf = 1;
+	next;
+    }
+
     # Replace <br/> with space
     $line =~ s/<br\/>/ /g;
     

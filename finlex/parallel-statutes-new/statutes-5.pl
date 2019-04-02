@@ -95,7 +95,6 @@ while (<>) {
 
     ## PARAGRAPHS
     # <saa:KohdatMomentti>
-    # <saa:MomenttiKooste>
     # <saa:SaadosLiite>
     # <saa:SaadosNimeke>
     # <saa:UusiNimeke>
@@ -103,8 +102,8 @@ while (<>) {
     # <saa:SaadosValiotsikkoKooste>
     # <saa:SaadosOtsikkoKooste>
     # <asi:SisaltoLiite>
-    elsif (/^(<saa:KohdatMomentti>|<saa:MomenttiKooste>)/) { $before = join('','<<paragraph type="paragraph">>',"\n"); }
-    elsif (/^(<\/saa:KohdatMomentti>|<\/saa:MomenttiKooste>)/) { $after = join('',"<</paragraph>>\n"); }
+    elsif (/^<saa:KohdatMomentti>/) { $before = join('','<<paragraph type="paragraph">>',"\n"); }
+    elsif (/^<\/saa:KohdatMomentti>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:SaadosLiite>/) { $before = join('','<<paragraph type="SAADOSLIITE">>',"\n"); }
     elsif (/^<\/saa:SaadosLiite>/) { $after = join('',"<</paragraph>>\n"); }
     elsif (/^<saa:SaadosNimeke>/) { $before = join('','<<paragraph type="SAADOSNIMEKE">>',"\n"); }
@@ -120,13 +119,15 @@ while (<>) {
 
     ## SENTENCES
     # <sis:KappaleKooste>
-    # <sis:SaadosKappaleKooste>
+    # <sis:SaadosKappaleKooste> (can be directly under saa:SaadosOsa)
     # <saa:MomenttiJohdantoKooste>
     # <saa:MomenttiKohtaKooste> (can be directly inside saa:Pykala)
     # <saa:MomenttiAlakohtaKooste>
+    # <saa:MomenttiKooste> (can sometimes be inside <saa:KohdatMomentti>)
+    # <saa:SaadosNimekeKooste>
 
-    elsif (/^<saa:MomenttiKohtaKooste>/) { $before = join('','<<?paragraph type="paragraph">>',"\n"); }
-    elsif (/^<\/saa:MomenttiKohtaKooste>/) { $before = "<>\n<</?paragraph>>\n"; }
+    elsif (/^<saa:(Momentti|MomenttiKohta|SaadosKappale|SaadosNimeke)Kooste>/) { $before = join('','<<?paragraph type="paragraph">>',"\n"); }
+    elsif (/^<\/saa:(Momentti|MomenttiKohta|SaadosKappale|SaadosNimeke)Kooste>/) { $before = "<>\n"; $after = "<</?paragraph>>\n"; }
 
     elsif (/^<\/sis:(Saados)?KappaleKooste>/) { $before = "<>\n"; }
     elsif (/^<\/saa:Momentti(Johdanto|Alakohta)Kooste>/) { $before = "<>\n"; }
