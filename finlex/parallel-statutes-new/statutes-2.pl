@@ -48,10 +48,10 @@ foreach my $line ( <STDIN> ) {
     # skip <pdf>
     if ($pdf eq 1)
     {
-	if ($line =~ /<\/pdf>/) { $pdf = 0; }
+	if ($line =~ /<\/pdf[^>]*>/) { $pdf = 0; }
 	next;
     }
-    if ( $line =~ /<pdf>/ )
+    if ( $line =~ /<pdf[^>]*>/ )
     {
 	$pdf = 1;
 	next;
