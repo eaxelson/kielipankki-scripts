@@ -1,4 +1,5 @@
 Scripts for processing Finlex statutes collection.
 
-  statutes-1.pl | statutes-2.pl | statutes-3.pl | statutes-4.pl | statutes-5.pl | \
-  statutes-identifiointiosa.pl | statutes-allekirjoitusosa.pl | remove-xml.pl | append-titles.pl
+statute-handle-special-cases.pl | statutes-1.pl | statutes-2.pl | statutes-3.pl | \
+statutes-4.pl | statutes-5.pl | statutes-identifiointiosa.pl | statutes-allekirjoitusosa.pl | \
+remove-xml.pl | check-if-data-inside-paragraph.pl
