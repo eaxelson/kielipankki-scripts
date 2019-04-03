@@ -3,8 +3,9 @@
 # Rename some files in asd/ and kko/ so that they will be left out
 # by scripts that compile the packages.
 
-# empty file
+# empty files
 mv asd/fi/1994/asd19940635.xml asd/fi/1994/asd19940635.xml.empty
+mv asd/fi/2010/asd20000001.xml asd/fi/2010/asd20000001.xml.empty
 
 # duplicates (e.g. asd/fi/1734/asd17340001000.xml is equivalent to asd/fi/1734/asd17340001.xml)
 # (also asd/fi/1906/asd19070006001.xml is equivalent to asd/fi/1907/asd19070006.xml)

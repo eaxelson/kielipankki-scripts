@@ -10,16 +10,16 @@ my $johtolause = "";
 
 while (<>) 
 {
-    if (/<johtl>/)
+    if (/^ +<johtl>/)
     {
 	$johtolause = $_;
 	$johtolause =~ s/<johtl>(.*)<\/johtl>/$1/;
     }
-    elsif ($johtolause ne "" && /<ko>/)
+    elsif ($johtolause ne "" && /^ +<ko>/)
     {
 	next;
     }
-    elsif ($johtolause ne "" && /<saa:SaadosKappaleKooste>/)
+    elsif ($johtolause ne "" && /^ +<saa:SaadosKappaleKooste>/)
     {
 	print;
 	print $johtolause;
@@ -33,6 +33,6 @@ while (<>)
 
 if ($johtolause ne "")
 {
-    print STDERR join('',"Error: could not insert <johtl>: \"",$johtl,"\"\n");
+    print STDERR join('',"Error: could not insert <johtl>: \"",$johtolause,"\"\n");
     exit 1;
 }

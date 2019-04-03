@@ -5,7 +5,7 @@ use warnings;
 use open qw(:std :utf8);
 
 while ( <> ) {
-    s/^<paragraph type="VIITE">/<<paragraph type="VIITE">>/;
+    s/^<(paragraph[^>]*)>/<<$1>>/;
     s/^<\/paragraph>/<<\/paragraph>>/;
     s/^<[^><].*//;
     s/^<</</;
