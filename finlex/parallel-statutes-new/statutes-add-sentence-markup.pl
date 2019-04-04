@@ -8,6 +8,7 @@ use open qw(:std :utf8);
 
 my $sentence_number = 0; # number of sentence
 my $sentence = ""; # the current sentence
+my $previous_sentence = "";
 my $words = 0; # number of words in a sentence, including punctuation
 my $words_in_total = 0;
 my $limit = 100000; # limit of sentence length, print warning if exceeded
@@ -50,8 +51,10 @@ foreach my $line ( <STDIN> ) {
     {
 	if ($sentence eq "")
 	{
-	    print STDERR join('',"Error: sentence starts with '",$line,"' in file ",$filename,"'\n");
-	    exit 1;
+	    $line =~ s/\n$//;
+	    print STDERR join('',"warning: sentence starts with '",$line,"' in file ",$filename,"', skipping the symbol\n");
+	    print STDERR join('',"(previous sentence is:\n",$previous_sentence);
+	    next;
 	}
 	if ( $line =~ /^</) # xml (including sentence boundary marker <>) -> no words
 	{
@@ -79,6 +82,7 @@ foreach my $line ( <STDIN> ) {
 
 	if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
 	print $sentence;
+	$previous_sentence = $sentence;
 	$sentence = "";
 	$words_in_total = $words_in_total + $words;
 	$words = 0;
@@ -98,6 +102,7 @@ foreach my $line ( <STDIN> ) {
 if ($sentence ne "")
 {
     print STDERR join('',"Error: last sentence in file ",$filename," could not be ended:\n",$sentence);
+    exit 1;
     #$sentence .= '</sentence>';
     #if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
     #$sentence .= "\n";
