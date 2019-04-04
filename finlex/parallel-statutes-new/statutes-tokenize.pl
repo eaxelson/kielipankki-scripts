@@ -39,6 +39,8 @@ foreach my $line ( <STDIN> ) {
 	# (must be done twice for overlapping matches)
 	$line =~ s/(\p{Upper})\. ?(\p{Upper})/$1¤\.¤ $2/g;
 	$line =~ s/(\p{Upper})\. ?(\p{Upper})/$1¤\.¤ $2/g;
+	# as well as .. and ... used for missing text or sometimes in tables
+	$line =~ s/\.\.(\.?)/¤\.\.$1¤/g;
 
 	# . at the end of a word (followed by space and capital letter or opening parenthesis) or line is separated
 	$line =~ s/(.)\. (\p{Upper}|\(|\[)/$1 \. $2/g;
@@ -54,7 +56,7 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/\. \]/ \.\]/g;
 
 	# unescape escaped dots
-	$line =~ s/¤\.¤/\./g;
+	$line =~ s/¤(\.+)¤/$1/g;
 
 	# separate hyphen, n dash, m dash and horizontal bar in numerical ranges and dates (e.g. 250-300; 1.2.-5.2.)
 	$line =~ s/([0-9\.])(\-|\x{2013}|\x{2014}|\x{2015})([0-9])/$1 $2 $3/g;

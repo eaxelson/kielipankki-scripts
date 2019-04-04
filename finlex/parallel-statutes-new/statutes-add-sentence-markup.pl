@@ -13,7 +13,10 @@ use open qw(:std :utf8);
 my $sentence_number = 0; # number of sentence
 my $sentence = ""; # the current sentence
 my $words = 0; # number of words in a sentence, including punctuation
+my $words_in_total = 0;
 my $limit = 100000; # limit of sentence length, print warning if exceeded
+
+my $print_wps = "false"; # print words per sentence on average at the end
 
 # interpret the following symbols as sentence separators if the respective threshold is exceeded:
 # my $comma_threshold = 100000; # comma
@@ -27,7 +30,8 @@ foreach (@ARGV)
     # elsif ( $_ eq "--comma-threshold" ) { $comma_threshold = -1; }
     # elsif ( $_ eq "--threshold" ) { $threshold = -1; }
     elsif ( $_ eq "--filename" ) { $filename = "next..."; }
-    elsif ( $_ eq "--help" || $_ eq "-h" ) { print "Usage: $0 [--limit LIMIT] [--filename FILENAME]\n"; exit 0; }
+    elsif ( $_ eq "--print-wps") { $print_wps = "true"; }
+    elsif ( $_ eq "--help" || $_ eq "-h" ) { print "Usage: $0 [--limit LIMIT] [--filename FILENAME] [--print-wps]\n"; exit 0; }
     # TODO [--comma-threshold CT] [--threshold T]
     elsif ( $limit == -1 ) { $limit = $_; }
     # elsif ( $comma_threshold == -1 ) { $comma_threshold = $_; }
@@ -45,7 +49,8 @@ foreach my $line ( <STDIN> ) {
     }
     # end of sentence
     # TODO: ( $words > $comma_threshold && $line =~ /^,$/ ) || ($words > $threshold && $line =~ /^(\-|\x{002D}|\x{2013}|\x{2014}|\x{2015})$/ ) )
-    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || $line =~ /^\.\.\.$/ || $line =~ /^</)
+    # .. and ... are used for missing text or in tables; interpret them as sentence boundaries if not in the beginning of a sentence
+    elsif ( $line =~ /^\.$/ || $line =~ /^\.\)$/ || $line =~ /^\.\]$/ || $line =~ /^\;$/ || $line =~ /^\:$/ || ($sentence ne "" && $line =~ /^\.\.\.?$/) || $line =~ /^</)
     {
 	if ($sentence eq "")
 	{
@@ -79,6 +84,7 @@ foreach my $line ( <STDIN> ) {
 	if ( $words > $limit ) { print STDERR join("","warning: sentence length is ",$words," words in sentence number ",$sentence_number," in file ",$filename,"\n"); }
 	print $sentence;
 	$sentence = "";
+	$words_in_total = $words_in_total + $words;
 	$words = 0;
     }
     else
@@ -105,4 +111,18 @@ else
 {
     # sentence might contain the last xml markup that has not yet been printed
     #print $sentence;
+}
+
+# words per sentence on average
+if ($print_wps eq "true")
+{
+    unless ($sentence_number eq 0)
+    {
+	my $wps = $words_in_total / $sentence_number;
+	print STDERR join('',"words per sentence on average: ",$wps,"\n");
+    }
+    else
+    {
+	print STDERR join('',"words per sentence on average: (no sentences)\n");
+    }
 }
