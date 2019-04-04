@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Mark different parts of document with << ... >> tags:
+# <<identifiointiosa>>, <<saadososa>>, <<allekirjoitusosa>>
+# and <<liiteosat>>.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

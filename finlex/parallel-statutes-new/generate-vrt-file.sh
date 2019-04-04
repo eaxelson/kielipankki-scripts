@@ -14,6 +14,9 @@ do
 	path=$arg;
     elif [ "$vrtfile" = "next..." ]; then
 	vrtfile=$arg;
+    elif [ "$arg" = "--help" -o "$arg" = "-h" ]; then
+	echo "Usage: "$0" XMLFILE [--script-path PATH] [--vrt-file VRTFILE]";
+	exit 0;
     elif [ "$xmlfile" = "" ];then
 	xmlfile=$arg;
     else

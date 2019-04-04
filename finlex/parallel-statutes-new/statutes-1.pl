@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# Separate each xml tag on its own line.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

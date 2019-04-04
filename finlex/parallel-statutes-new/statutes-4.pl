@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Mark heading paragraphs. Heading paragraphs will contain
+# <saa:(Osa|Luku|Pykala)TunnusKooste> and the following
+# <saa:SaadosOtsikkoKooste>, if it is present.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

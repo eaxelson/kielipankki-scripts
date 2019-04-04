@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# Process <<allekirjoitusosa>> into paragraphs.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

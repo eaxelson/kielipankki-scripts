@@ -1,10 +1,6 @@
 #!/usr/bin/perl
 
-# Read VRT from standard input. Add sentence tags and write
-# result to standard output. Input comes by default from script
-# statute-handle-punctuation.pl.
-
-# TODO: interpret some xml markup as sentence boundary.
+# Divide input into sentences.
 
 use strict;
 use warnings;

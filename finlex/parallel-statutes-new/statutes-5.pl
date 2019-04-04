@@ -1,5 +1,13 @@
 #!/usr/bin/perl
 
+# Mark parts of document:
+#
+#  <saa:Osa> as <part>
+#  <saa:Luku> as <chapter>
+#  <saa:Pykala> as <section>
+#
+# Also mark paragraphs (can be optional) and sentence boundaries.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

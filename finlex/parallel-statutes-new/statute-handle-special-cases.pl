@@ -1,5 +1,11 @@
 #!/usr/bin/perl
 
+# Insert paragraph tags around text that would else be left
+# outside paragraphs in later stages of processing.
+#
+# Mark <viite> as <paragraph type="VIITE">.
+# Mark <saa:Pykala> on one line as <paragraph type="paragraph">.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

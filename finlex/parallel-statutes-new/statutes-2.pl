@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Skip some parts of text: <tau:table>, <te>, <ete> and <pdf>.
+# Tables are difficult to parse and split into sentences.
+# Also replace <br /> with space and get rid of extra whitespace.
 
 use strict;
 use warnings;

@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# Add <link> around each <section> for parallel corpus.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

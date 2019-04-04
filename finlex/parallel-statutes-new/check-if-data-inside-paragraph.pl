@@ -1,5 +1,10 @@
 #!/usr/bin/perl
 
+# Check that all text data is inside a <paragraph> and that there
+# are no paragraphs inside another paragraph. Handle optional paragraphs
+# (<?paragraph>); insert them where they are needed. Also add missing
+# paragraphs and give a warning.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

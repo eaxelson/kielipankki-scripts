@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Extract titles from inserted <title> tags and append them
+# as 'title' attribute to preceeding <part>, <chapter> or <section>.
+# Then remove the <title>.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

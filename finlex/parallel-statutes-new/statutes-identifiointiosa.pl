@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# Divide <<identifiointiosa>> into paragraphs.
+
 use strict;
 use warnings;
 use open qw(:std :utf8);

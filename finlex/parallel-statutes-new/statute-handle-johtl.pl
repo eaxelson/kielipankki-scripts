@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 
+# Move parts of text so that they are not left outside paragraphs
+# in later stages of processing.
+#
 # Move <johtl> inside following <saa:SaadosKappaleKooste>.
 
 use strict;
