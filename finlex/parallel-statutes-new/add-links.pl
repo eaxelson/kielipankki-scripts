@@ -8,13 +8,13 @@ my $id = "";
 
 while (<>)
 {
-    if (/^<chapter id="([^"]*)"/)
+    if (/^<section id="([^"]*)"/)
     {
 	$id = $1;
 	print join('',"<link id=\"",$id,"\">\n");
 	print;
     }
-    elsif (/^<\/chapter>/)
+    elsif (/^<\/section>/)
     {
 	print;
 	print "</link>\n";
