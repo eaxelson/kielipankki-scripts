@@ -6,6 +6,7 @@ use open qw(:std :utf8);
 
 my $paragraph = 0;
 my $possible_paragraph = 0;
+my $paragraph_inserted = 0;
 my $line = 0;
 
 while ( <> ) {
@@ -24,6 +25,11 @@ while ( <> ) {
     }
     elsif (/^<paragraph/)
     {
+	if ($paragraph_inserted eq 1)
+	{
+	    print "</paragraph>\n";
+	    $paragraph_inserted = 0;
+	}
 	if(++$paragraph > 1)
 	{
 	    print STDERR join('','ERROR: paragraph inside paragraph on line ',$line,"\n");
@@ -31,12 +37,23 @@ while ( <> ) {
 	}
     }
     elsif (/^<\/paragraph/) { $paragraph = 0; }
-    elsif (/^</) { } # other tags
+    # other tags (<> is sentence boundary that must be inside paragraph)
+    elsif (/^<[^>]/)
+    {
+	if ($paragraph_inserted eq 1)
+	{
+	    print "</paragraph>\n";
+	    $paragraph_inserted = 0;
+	}
+    }
     elsif ($paragraph eq 0) # content that should be inside paragraph
     {
-	print STDERR "ERROR: content not inside paragraph:\n";
-	print STDERR $_;
-	exit 1;
+	unless ($paragraph_inserted eq 1)
+	{
+	    print STDERR join('',"warning: content not inside paragraph: ",$_,"inserting <paragraph type=\"unknown\"> ... </paragraph>\n");
+	    print "<paragraph type=\"unknown\">\n";
+	    $paragraph_inserted = 1;
+	}
     }
     print;
 }
