@@ -36,9 +36,21 @@ if [ "$vrtfile" = "" ]; then
     vrtfile=`echo $xmlfile | perl -pe 's/\.xml/\.vrt/'`
 fi
 
-cat $xmlfile | $path/statute-move-johtolause.pl | $path/statute-insert-paragraphs.pl | $path/statute-separate-xml-tags.pl | $path/statute-trim.pl | $path/statute-mark-doc-parts.pl | \
-    $path/statute-mark-heading-paragraphs.pl | $path/statute-insert-vrt-tags.pl | $path/statute-process-identifiointiosa.pl | $path/statute-process-allekirjoitusosa.pl | $path/statute-remove-orig-xml-tags.pl | \
-    $path/statute-check-paragraphs.pl | $path/statute-move-titles.pl | $path/statute-tokenize.pl | $path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 100 | \
+cat $xmlfile | \
+    $path/statute-move-johtolause.pl | \
+    $path/statute-insert-paragraphs.pl | \
+    $path/statute-separate-xml-tags.pl | \
+    $path/statute-trim.pl | \
+    $path/statute-mark-doc-parts.pl | \
+    $path/statute-mark-heading-paragraphs.pl | \
+    $path/statute-insert-vrt-tags.pl | \
+    $path/statute-process-identifiointiosa.pl | \
+    $path/statute-process-allekirjoitusosa.pl | \
+    $path/statute-remove-orig-xml-tags.pl | \
+    $path/statute-check-paragraphs.pl | \
+    $path/statute-move-titles.pl | \
+    $path/statute-tokenize.pl | \
+    $path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 150 | \
     $path/statute-insert-links.pl > tmp
 
 doctype=`cat $xmlfile | $path/statute-get-doc-type.pl`
