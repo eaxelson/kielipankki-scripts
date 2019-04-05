@@ -36,12 +36,12 @@ if [ "$vrtfile" = "" ]; then
     vrtfile=`echo $xmlfile | perl -pe 's/\.xml/\.vrt/'`
 fi
 
-cat $xmlfile | $path/statute-handle-johtl.pl | $path/statute-handle-special-cases.pl | $path/statutes-1.pl | $path/statutes-2.pl | $path/statutes-3.pl | \
-    $path/statutes-4.pl | $path/statutes-5.pl | $path/statutes-identifiointiosa.pl | $path/statutes-allekirjoitusosa.pl | $path/remove-xml.pl | \
-    $path/check-if-data-inside-paragraph.pl | $path/append-titles.pl | $path/statutes-tokenize.pl | $path/statutes-add-sentence-markup.pl --filename $xmlfile --limit 100 | \
-    $path/add-links.pl > tmp
+cat $xmlfile | $path/statute-move-johtolause.pl | $path/statute-insert-paragraphs.pl | $path/statute-separate-xml-tags.pl | $path/statute-trim.pl | $path/statute-mark-doc-parts.pl | \
+    $path/statute-mark-heading-paragraphs.pl | $path/statute-insert-vrt-tags.pl | $path/statute-process-identifiointiosa.pl | $path/statute-process-allekirjoitusosa.pl | $path/statute-remove-orig-xml-tags.pl | \
+    $path/statute-check-paragraphs.pl | $path/statute-move-titles.pl | $path/statute-tokenize.pl | $path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 100 | \
+    $path/statute-insert-links.pl > tmp
 
-doctype=`cat $xmlfile | $path/get-statute-type.pl`
+doctype=`cat $xmlfile | $path/statute-get-doc-type.pl`
 
 url_year=`echo $xmlfile | perl -pe 's/.*asd([0-9][0-9][0-9][0-9]).*/\1/g;'`
 url_number=`echo $xmlfile | perl -pe 's/\.xml//g; s/asd\/(fi|sv)\/[0-9][0-9][0-9][0-9]\///g; s/(s|t)$//g; s/asd[0-9][0-9][0-9][0-9]//g; s/^0+//g;'`
