@@ -3,6 +3,8 @@
 # Mark heading paragraphs. Heading paragraphs will contain
 # <saa:(Osa|Luku|Pykala)TunnusKooste> and the following
 # <saa:SaadosOtsikkoKooste>, if it is present.
+# Also extract title of heading paragraph and print it after
+# the paragraph as <<title="TITLE">>.
 
 use strict;
 use warnings;
