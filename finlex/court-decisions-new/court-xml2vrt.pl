@@ -41,6 +41,7 @@ cat $xmlfile | \
     $path/court-trim.pl | \
     $path/court-mark-doc-parts.pl | \
     $path/court-mark-heading-paragraphs.pl | \
+    $path/court-process-description.pl | \
     $path/court-insert-vrt-tags.pl | \
     $path/court-remove-orig-xml-tags.pl | \
     $path/court-check-paragraphs.pl | \
