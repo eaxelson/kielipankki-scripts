@@ -15,8 +15,8 @@ while ( <> ) {
     s/^<[^><].*//;
     s/^<</</;
     s/>>$/>/;
-    s/<\/?saadososa.*//;
-    s/<\/?liiteosa.*//;
+    #s/<\/?saadososa.*//;
+    #s/<\/?liiteosa.*//;
     s/^\n$//;
     print;
 }
