@@ -30,9 +30,9 @@ while (<STDIN>) {
     elsif (/^<\/div>/)
     {
 	$div_depth--;
-	if ($div_depth eq 0) { $before = "<</part>>\n"; }
-	elsif ($div_depth eq 1) { $before = "<</chapter>>\n"; }
-	elsif ($div_depth eq 2) { $before = "<</section>>\n"; }
+	if ($div_depth eq 0) { $after = "<</part>>\n"; }
+	elsif ($div_depth eq 1) { $after = "<</chapter>>\n"; }
+	elsif ($div_depth eq 2) { $after = "<</section>>\n"; }
 	else { print STDERR join('',"Error: <div> depth exceeds 3 in file ",$filename,".\n"); exit 1; }
     }
     elsif (/^<p[ >]/)
