@@ -17,6 +17,10 @@ while (<>) {
     elsif ($in_description eq 1)
     { 
 	$description_part .= $_;
+	if (/^[^<]/)
+	{
+	    $description_part .= "<>\n"; # sentence boundary
+	}
 	if (/<span>|<strong>/) { $in_keywords = 1; }
 	elsif (/<\/span>|<\/strong>/) { $in_keywords = 0; }
 	elsif ($in_keywords eq 1)
@@ -29,11 +33,11 @@ while (<>) {
     else { $other_parts .= $_; }
 }
 
-print join('','<<section type="description">>',"\n");
-print $description_part;
-print "<</section>>\n";
 unless ($keywords eq "|")
 {
     print join('','<<keywords="',$keywords,'">>',"\n");
 }
+print join('','<<section type="description">>',"\n");
+print $description_part;
+print "<</section>>\n";
 print $other_parts;
