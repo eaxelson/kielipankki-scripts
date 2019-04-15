@@ -42,9 +42,9 @@ cat tmp2 | $path/court-mark-doc-parts.pl > tmp3
 cat tmp3 | $path/court-mark-heading-paragraphs.pl > tmp4
 cat tmp4 | $path/court-process-description.pl > tmp5
 cat tmp5 | $path/court-process-abstract.pl > tmp6
-cat tmp6 | $path/court-insert-vrt-tags.pl > tmp7
+cat tmp6 | $path/court-insert-vrt-tags.pl --filename $xmlfile> tmp7
 cat tmp7 | $path/court-remove-orig-xml-tags.pl > tmp8
-cat tmp8 | $path/court-check-paragraphs.pl > tmp9
+cat tmp8 | $path/court-check-paragraphs.pl --filename $xmlfile > tmp9
 cat tmp9 | $path/court-move-titles.pl > tmp10
 cat tmp10 | $path/court-tokenize.pl > tmp11
-cat tmp11  | $path/court-add-sentence-tags.pl --filename $xmlfile --limit 150 > tmp
+cat tmp11  | $path/court-insert-sentence-tags.pl --filename $xmlfile --limit 150 > tmp

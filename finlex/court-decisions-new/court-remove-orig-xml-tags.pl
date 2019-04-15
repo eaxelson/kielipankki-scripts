@@ -7,6 +7,7 @@ use open qw(:std :utf8);
 while ( <> ) {
     #s/^<(paragraph[^>]*)>/<<$1>>/;
     #s/^<\/paragraph>/<<\/paragraph>>/;
+    s/<\/li>/<>/; # insert sentence boundary between list items
     s/^<[^><].*//;
     s/^<</</;
     s/>>$/>/;

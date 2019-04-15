@@ -13,8 +13,16 @@ my $paragraph = 0;
 my $possible_paragraph = 0;
 my $paragraph_inserted = 0;
 my $line = 0;
+my $filename = ""; # for more informative warning messages
 
-while ( <> ) {
+foreach (@ARGV)
+{
+    if ( $_ eq "--filename" ) { $filename = "next..."; }
+    elsif ( $filename eq "next..." ) { $filename = $_; }
+    else { print join("","Error: argument ",$_," not recognized\n"); exit 1; }
+}
+
+while ( <STDIN> ) {
     ++$line;
     # possible paragraph
     if (/^<\?paragraph/)
@@ -37,7 +45,7 @@ while ( <> ) {
 	}
 	if(++$paragraph > 1)
 	{
-	    print STDERR join('','ERROR: paragraph inside paragraph on line ',$line,"\n");
+	    print STDERR join('','ERROR: paragraph inside paragraph on line ',$line,' in file ',$filename,"\n");
 	    exit 1;
 	}
     }
@@ -55,7 +63,7 @@ while ( <> ) {
     {
 	unless ($paragraph_inserted eq 1)
 	{
-	    print STDERR join('',"warning: content not inside paragraph: ",$_,"inserting <paragraph type=\"unknown\"> ... </paragraph>\n");
+	    print STDERR join('',"warning: content not inside paragraph: ",$_," inserting <paragraph type=\"unknown\"> ... </paragraph>\n");
 	    print "<paragraph type=\"unknown\">\n";
 	    $paragraph_inserted = 1;
 	}
