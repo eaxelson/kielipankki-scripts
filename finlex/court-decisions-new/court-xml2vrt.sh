@@ -48,3 +48,13 @@ cat tmp8 | $path/court-check-paragraphs.pl --filename $xmlfile > tmp9
 cat tmp9 | $path/court-move-titles.pl > tmp10
 cat tmp10 | $path/court-tokenize.pl > tmp11
 cat tmp11  | $path/court-insert-sentence-tags.pl --filename $xmlfile --limit 150 > tmp
+
+year=`echo $xmlfile | perl -pe 's/.*(kho|kko)([0-9][0-9][0-9][0-9]).*/\2/g;'`
+datefrom=$year"0101"
+dateto=$year"1231"
+url=""
+keywords=`egrep -m 1 '<keywords=' tmp | perl -pe 's/<keywords="([^"]*)">/\1/;'`
+
+echo '<text filename="'$xmlfile'" datefrom="'$datefrom'" dateto="'$dateto'" timefrom="000000" timeto="235959" url="'$url'" keywords="'$keywords'">' > $vrtfile
+cat tmp | egrep -v '^<keywords=' >> $vrtfile
+echo '</text>' >> $vrtfile
