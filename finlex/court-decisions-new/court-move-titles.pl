@@ -31,6 +31,10 @@ while ( <> ) {
 	    print;
 	}
     }
+    elsif (/^<title=/)
+    {
+	; # just skip title, there is nothing to append it to
+    }
     else
     {
 	print;

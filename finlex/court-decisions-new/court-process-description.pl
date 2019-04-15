@@ -26,6 +26,7 @@ while (<>) {
 	elsif ($in_keywords eq 1)
 	{
 	    my $keyword = $_;
+	    $keyword =~ s/|"//g; # get rid of | and "
 	    $keyword =~ s/\n/|/;
 	    $keywords .= $keyword;
 	}
