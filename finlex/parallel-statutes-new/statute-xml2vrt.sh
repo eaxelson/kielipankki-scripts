@@ -53,10 +53,11 @@ if [ "$tmpfiles" = "true" ]; then
     cat tmp10 | $path/statute-process-saadososa.pl > tmp11
     cat tmp11 | $path/statute-remove-orig-xml-tags.pl > tmp12
     cat tmp12 | $path/statute-check-paragraphs.pl > tmp13
-    cat tmp13 | $path/statute-move-titles.pl > tmp14
-    cat tmp14 | $path/statute-tokenize.pl > tmp15
-    cat tmp15 | $path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 150 > tmp16
-    cat tmp16 | $path/statute-insert-links.pl > tmp
+    cat tmp13 | $path/statute-check-sections.pl > tmp14
+    cat tmp14 | $path/statute-move-titles.pl > tmp15
+    cat tmp15 | $path/statute-tokenize.pl > tmp16
+    cat tmp16 | $path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 150 > tmp17
+    cat tmp17 | $path/statute-insert-links.pl > tmp
 else
     cat $xmlfile | \
 	$path/statute-move-johtolause.pl | \
@@ -70,6 +71,7 @@ else
 	$path/statute-process-allekirjoitusosa.pl | \
 	$path/statute-remove-orig-xml-tags.pl | \
 	$path/statute-check-paragraphs.pl | \
+	$path/statute-check-sections.pl | \
 	$path/statute-move-titles.pl | \
 	$path/statute-tokenize.pl | \
 	$path/statute-insert-sentence-tags.pl --filename $xmlfile --limit 150 | \
