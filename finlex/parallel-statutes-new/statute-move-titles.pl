@@ -13,6 +13,7 @@ my $line = "";
 while ( <> ) {
     if (/^<(part|chapter|section)/)
     {
+	print $line; # e.g. line <part> followed by line <chapter>
 	$line = $_;
     }
     elsif ($line ne "")
@@ -30,6 +31,10 @@ while ( <> ) {
 	    $line = "";
 	    print;
 	}
+    }
+    elsif (/^<title=/)
+    {
+	; # just skip title, there is nothing to append it to
     }
     else
     {
