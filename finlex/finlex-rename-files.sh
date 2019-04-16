@@ -79,11 +79,13 @@ done
 # asd/sv/1992/asd19921607.xml # many xml tags on one line
 # asd/fi/1996/asd19960460.xml # many xml tags on one line
 # asd/fi/1996/asd19960477.xml # many xml tags on one line
+# kho/fi/2018/kho201801629.xml # missing <p>
 for file in \
     asd/fi/1992/asd19920123.xml \
     asd/sv/1992/asd19921607.xml \
     asd/fi/1996/asd19960460.xml \
-    asd/fi/1996/asd19960477.xml;
+    asd/fi/1996/asd19960477.xml \
+    kho/fi/2018/kho201801629.xml;
 do
     mv $file $file.error
 done
