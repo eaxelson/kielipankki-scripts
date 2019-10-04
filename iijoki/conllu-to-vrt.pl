@@ -6,6 +6,8 @@ use open qw(:std :utf8);
 
 my $first_sentence_in_paragraph = "true";
 
+print "<text>\n";
+
 foreach my $line ( <STDIN> ) {    
 
     if ($line =~ /^# <\/paragraph>$/)
@@ -25,8 +27,13 @@ foreach my $line ( <STDIN> ) {
 	    $line = "<\/sentence>\n<sentence>\n";
 	}
     }
+    $line =~ s/<section_before_first_part>/<section type="???">/;
+    $line =~ s/<\/section_before_first_part>/<\/section>/;
     $line =~ s/^# [^<].*//;
     $line =~ s/^# //;
+    $line =~ s/^\n$//;
     print $line;
 
 }
+
+print "<\/text>\n";

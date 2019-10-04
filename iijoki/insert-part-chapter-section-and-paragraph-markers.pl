@@ -17,14 +17,14 @@ foreach my $line ( <STDIN> ) {
 
     if ($first_line eq "true")
     {
-	$line = "###C: <title>\n###C: <paragraph>\n".$line;
+	$line = "###C: <section_before_first_part>\n###C: <paragraph>\n".$line;
 	$first_line = "false";
     }
     elsif ($line =~ /^((ENSIMM\x{00C4}INEN|TOINEN|((KOLMAS|NELJ\x{00C4}S|VIIDES|KUUDES|SEITSEM\x{00C4}S|KAHDEKSAS|YHDEKS\x{00C4}S)(TOISTA)?)|KYMMENES|YHDESTOISTA|KAHDESTOISTA) LUKU)$/)
     {
 	if ($first_part_encountered eq "false")
 	{
-	    $line = "###C: <\/paragraph>\n###C: <\/title>\n###C: <part title=\"".$1."\">\n###C: <paragraph type=\"heading\">\n".$line."###C: <\/paragraph>\n";
+	    $line = "###C: <\/paragraph>\n###C: <\/section_before_first_part>\n###C: <part title=\"".$1."\">\n###C: <paragraph type=\"heading\">\n".$line."###C: <\/paragraph>\n";
 	    $first_part_encountered = "true";
 	}
 	else
@@ -34,7 +34,7 @@ foreach my $line ( <STDIN> ) {
 	$latest_element="<part>";
 	$first_chapter_of_part = "true";
     }
-    elsif ($first_part_encountered eq "true" && $line =~ /^([A-Z\x{00C5}\x{00C4}\x{00D6}]+( [A-Z\x{00C5}\x{00C4}\x{00D6}]+)*)$/)
+    elsif ($first_part_encountered eq "true" && $line =~ /^([^a-z\n]+( [^a-z])*)$/)
     {
 	if ($first_chapter_of_part eq "true")
 	{
