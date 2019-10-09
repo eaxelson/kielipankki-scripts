@@ -6,7 +6,15 @@ use open qw(:std :utf8);
 
 my $first_sentence_in_paragraph = "true";
 
-print "<text>\n";
+print "<text filename=\"";
+print $ARGV[2];
+print "\" title=\"";
+print $ARGV[0];
+print "\" text dateto=\"";
+print $ARGV[1];
+print "0101\" datefrom=\"";
+print $ARGV[1];
+print "1231\" timefrom=\"000000\" timeto=\"235959\" author=\"Kalle P\x{00E4}\x{00E4}talo\" lang=\"fi\" publisher=\"Gummerus\">\n";
 
 foreach my $line ( <STDIN> ) {    
 
