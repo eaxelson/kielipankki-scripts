@@ -1,6 +1,6 @@
 
 for file in Iijoki-sarja/*.txt:
-  ./insert-part-chapter-section-and-paragraph-markers.pl
+  ./insert-chapter-section-and-paragraph-markers.pl # check titles and fix them manually in the output, if needed
   python3 full_pipeline_stream.py --gpu -1 --conf models_fi_tdt/pipelines.yaml parse_plaintext
   head -n -6 | ./conllu-to-vrt.pl # skip 6 last lines to get rid of "TNPP_INPUT_CANNOT_END_IN_COMMENT_LINE"
   (vrt-validate)
