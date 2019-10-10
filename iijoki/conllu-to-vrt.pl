@@ -4,13 +4,14 @@ use strict;
 use warnings;
 use open qw(:std :utf8);
 
-my $first_sentence_in_paragraph = "true";
+my $sentence_id=1;
+my $first_sentence_in_paragraph="true";
 
 print "<text filename=\"";
 print $ARGV[2];
 print "\" title=\"";
 print $ARGV[0];
-print "\" text dateto=\"";
+print "\" dateto=\"";
 print $ARGV[1];
 print "0101\" datefrom=\"";
 print $ARGV[1];
@@ -27,19 +28,21 @@ foreach my $line ( <STDIN> ) {
     {
 	if ($first_sentence_in_paragraph eq "true")
 	{
-	    $line = "<sentence>\n";
+	    $line = "<sentence id=\"".$sentence_id."\">\n";
 	    $first_sentence_in_paragraph = "false";
 	}
 	else
 	{
-	    $line = "<\/sentence>\n<sentence>\n";
+	    $line = "<\/sentence>\n<sentence id=\"".$sentence_id."\">\n";
 	}
+	$sentence_id++;
     }
     $line =~ s/<section_before_first_part>/<section type="???">/;
     $line =~ s/<\/section_before_first_part>/<\/section>/;
     $line =~ s/^# [^<].*//;
     $line =~ s/^# //;
     $line =~ s/^\n$//;
+    $line =~ s/&/&amp;/g; # escape ampersands
     print $line;
 
 }
