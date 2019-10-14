@@ -3,6 +3,7 @@ for file in Iijoki-sarja/*.txt:
   ./insert-chapter-section-and-paragraph-markers.pl # check titles and fix them manually in the output, if needed
   python3 full_pipeline_stream.py --gpu -1 --conf models_fi_tdt/pipelines.yaml parse_plaintext
   head -n -6 | ./conllu-to-vrt.pl # skip 6 last lines to get rid of "TNPP_INPUT_CANNOT_END_IN_COMMENT_LINE"
+  vrt-keep -i -n 'word,id,lemma,upos,xpos,feats,head,deprel,deps,misc' # swap id and word
   (vrt-validate)
 
 conllu-to-vrt commands:
@@ -34,3 +35,9 @@ cat $conllu_dir/023_Iijoelta_etelaan.conllu | head -n -6 | ./conllu-to-vrt.pl "I
 cat $conllu_dir/024_Pato_murtuu.conllu | head -n -6 | ./conllu-to-vrt.pl "Pato murtuu" 1994 024_Pato_murtuu.txt > $vrt_dir/024_Pato_murtuu.vrt
 cat $conllu_dir/025_Hyvasti_Iijoki.conllu | head -n -6 | ./conllu-to-vrt.pl "Hyvästi Iijoki" 1995 025_Hyvasti_Iijoki.txt > $vrt_dir/025_Hyvasti_Iijoki.vrt
 cat $conllu_dir/026_Polhokanto_Iijoen_tormassa.conllu | head -n -6 | ./conllu-to-vrt.pl "Pölhökanto Iijoen törmässä" 1998 026_Polhokanto_Iijoen_tormassa.txt > $vrt_dir/026_Polhokanto_Iijoen_tormassa.vrt
+
+
+Compile on korp:
+
+PATH=$PATH:/proj/clarin/korp/cwb/bin:/proj/clarin/korp/scripts
+korp-make --corpus-root="/proj/clarin/korp/corpora" --input-attributes="id lemma upos xpos feats head deprel deps misc" --log-file=log --verbose CORPUSNAME FILE1.vrt FILE2.vrt ...
