@@ -38,9 +38,10 @@ foreach my $line ( <STDIN> ) {
 	$titletag = "false";
     }
 
+    # text before first part
     if ($first_line eq "true")
     {
-	$line = "###C: <section_before_first_part>\n###C: <paragraph>\n".$line;
+	$line = "###C: <paragraph>\n".$line;
 	$first_line = "false";
     }
     # "I" and "II" are used only in the last book
@@ -48,7 +49,7 @@ foreach my $line ( <STDIN> ) {
     {
 	if ($first_part_encountered eq "false")
 	{
-	    $line = "###C: <\/paragraph>\n###C: <\/section_before_first_part>\n###C: <chapter title=\"".$1."\">\n###C: <paragraph type=\"heading\">\n".$line."###C: <\/paragraph>\n";
+	    $line = "###C: <\/paragraph>\n###C: <chapter title=\"".$1."\">\n###C: <paragraph type=\"heading\">\n".$line."###C: <\/paragraph>\n";
 	    $first_part_encountered = "true";
 	}
 	else

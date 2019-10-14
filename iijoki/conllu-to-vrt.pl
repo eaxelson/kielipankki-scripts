@@ -7,6 +7,8 @@ use open qw(:std :utf8);
 my $sentence_id=1;
 my $first_sentence_in_paragraph="true";
 
+print "<!-- #vrt positional-attributes: id word lemma upos xpos feats head deprel deps misc -->\n";
+
 print "<text filename=\"";
 print $ARGV[2];
 print "\" title=\"";
@@ -37,8 +39,6 @@ foreach my $line ( <STDIN> ) {
 	}
 	$sentence_id++;
     }
-    $line =~ s/<section_before_first_part>/<section type="???">/;
-    $line =~ s/<\/section_before_first_part>/<\/section>/;
     $line =~ s/^# [^<].*//;
     $line =~ s/^# //;
     $line =~ s/^\n$//;
